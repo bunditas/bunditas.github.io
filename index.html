@@ -209,6 +209,21 @@ tr.us td:first-child{color:var(--terra)}
 .qc-dots button:hover::before{background:rgba(44,46,69,.5);transform:scale(1.15)}
 .qc-dots button.on::before{background:var(--nacht)}
 .qc[data-single] .qc-nav{display:none}
+
+/* ---------- Zitatband: anhalten und weiterlaufen ---------- */
+/* Der Wechsel laeuft von allein. Wer ihn stoppen will, braucht dafuer eine
+   sichtbare Schaltflaeche und nicht nur die Maus (WCAG 2.2.2). Der Knopf
+   zeigt immer den naechsten Schritt: zwei Balken heisst anhalten, das
+   Dreieck heisst weiterlaufen lassen. */
+.qc-nav{align-items:center;gap:14px}
+.qc-lauf{width:32px;height:32px;padding:0;border:none;border-radius:99px;
+  cursor:pointer;background:transparent;display:grid;place-items:center;
+  color:rgba(44,46,69,.75);transition:color .2s,background .2s}
+.qc-lauf:hover{color:var(--nacht);background:rgba(44,46,69,.09)}
+.qc-lauf svg{width:12px;height:12px;display:block;fill:currentColor}
+.qc-lauf .i-start{display:none}
+.qc-lauf[data-gestoppt] .i-start{display:block}
+.qc-lauf[data-gestoppt] .i-stopp{display:none}
 @media (max-width:900px){
   .quoteband{padding:54px 0}
 }
@@ -1197,12 +1212,12 @@ footer h2{line-height:1.6}
 @media (max-width:820px){#fragen .faq{grid-template-columns:1fr;row-gap:26px}}
 
 /* Solange noch niemand geklickt hat, atmen die Punkte leicht und der Text lädt
-   dazu ein. Nach dem ersten Klick hört das Pulsieren auf. */
+   dazu ein. Es pulsiert dreimal und steht dann still, ein Klick beendet es sofort. */
 @keyframes kp-atmen{
   0%,100%{box-shadow:0 0 0 0 rgba(247,214,91,.55)}
   50%{box-shadow:0 0 0 7px rgba(247,214,91,0)}
 }
-.kpunkte.pulst .kp::before{animation:kp-atmen 2.4s ease-out 2.9s infinite}
+.kpunkte.pulst .kp::before{animation:kp-atmen 2.4s ease-out 2.9s 3}
 .kaktustext .kt[data-kt="start"] .kt-b{color:rgba(242,232,196,.7)}
 .kchips.pulst .kchip{animation:none}
 @media (prefers-reduced-motion:reduce){ .kpunkte.pulst .kp::before{animation:none} }
@@ -1419,10 +1434,10 @@ footer h2{line-height:1.6}
 </div>
 </div></section><section class="quoteband"><div class="wrap"><div aria-hidden="true" class="qm" role="presentation"></div>
 <div class="qc" data-qc="">
-<div aria-label="Stimmen aus der Zusammenarbeit, waagrecht scrollbar" class="qc-track" role="group" tabindex="0"><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.1.TEXT">Sie stellen genau die richtigen Fragen, um die entscheidenden Hebel zu identifizieren, und sorgen dafür, dass Produkt und Sales nahtlos ineinandergreifen. Damit schaffen sie die fundierte Basis, die wir im Management brauchten, um wegweisende Entscheidungen schnell und sicher zu treffen.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.1.QUELLE">Chief Sales Officer</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.2.TEXT">Eva &amp; Maja sind ein großartiges komplementäres Duo: Sie vereinen strategische Produktkompetenz mit analytischer Prozessklarheit. Die Zusammenarbeit mit beiden macht stets Spaß und dabei sind sie zuverlässig, on point und sehr professionell.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.2.QUELLE">Head of Brand &amp; Communications</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.3.TEXT">Besonders beeindruckt hat mich ihre offene, kreative und zugleich strukturierte Arbeitsweise: gemeinsam in Szenarien denken, Perspektiven wechseln, auch ungewöhnliche Wege zulassen – und daraus tragfähige Lösungen entwickeln. Eva und Maja bringen unterschiedliche Stärken und Perspektiven mit, die sich ideal ergänzen: 1 + 1 ist deutlich mehr als 2.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.3.QUELLE">Head of Key Account Management</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.4.TEXT">Ihre sympathische, offene Art und die klare Kommunikation sorgten dafür, dass man aus jedem gemeinsamen Termin mit echtem Mehrwert herausging – immer pragmatisch, zielgerichtet und auf Augenhöhe. Bessere Kolleginnen kann man sich für ein Vorhaben kaum wünschen.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.4.QUELLE">Business Intelligence Manager</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.5.TEXT">Beide packen Dinge mit einer Energie an, die ansteckt, und beide verbinden strategisches Denken mit echter Umsetzungskraft. Ich bin überzeugt, dass sie gemeinsam viel bewegen werden.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.5.QUELLE">Chief Product Officer</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.6.TEXT">Fortschritt auf der Arbeit fällt leichter, wenn man mit Kolleg*innen arbeitet, die neben Fachwissen und Professionalität auch Humor und gute Laune mitbringen – auch wenn die Situation schwierig ist.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.6.QUELLE">Head of Engineering</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.7.TEXT">Ich habe die beiden als außergewöhnlich kluge und empathische Persönlichkeiten kennengelernt, die Menschen begeistern und Dinge voranbringen. Die Zusammenarbeit mit ihnen war immer bereichernd – geprägt von Offenheit, guten Fragen und echtem Austausch – und hat vor allem richtig Freude gemacht.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.7.QUELLE">Partner at Management Consultancy · Commercial Excellence expert</figcaption></figure></div>
+<div aria-label="Stimmen aus der Zusammenarbeit, waagrecht scrollbar" class="qc-track" role="group" tabindex="0"><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.1.TEXT">Sie stellen genau die richtigen Fragen, um die entscheidenden Hebel zu identifizieren, und sorgen dafür, dass Produkt und Sales nahtlos ineinandergreifen. Damit schaffen sie die fundierte Basis, die wir im Management brauchten, um wegweisende Entscheidungen schnell und sicher zu treffen.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.1.QUELLE">Chief Sales Officer</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.2.TEXT">Eva &amp; Maja sind ein großartiges komplementäres Duo: Sie vereinen strategische Produktkompetenz mit analytischer Prozessklarheit. Die Zusammenarbeit mit beiden macht stets Spaß und dabei sind sie zuverlässig, on point und sehr professionell.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.2.QUELLE">Head of Brand &amp; Communications</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.3.TEXT">Besonders beeindruckt hat mich ihre offene, kreative und zugleich strukturierte Arbeitsweise: gemeinsam in Szenarien denken, Perspektiven wechseln, auch ungewöhnliche Wege zulassen – und daraus tragfähige Lösungen entwickeln. Eva und Maja bringen unterschiedliche Stärken und Perspektiven mit, die sich ideal ergänzen: 1 + 1 ist deutlich mehr als 2.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.3.QUELLE">Head of Key Account Management</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.4.TEXT">Ihre sympathische, offene Art und die klare Kommunikation sorgten dafür, dass man aus jedem gemeinsamen Termin mit echtem Mehrwert herausging – immer pragmatisch, zielgerichtet und auf Augenhöhe. Bessere Kolleginnen kann man sich für ein Vorhaben kaum wünschen.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.4.QUELLE">Business Intelligence Manager</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.5.TEXT">Beide packen Dinge mit einer Energie an, die ansteckt, und beide verbinden strategisches Denken mit echter Umsetzungskraft. Ich bin überzeugt, dass sie gemeinsam viel bewegen werden.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.5.QUELLE">Chief Product Officer</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.6.TEXT">Fortschritt auf der Arbeit fällt leichter, wenn man mit Kolleginnen arbeitet, die neben Fachwissen und Professionalität auch Humor und gute Laune mitbringen – auch wenn die Situation schwierig ist.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.6.QUELLE">Head of Engineering</figcaption></figure><figure class="qc-item"><blockquote data-t="HOME.ZITAT.1.7.TEXT">Ich habe die beiden als außergewöhnlich kluge und empathische Persönlichkeiten kennengelernt, die Menschen begeistern und Dinge voranbringen. Die Zusammenarbeit mit ihnen war immer bereichernd – geprägt von Offenheit, guten Fragen und echtem Austausch – und hat vor allem richtig Freude gemacht.</blockquote><figcaption class="who" data-t="HOME.ZITAT.1.7.QUELLE">Partner at Management Consultancy · Commercial Excellence Expert</figcaption></figure></div>
 <div class="qc-nav">
 <div class="qc-dots"><button aria-label="Zitat 1 von 7" class="on" type="button"></button><button aria-label="Zitat 2 von 7" type="button"></button><button aria-label="Zitat 3 von 7" type="button"></button><button aria-label="Zitat 4 von 7" type="button"></button><button aria-label="Zitat 5 von 7" type="button"></button><button aria-label="Zitat 6 von 7" type="button"></button><button aria-label="Zitat 7 von 7" type="button"></button></div>
-</div>
+<button aria-label="Zitatwechsel anhalten" class="qc-lauf" type="button"><svg aria-hidden="true" class="i-stopp" focusable="false" viewbox="0 0 12 12"><rect height="10" rx="1.1" width="3.2" x="1.4" y="1"></rect><rect height="10" rx="1.1" width="3.2" x="7.4" y="1"></rect></svg><svg aria-hidden="true" class="i-start" focusable="false" viewbox="0 0 12 12"><path d="M3.1 1.5 10.6 6l-7.5 4.5z"></path></svg></button></div>
 </div>
 </div></section><section class="photoband" style="padding:0"><img alt="Eva Sturm und Maja Tuder sitzen nebeneinander, auf beiden Laptops klebt das bunditas. Zeichen." height="1200" loading="lazy" sizes="(max-width:820px) 100vw, 100vw" src="assets/fotos/team-zusammenarbeit.jpg" srcset="assets/fotos/team-zusammenarbeit-900.jpg 900w, assets/fotos/team-zusammenarbeit.jpg 1800w" style="object-position:center 42%" width="1800"/><div class="overlay"><div class="wrap"><p class="claimbig" data-t="HOME.CLAIM">Wir bündeln,<br/>was euch weiterbringt.</p></div></div></section><section class="cream" id="arbeitsweise"><div class="wrap">
 <div class="kicker" data-t="HOME.ARBEITSWEISE.KICKER">Arbeitsweise</div>
@@ -1490,41 +1505,51 @@ footer h2{line-height:1.6}
 <script>
 document.querySelectorAll('[data-qc]').forEach(function(qc){
   var track=qc.querySelector('.qc-track'), items=qc.querySelectorAll('.qc-item'),
-      dots=qc.querySelectorAll('.qc-dots button');
+      dots=qc.querySelectorAll('.qc-dots button'), lauf=qc.querySelector('.qc-lauf');
   if(items.length<2){ qc.setAttribute('data-single',''); return; }
-  var i=0, timer=null, vonHand=false;
-  /* Der Autowechsel laeuft nur, wenn niemand "Bewegung reduzieren" eingestellt
-     hat, und er steht still, sobald der Fokus im Band liegt oder jemand selbst
-     geblaettert hat. Ohne Maus gibt es sonst keine Moeglichkeit anzuhalten. */
+  /* Der Autowechsel hat eine sichtbare Schaltflaeche zum Anhalten und
+     Weiterlaufen. "gestoppt" ist die bewusste Entscheidung der Besucherin,
+     "imFokus" nur eine kurze Pause, solange jemand im Band liest. Wer
+     "Bewegung reduzieren" eingestellt hat, startet von vornherein gestoppt,
+     kann den Wechsel aber selbst in Gang setzen. */
   var ruhig=window.matchMedia('(prefers-reduced-motion: reduce)');
-  var imFokus=false;
+  var i=0, timer=null, imFokus=false, gestoppt=ruhig.matches;
   function sanft(){ return ruhig.matches ? 'auto' : 'smooth'; }
   function mark(){ dots.forEach(function(d,k){ d.classList.toggle('on', k===i); }); }
   function go(n){ i=(n+items.length)%items.length;
     track.scrollTo({left: items[i].offsetLeft-items[0].offsetLeft, behavior: sanft()}); mark(); }
   function stop(){ if(timer){ clearInterval(timer); timer=null; } }
-  function start(){ if(vonHand || imFokus || ruhig.matches) return;
+  function start(){ if(gestoppt || imFokus) return;
     stop(); timer=setInterval(function(){ go(i+1); }, 12000); }
-  function eigenhaendig(){ vonHand=true; stop(); }
-  dots.forEach(function(d,k){ d.addEventListener('click', function(){ eigenhaendig(); go(k); }); });
+  function knopf(){
+    if(!lauf) return;
+    if(gestoppt){ lauf.setAttribute('data-gestoppt',''); lauf.setAttribute('aria-label','Zitatwechsel starten'); }
+    else { lauf.removeAttribute('data-gestoppt'); lauf.setAttribute('aria-label','Zitatwechsel anhalten'); }
+  }
+  function anhalten(){ gestoppt=true; stop(); knopf(); }
+  function weiter(){ gestoppt=false; knopf(); start(); }
+  if(lauf) lauf.addEventListener('click', function(){ gestoppt ? weiter() : anhalten(); });
+  /* Wer selbst blaettert oder wischt, will offensichtlich nicht weitergeschoben
+     werden. Der Knopf zeigt danach das Dreieck, damit sichtbar ist, dass der
+     Wechsel steht und wie er wieder losgeht. */
+  dots.forEach(function(d,k){ d.addEventListener('click', function(){ anhalten(); go(k); }); });
   ['touchstart','pointerdown','wheel','keydown'].forEach(function(art){
-    track.addEventListener(art, eigenhaendig, {passive:true});
+    track.addEventListener(art, anhalten, {passive:true});
   });
   qc.addEventListener('mouseenter', stop);
   qc.addEventListener('mouseleave', start);
-  qc.addEventListener('focusin', function(){ imFokus=true; stop(); });
-  qc.addEventListener('focusout', function(e){
-    if(!qc.contains(e.relatedTarget)){ imFokus=false; start(); }
+  track.addEventListener('focusin', function(){ imFokus=true; stop(); });
+  track.addEventListener('focusout', function(e){
+    if(!track.contains(e.relatedTarget)){ imFokus=false; start(); }
   });
-  if(ruhig.addEventListener) ruhig.addEventListener('change', function(){ ruhig.matches ? stop() : start(); });
+  if(ruhig.addEventListener) ruhig.addEventListener('change', function(){ if(ruhig.matches) anhalten(); });
   track.addEventListener('scroll', function(){
     var w=items[1].offsetLeft-items[0].offsetLeft;
     var n=Math.max(0, Math.min(items.length-1, Math.round(track.scrollLeft/w)));
     if(n!==i){ i=n; mark(); }
   }, {passive:true});
-  start();
-});
-</script>
+  knopf(); start();
+});</script>
 <!-- Der Text-Editor der Arbeitsfassung ist in der Live-Fassung nicht enthalten. -->
 <script>
 /* Aussprache des Namens. Zuerst die echte Aufnahme; wenn der Browser sie nicht
