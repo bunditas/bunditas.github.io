@@ -1185,6 +1185,40 @@ footer h2{line-height:1.6}
 /* Startband zweizeilig, mittig */
 #start p{text-wrap:balance}
 
+
+/* ---------- Häufige Fragen ---------- */
+/* Kurze, für sich stehende Antworten: gut für Menschen, die schnell etwas
+   nachsehen wollen, und für Suchsysteme, die daraus zitieren. */
+#fragen .faq{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:56px;row-gap:34px}
+#fragen .faq-item h3{margin:0 0 8px;font-size:1.0625rem;font-weight:700;letter-spacing:-.01em;
+  color:var(--nacht)}
+#fragen .faq-item p{margin:0;font-size:1rem;line-height:1.6;color:var(--nacht-60);max-width:56ch}
+@media (max-width:820px){#fragen .faq{grid-template-columns:1fr;row-gap:26px}}
+
+/* Solange noch niemand geklickt hat, atmen die Punkte leicht und der Text lädt
+   dazu ein. Nach dem ersten Klick hört das Pulsieren auf. */
+@keyframes kp-atmen{
+  0%,100%{box-shadow:0 0 0 0 rgba(247,214,91,.55)}
+  50%{box-shadow:0 0 0 7px rgba(247,214,91,0)}
+}
+.kpunkte.pulst .kp::before{animation:kp-atmen 2.4s ease-out 2.9s infinite}
+.kaktustext .kt[data-kt="start"] .kt-b{color:rgba(242,232,196,.7)}
+.kchips.pulst .kchip{animation:none}
+@media (prefers-reduced-motion:reduce){ .kpunkte.pulst .kp::before{animation:none} }
+
+/* Die drei Kacheln bei Eva & Maja behalten ihre gemeinsame Hoehe, auch wenn
+   eine aufgeklappt ist. Nur die geoeffnete waechst, die anderen bleiben
+   stehen, wo sie sind. Die Hoehe misst das Skript im zugeklappten Zustand. */
+#wir .team{align-items:start}
+#wir .team>div{min-height:var(--kachelhoehe,auto)}
+/* Untereinander braucht es keine gemeinsame Hoehe. Ohne sie entsteht kein
+   Leerraum ueber dem LinkedIn-Verweis, und der bleibt beim Auf- und Zuklappen
+   an derselben Stelle. */
+@media (max-width:900px){
+  #wir .team>div{min-height:0}
+  #wir .person .lilink,#wir .stats .lilink{margin-top:18px}
+}
 </style>
 <meta content="#2C2E45" name="theme-color"/><meta content="strict-origin-when-cross-origin" name="referrer"/><script type="application/ld+json">{
  "@context": "https://schema.org",
