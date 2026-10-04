@@ -728,26 +728,61 @@ footer h2{line-height:1.6}
   .photoband:not(.plain) .overlay{align-items:center;padding-top:0}
   .photoband:not(.plain) .claimbig{font-size:clamp(1.375rem,4vw,2.25rem);max-width:10ch}
 }
-/* ---------- Arbeitsweise: aufklappen statt drehen ---------- */
-/* Die 3D-Drehung hat auf manchen Geraeten beide Seiten gleichzeitig gezeigt:
-   die Vorderseite schimmerte spiegelverkehrt durch die Rueckseite. Das liegt
-   an backface-visibility, das nicht ueberall zuverlaessig greift. Die Karten
-   klappen deshalb jetzt ueberall so auf wie am Handy, ohne Drehung im Raum. */
-#arbeitsweise .flip{perspective:none}
-#arbeitsweise .flip-in{display:block;transform:none!important;transform-style:flat;
-  transition:none}
-#arbeitsweise .flip-front,#arbeitsweise .flip-back{transform:none!important;opacity:1!important;
-  backface-visibility:visible;-webkit-backface-visibility:visible}
-#arbeitsweise .flip-back{display:none;margin-top:-1px;
-  border-top-left-radius:0;border-top-right-radius:0}
-#arbeitsweise .flip.um .flip-front{border-bottom-left-radius:0;border-bottom-right-radius:0}
-#arbeitsweise .flip.um .flip-back{display:block}
-#arbeitsweise .flip-back .more{display:none}
-#arbeitsweise .flip .more .m-auf{display:inline}
-#arbeitsweise .flip .more .m-zu{display:none}
-#arbeitsweise .flip.um .more .m-auf{display:none}
-#arbeitsweise .flip.um .more .m-zu{display:inline}
+/* ---------- Arbeitsweise am Handy: aufklappen statt drehen ---------- */
+/* Schmale Schirme drehen nicht, dort schiebt sich der Text unter den Titel. */
+@media (max-width:940px){
+  #arbeitsweise .cols3{align-items:start;grid-auto-rows:auto}
+  #arbeitsweise .flip{perspective:none}
+  #arbeitsweise .flip-in{display:block;transform:none!important;transform-style:flat;
+    transition:none}
+  #arbeitsweise .flip-front,#arbeitsweise .flip-back{transform:none!important;opacity:1!important;
+    backface-visibility:visible;-webkit-backface-visibility:visible}
+  #arbeitsweise .flip-front{min-height:var(--kartenkopf,auto)}
+  #arbeitsweise .flip-back{display:none;margin-top:-1px;
+    border-top-left-radius:0;border-top-right-radius:0}
+  #arbeitsweise .flip.um .flip-front{border-bottom-left-radius:0;border-bottom-right-radius:0}
+  #arbeitsweise .flip.um .flip-back{display:block}
+  #arbeitsweise .flip-back .more{display:none}
+  #arbeitsweise .flip .more .m-auf{display:inline}
+  #arbeitsweise .flip .more .m-zu{display:none}
+  #arbeitsweise .flip.um .more .m-auf{display:none}
+  #arbeitsweise .flip.um .more .m-zu{display:inline}
+}
 
+/* ---------- Arbeitsweise am Rechner: Karten drehen ---------- */
+/* Diese Regeln stehen bewusst ganz am Ende und beschreiben die Drehung
+   vollstaendig. In frueheren Fassungen lagen Bruchstuecke verstreut im
+   Stylesheet, teils auf Selektoren, die es nicht mehr gibt. Dadurch blieb die
+   Rueckseite sichtbar und die Vorderseite schimmerte spiegelverkehrt durch. */
+@media (min-width:941px){
+  #arbeitsweise .cols3{align-items:stretch;grid-auto-rows:1fr}
+  #arbeitsweise .flip{perspective:1200px;height:100%}
+  #arbeitsweise .flip-in{display:grid;height:100%;transform-style:preserve-3d;
+    transform:rotateY(0deg);transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+  #arbeitsweise .flip.um .flip-in{transform:rotateY(180deg)}
+  #arbeitsweise .flip-front,#arbeitsweise .flip-back{grid-area:1/1;height:100%;min-height:0;
+    opacity:1;display:flex;flex-direction:column;border-radius:14px;margin-top:0;
+    backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  #arbeitsweise .flip-front{transform:rotateY(0deg)}
+  #arbeitsweise .flip-back{transform:rotateY(180deg)}
+  #arbeitsweise .flip-back .more{display:block}
+}
+/* Wer Bewegung reduziert hat, bekommt statt der Drehung einen Austausch. */
+@media (min-width:941px) and (prefers-reduced-motion:reduce){
+  #arbeitsweise .flip-in{transform:none!important;transform-style:flat;transition:none}
+  #arbeitsweise .flip-front,#arbeitsweise .flip-back{transform:none!important;
+    backface-visibility:visible;-webkit-backface-visibility:visible;transition:opacity .18s}
+  #arbeitsweise .flip-back{opacity:0;pointer-events:none}
+  #arbeitsweise .flip.um .flip-front{opacity:0;pointer-events:none}
+  #arbeitsweise .flip.um .flip-back{opacity:1;pointer-events:auto}
+}
+
+/* ---------- Arbeitsweise: alle Karten gleich hoch ---------- */
+/* grid-auto-rows:1fr hat nur die unsichtbare Huelle gedehnt, nicht die weisse
+   Karte darin. Und sobald eine Karte aufgeklappt ist, wuerde 1fr alle Reihen
+   auf diese Hoehe ziehen. Stattdessen bekommen alle Vorderseiten dieselbe
+   Mindesthoehe, gemessen an der hoechsten. Die Karten stehen oben buendig,
+   eine aufgeklappte waechst nur selbst nach unten. */
 /* Das Menuezeichen steht ganz aussen rechts, der Knopf links davon. Die
    Reihenfolge steckt im HTML und nicht in CSS-order, damit die Tastaturfolge
    dem entspricht, was man sieht. */
@@ -1676,22 +1711,63 @@ document.querySelectorAll('[data-qc]').forEach(function(qc){
    Klick laeuft durch dieselbe Stelle, also schaltet die Karte genau einmal. */
 document.querySelectorAll('#arbeitsweise .flip').forEach(function (karte) {
   var schalter = karte.querySelectorAll('.more');
-  var hinten = karte.querySelector('.flip-back');
+  var vs = karte.querySelector('.flip-front'), hs = karte.querySelector('.flip-back');
+  var vorne = karte.querySelector('.flip-front .more');
+  var hinten = karte.querySelector('.flip-back .more');
+  /* Am Rechner dreht sich die Karte, die Vorderseite verschwindet dahinter und
+     muss dann aus Tastatur und Vorleseprogramm raus. Am Handy klappt der Text
+     darunter auf, dort bleibt die Vorderseite sichtbar und bedienbar; wuerde
+     man sie auch dort sperren, kaeme man nicht mehr zum Schalter zurueck. */
+  function gedreht(){ return hinten && getComputedStyle(hinten).display !== 'none'; }
   function stand(offen) {
     karte.classList.toggle('um', offen);
     schalter.forEach(function (s) { s.setAttribute('aria-expanded', offen ? 'true' : 'false'); });
-    /* Nur die zugeklappte Rueckseite wird herausgenommen. Die Vorderseite
-       bleibt sichtbar und bedienbar, sonst kaeme man mit der Tastatur nicht
-       mehr zum Schalter zurueck, um die Karte wieder zu schliessen. */
-    if (hinten) { if (offen) hinten.removeAttribute('inert'); else hinten.setAttribute('inert',''); }
+    var dreht = gedreht();
+    if (vorne) vorne.tabIndex = (dreht && offen) ? -1 : 0;
+    if (hinten) hinten.tabIndex = offen ? 0 : -1;
+    if (vs) { if (dreht && offen) vs.setAttribute('inert',''); else vs.removeAttribute('inert'); }
+    if (hs) { if (offen) hs.removeAttribute('inert'); else hs.setAttribute('inert',''); }
   }
   stand(karte.classList.contains('um'));
   karte.addEventListener('click', function (e) {
     /* Verweise in der Karte sollen weiter funktionieren. */
     if (e.target.closest('a')) return;
-    stand(!karte.classList.contains('um'));
+    var offen = !karte.classList.contains('um');
+    stand(offen);
+    var vonTaste = document.activeElement && document.activeElement.classList.contains('more');
+    if (vonTaste && gedreht()) {
+      var ziel = karte.querySelector((offen ? '.flip-back' : '.flip-front') + ' .more');
+      if (ziel) ziel.focus();
+    }
   });
+  /* Beim Wechsel zwischen den Darstellungen die Sperren neu setzen. */
+  window.addEventListener('resize', function(){ stand(karte.classList.contains('um')); });
 });
+
+/* Alle Kartenvorderseiten auf die Hoehe der hoechsten bringen. Gemessen wird
+   nach dem Zuruecksetzen, sonst waechst der Wert bei jedem Durchlauf weiter.
+   Bei Breitenaenderung wird neu gemessen, weil Titel dann anders umbrechen. */
+(function(){
+  var raster = document.querySelector('#arbeitsweise .cols3');
+  if (!raster) return;
+  var koepfe = raster.querySelectorAll('.flip-front');
+  if (!koepfe.length) return;
+  var letzteBreite = 0;
+  function messen(){
+    raster.style.removeProperty('--kartenkopf');
+    var hoch = 0;
+    koepfe.forEach(function(k){ hoch = Math.max(hoch, k.getBoundingClientRect().height); });
+    if (hoch > 0) raster.style.setProperty('--kartenkopf', Math.ceil(hoch) + 'px');
+  }
+  function vielleichtMessen(){
+    if (window.innerWidth === letzteBreite) return;
+    letzteBreite = window.innerWidth;
+    messen();
+  }
+  vielleichtMessen();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(messen);
+  window.addEventListener('resize', vielleichtMessen);
+})();
 </script><script>
 /* Menüknopf am Handy: auf, zu, und wieder zu beim Antippen eines Verweises,
    bei Escape und beim Tippen daneben. */
