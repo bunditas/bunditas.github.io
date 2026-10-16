@@ -856,7 +856,7 @@ footer h2{line-height:1.6}
 .legal{background:var(--paper);border-top:1px solid var(--line);padding:44px 0 46px}
 .legal .wrap>h2{font-size:0.71875rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--terra);font-weight:700;margin-bottom:16px;line-height:1.6}
-.legalgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;font-size:0.90625rem;
+.legalgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 0;font-size:0.90625rem;
   color:var(--nacht-2);line-height:1.7}
 .legalgrid>div{padding-right:26px}
 .legalgrid b{color:var(--nacht);font-weight:700;display:block;font-size:0.8125rem;
@@ -864,6 +864,11 @@ footer h2{line-height:1.6}
 /* Der Verweis im Impressum bleibt in Nacht, erst beim Zeigen wird er Terra. */
 .legalgrid a{color:var(--nacht);text-decoration:none}
 .legalgrid a:hover{color:var(--terra);text-decoration:underline}
+/* Der Verweis auf die Gewerbeordnung ist ohne Unterstreichung nicht als
+   Verweis erkennbar, anders als die E-Mail-Adresse daneben. */
+.legalgrid a[target="_blank"]{text-decoration:underline;text-underline-offset:3px;
+  text-decoration-thickness:1px;text-decoration-color:rgba(44,46,69,.35)}
+.legalgrid a[target="_blank"]:hover{text-decoration-color:currentColor}
 @media (max-width:900px){.legalgrid{grid-template-columns:1fr;gap:20px}
   .legalgrid>div{padding-right:0}}
 
@@ -1317,7 +1322,20 @@ footer h2{line-height:1.6}
  "@type": "ProfessionalService",
  "@id": "https://bunditas.at/#organisation",
  "name": "bunditas.",
- "legalName": "bunditas. OG in Gründung",
+ "legalName": "bunditas. OG",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "Firmenbuchnummer",
+      "value": "FN 690209p"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "GISA-Zahl",
+      "value": "40250748"
+    }
+  ],
+  "globalLocationNumber": "9110040013265",
  "description": "Unternehmensberatung von Eva Sturm und Maja Tuder für Unternehmen, die schneller gewachsen sind als ihre Strukturen. Schwerpunkte: Produktstrategie, Prozesse und das Zusammenspiel von Produkt und Vertrieb.",
  "url": "https://bunditas.at/",
  "email": "hallo@bunditas.at",
@@ -1542,15 +1560,7 @@ footer h2{line-height:1.6}
 <a class="btn btn-s" data-t="HOME.ABSCHLUSS.BUTTON.3" data-umami-event="linkedin-bunditas" href="https://www.linkedin.com/company/bunditas/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg><span class="lbl">bunditas. auf LinkedIn</span></a>
 </div></div>
 </div></section><section id="fragen"><div class="wrap"><div class="kicker" data-t="HOME.FAQ.KICKER">Kurz gefragt</div><h2 data-t="HOME.FAQ.H2">Häufige Fragen.</h2><p class="sub" data-t="HOME.FAQ.SUB">bunditas. ist die Unternehmensberatung von Dipl.-Ing. Eva Sturm und MMag. Maja Tuder mit Sitz in Amstetten in Niederösterreich. Die Schwerpunkte: Produktstrategie, Prozesse und das Zusammenspiel von Produkt und Vertrieb.</p><div class="faq"><div class="faq-item"><h3 data-t="HOME.FAQ.1.FRAGE">Was macht bunditas. genau?</h3><p data-t="HOME.FAQ.1.ANTWORT">bunditas. berät Unternehmen mit Blick auf das ganze System: Produktstrategie, Prozesse und das Zusammenspiel von Produkt und Vertrieb. Wir machen sichtbar, wo Kraft verloren geht, und befähigen euer Team, ohne uns weiterzukommen.</p></div><div class="faq-item"><h3 data-t="HOME.FAQ.2.FRAGE">Für wen ist bunditas. da?</h3><p data-t="HOME.FAQ.2.ANTWORT">Für Unternehmen, die schneller gewachsen sind als ihre Strukturen: Schnittstellen reiben, Entscheidungen dauern, Abläufe aus der Anfangszeit tragen nicht mehr. Unsere Erfahrung kommt aus digitalen Plattformen wie SaaS und Marktplätzen, aus Hochschule, Social Media, Agentur, Handel und HR.</p></div><div class="faq-item"><h3 data-t="HOME.FAQ.3.FRAGE">Ab wann ist bunditas. buchbar?</h3><p data-t="HOME.FAQ.3.ANTWORT">bunditas. ist gestartet, Projekte und Kennenlerntermine sind ab sofort buchbar. Einfach an <a data-umami-event="mail" href="mailto:hallo@bunditas.at">hallo@bunditas.at</a> schreiben.</p></div><div class="faq-item"><h3 data-t="HOME.FAQ.4.FRAGE">Wo ist bunditas. tätig?</h3><p data-t="HOME.FAQ.4.ANTWORT">Unsere Basis ist Amstetten in Niederösterreich. Wenn ihr uns woanders braucht, kommen wir vorbei – vor Ort oder remote.</p></div><div class="faq-item"><h3 data-t="HOME.FAQ.5.FRAGE">Wie läuft eine Zusammenarbeit mit bunditas. ab?</h3><p data-t="HOME.FAQ.5.ANTWORT">Wir sondieren, zeigen Möglichkeiten und deren Wirkung, entschieden wird von euch. Wir sind immer zu zweit dabei, arbeiten mit euren Daten und schauen auf Rollen und Prozesse statt auf einzelne Personen. Beendet ist die Zusammenarbeit, wenn ihr ohne uns weiterkommt.</p></div></div></div></section><section class="photoband plain" style="padding:0"><img alt="Eva Sturm und Maja Tuder stehen lachend vor einer hellen Gebäudefassade." height="818" loading="lazy" sizes="(max-width:820px) 100vw, 100vw" src="assets/fotos/team-fassade.jpg" srcset="assets/fotos/team-fassade-900.jpg 900w, assets/fotos/team-fassade.jpg 1800w" width="1800"/></section>
-</main><aside aria-label="Impressum"><section class="legal" id="impressum"><div class="wrap">
-<h2 data-t="HOME.IMPRESSUM.TITEL">Impressum</h2>
-<div class="legalgrid">
-<div data-t="HOME.IMPRESSUM.1"><b>Verantwortlich</b>bunditas. OG in Gründung<br/>
-    Dipl.-Ing. Eva Sturm, MMag. Maja Tuder</div>
-<div data-t="HOME.IMPRESSUM.2"><b>Anschrift</b>Graben 62<br/>3300 Amstetten, Österreich</div>
-<div data-t="HOME.IMPRESSUM.3"><b>Kontakt</b>
-<a href="mailto:hallo@bunditas.at">hallo@bunditas.at</a></div>
-</div></div></section></aside><footer><div class="wrap">
+</main><footer><div class="wrap">
 <div class="fgrid">
 <div>
 <a class="logo" href="index.html" style="text-decoration:none"><svg aria-label="bunditas." role="img" viewbox="0 0 1638.74 325.98" xmlns="http://www.w3.org/2000/svg"><path d="M1591.09,254.43c0,12.36,10.42,22.78,22.78,22.78s22.78-10.42,22.78-22.78-10.41-22.78-22.78-22.78-22.78,10.42-22.78,22.78M1435.55,253.13c16.27,15.94,40.68,24.4,67.36,24.4,42.3,0,65.41-21.16,65.41-48.81,0-37.1-33.52-44.91-60.85-50.76-18.55-4.23-34.17-8.46-34.17-20.51,0-11.06,11.39-17.57,29.28-17.57,19.53,0,37.1,8.13,46.54,18.87l14.32-24.09c-14.32-12.69-34.5-22.12-61.19-22.12-39.7,0-61.83,22.12-61.83,47.83,0,35.14,32.22,42.3,59.23,48.17,19.2,4.23,35.79,9.11,35.79,22.78,0,11.71-10.42,19.2-30.91,19.2s-42.3-10.74-53.37-22.13l-15.62,24.74ZM1370.79,237.84c-7.81,10.73-22.45,16.27-37.42,16.27-19.2,0-33.52-11.07-33.52-27.99s14.32-28.31,33.52-28.31c14.97,0,29.62,5.53,37.42,16.27v23.76ZM1370.79,273.63h34.17v-104.13c0-42.31-30.59-56.95-65.41-56.95-25.06,0-47.84,8.13-66.07,25.38l14,23.76c13.67-13.35,28.97-19.86,46.53-19.86,21.81,0,36.78,11.07,36.78,29.29v23.43c-11.39-13.34-29.62-20.17-50.76-20.17-25.71,0-54.68,14.97-54.68,51.09s28.97,52.07,54.68,52.07c20.82,0,39.05-7.48,50.76-20.82v16.92ZM1211.67,277.53c15.94,0,26.03-4.23,32.21-10.09l-8.13-25.7c-2.61,2.92-8.78,5.53-15.29,5.53-9.77,0-14.97-7.81-14.97-18.55v-82.32h31.89v-29.94h-31.89v-42.96h-34.17v42.96h-26.04v29.94h26.04v90.78c0,26.03,14,40.36,40.36,40.36M1079.55,273.63h34.17V116.45h-34.17v157.17ZM1096.46,90.42c11.71,0,21.16-9.44,21.16-21.16s-9.44-21.15-21.16-21.15-21.15,9.43-21.15,21.15,9.76,21.16,21.15,21.16M1001.12,226.45c-7.81,11.71-24.4,20.82-40.67,20.82-27.01,0-44.26-21.81-44.26-52.07s17.25-52.39,44.26-52.39c16.27,0,32.86,9.43,40.67,21.15v62.49ZM1001.12,273.63h34.17V56.58h-34.17v81.68c-12.69-16.59-30.91-25.7-50.44-25.7-40.68,0-69.96,31.89-69.96,82.65s29.62,82.33,69.96,82.33c20.17,0,38.4-9.77,50.44-25.39v21.48ZM818.57,273.63h34.17v-110.64c0-32.22-16.93-50.44-50.76-50.44-24.74,0-44.91,13.01-55.33,25.38v-21.47h-34.17v157.17h34.17v-109.67c7.81-10.74,22.78-21.15,40.36-21.15,19.2,0,31.56,8.13,31.56,32.54v98.28ZM634.06,273.63h34.17V116.45h-34.17v110.32c-8.13,10.73-23.1,20.5-40.36,20.5-19.2,0-31.56-7.48-31.56-31.89v-98.93h-34.17v111.29c0,32.21,16.59,49.79,50.44,49.79,24.74,0,44.26-12.04,55.65-24.73v20.82ZM379.58,226.45v-62.16c7.48-11.71,24.4-21.47,40.36-21.47,27.33,0,44.58,21.8,44.58,52.39s-17.24,52.07-44.58,52.07c-15.95,0-32.87-9.11-40.36-20.82M345.41,273.63h34.17v-21.48c12.04,15.62,29.94,25.39,50.44,25.39,40.03,0,69.65-30.59,69.65-82.33s-29.29-82.65-69.65-82.65c-19.85,0-38.07,9.11-50.44,25.7V56.58h-34.17v217.05Z" fill="currentColor"></path><path d="M136.81,323.93c-36.6,0-71.75-12.54-94.33-35.06C-6.33,240.15-9.7,162.5,17.8,123.28c5.36-7.65,15.9-9.5,23.55-4.14,7.65,5.36,9.5,15.9,4.14,23.55-17.05,24.33-17.4,84.04,20.88,122.24,21.99,21.94,63.34,30.79,100.55,21.52,20.86-5.2,58.01-20.9,72.33-67.54,10.13-33.01,3.44-58.27-6.76-73.78-5.58,25.61-20.55,48.14-48.13,60.27-35.08,15.38-72.63-1.03-85.75-22.49-14.9-24.4-13.49-62.5,18.03-88.13,21.35-17.37,54.9-20.6,86.07-10.2-6.06-18.93-18.88-35.24-35.4-43.51-22.28-11.15-47.73-6.26-73.58,14.13-7.32,5.79-17.95,4.54-23.75-2.8-5.78-7.33-4.53-17.97,2.8-23.75C121.82-10.06,162.53.85,182.42,10.82c33.96,16.98,56.67,54.46,57.88,94.57,34.72,28.77,46.42,74.07,31.27,123.44-14.02,45.67-49.18,78.63-96.47,90.43-12.63,3.15-25.55,4.67-38.29,4.67ZM166.71,112.39c-11.35,0-21.62,2.82-28.75,8.62-16.47,13.39-17.75,32.41-10.5,44.27,6.95,11.39,27.61,16.22,42.69,9.59,27.74-12.2,31.92-36.27,35.08-52.48-12.31-6.59-26.06-9.99-38.52-9.99Z" fill="currentColor"></path></svg></a>
@@ -1576,7 +1586,7 @@ footer h2{line-height:1.6}
 </div>
 <div class="fbottom">
 <span data-t="FOOTER.UNTEN.1">© 2026 bunditas.</span>
-<span data-t="FOOTER.UNTEN.2"><a href="#impressum">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+<span data-t="FOOTER.UNTEN.2"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
 </div>
 </div></footer>
 <script>

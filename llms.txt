@@ -5,7 +5,8 @@
 > Strukturen. Wir bündeln, was euch weiterbringt.
 
 ## Auf einen Blick
-- Firma: bunditas. (bunditas. OG in Gruendung), Graben 62, 3300 Amstetten, Oesterreich
+- Firma: bunditas. (bunditas. OG, FN 690209p, Landesgericht St. Poelten), 3300 Amstetten, Graben 62, Oesterreich
+- Gewerbe: Unternehmensberatung einschliesslich der Unternehmensorganisation, GISA-Zahl 40250748
 - Kontakt: hallo@bunditas.at
 - Website: https://bunditas.at/
 - Status: seit Oktober 2026 aktiv, Projekte und Gespraeche ab sofort
@@ -25,4 +26,5 @@ aus der Anfangszeit nicht mehr tragen. Erfahrung aus digitalen Plattformen
 
 ## Seiten
 - https://bunditas.at/ : Startseite mit Team, Arbeitsweise, Stimmen und haeufigen Fragen
+- https://bunditas.at/impressum.html : Impressum mit Firmenbuch- und Gewerbedaten
 - https://bunditas.at/datenschutz.html : Datenschutzerklaerung
