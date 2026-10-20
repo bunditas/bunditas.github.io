@@ -13,6 +13,17 @@
 - Gruenderinnen: Eva Sturm (Strategie und Product), Maja Tuder (Prozesse und Sales)
 - Zusammenarbeit der beiden seit 2016
 
+## bunditas. Prinzip (unsere Herangehensweise)
+Wir verbinden Zahlen mit Menschen, in jedem Schritt, den wir tun. Daten zeigen,
+was passiert. Die Menschen wissen, warum. Wir fuehren beides zusammen, bis
+sichtbar wird, was wirklich los ist. Jedes Projekt folgt diesen
+drei Schritten, immer in dieser Reihenfolge:
+1. Belegen: Zahlen, Daten und Fakten, dazu Interviews und Stimmen aus dem
+   Unternehmen. Vom Bauchgefuehl zu belegten Hypothesen.
+2. Buendeln: alles Gesehene zu einem Bild zusammengefuehrt und strukturiert.
+3. Bewegen: ein gangbarer Weg mit konkreten Schritten, nicht nur eine
+   theoretische Liste von Befunden.
+
 ## Was wir machen
 - Blick von aussen auf das Gesamtsystem: Produkt, Prozesse, Vertrieb
 - Datenbasierte Entscheidungsgrundlagen statt Bauchgefuehl
@@ -25,6 +36,6 @@ aus der Anfangszeit nicht mehr tragen. Erfahrung aus digitalen Plattformen
 (SaaS, Marktplaetze), Hochschule, Social Media, Agentur, Handel und HR.
 
 ## Seiten
-- https://bunditas.at/ : Startseite mit Team, Arbeitsweise, Stimmen und haeufigen Fragen
+- https://bunditas.at/ : Startseite mit dem bunditas. Prinzip, Team, Zusammenarbeit und Stimmen
 - https://bunditas.at/impressum.html : Impressum mit Firmenbuch- und Gewerbedaten
 - https://bunditas.at/datenschutz.html : Datenschutzerklaerung
