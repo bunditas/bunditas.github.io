@@ -794,6 +794,76 @@ footer h2{line-height:1.6}
   #prinzip .schritte{grid-template-columns:1fr;gap:20px;margin-top:44px}
 }
 
+/* ---------- Unser Angebot (dunkel) ---------- */
+#angebot h2{max-width:44ch}
+#angebot .angebote{margin-top:44px;display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px;align-items:stretch}
+#angebot .karte{background:var(--white);border:1px solid var(--line);border-radius:16px;
+  overflow:hidden;color:var(--nacht);display:flex;flex-direction:column}
+#angebot .karte-haupt{border-color:var(--butter);box-shadow:0 0 0 1px var(--butter)}
+#angebot .k-body{padding:26px 28px 24px;display:flex;flex-direction:column;flex:1}
+#angebot .pill-rolle{align-self:flex-start;background:var(--butter);color:var(--nacht);
+  border-radius:99px;padding:6px 14px;font-size:0.6875rem;font-weight:800;letter-spacing:.11em;
+  text-transform:uppercase}
+#angebot .pill-grau{background:var(--paper);border:1px solid var(--line);color:var(--nacht-60)}
+#angebot .karte h3{margin:14px 0 4px;font-size:clamp(1.5rem,2.4vw,1.875rem);letter-spacing:-.03em;
+  color:var(--nacht)}
+#angebot .k-claim{margin:0 0 4px;font-size:1rem;font-weight:700;color:var(--nacht-2)}
+#angebot .elemente{margin-top:18px}
+#angebot .el{display:block;padding:16px 0;border-top:1px solid var(--line)}
+#angebot .el>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:24px;
+  align-items:start;cursor:pointer;padding:0;list-style:none}
+#angebot .el>summary::-webkit-details-marker{display:none}
+#angebot .el>summary::after{display:none}
+#angebot .el-t{grid-column:1;grid-row:1;display:block;font-size:0.625rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;color:var(--nacht-60);margin-bottom:6px}
+#angebot .el-s{grid-column:1;grid-row:2;display:block;font-size:0.96875rem;font-weight:400;
+  line-height:1.6;color:var(--nacht-2)}
+#angebot .el-m{grid-column:2;grid-row:1 / span 2;align-self:start;
+  display:inline-flex;align-items:center;gap:7px;font-size:0.8125rem;font-weight:700;
+  color:var(--terra);white-space:nowrap;line-height:1.2}
+#angebot .el-m::after{content:"+";font-size:1.0625rem;font-weight:400;line-height:1;
+  position:relative;top:-1px}
+#angebot .el[open] .el-m::after{content:"–"}
+#angebot .el>summary:hover .el-m{text-decoration:underline}
+#angebot .el .m-zu{display:none}
+#angebot .el[open] .m-auf{display:none}
+#angebot .el[open] .m-zu{display:inline}
+#angebot .ml{list-style:none;margin:12px 0 0;padding:0}
+#angebot .ml li{position:relative;padding-left:18px;margin-bottom:7px;font-size:0.875rem;
+  line-height:1.5;color:var(--nacht-2)}
+#angebot .ml li b{color:var(--nacht)}
+#angebot .ml li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;
+  border-radius:50%;border:2px solid var(--butter);background:transparent}
+#angebot .ml-zwei{columns:2;column-gap:28px;margin-top:14px}
+#angebot .ml-zwei li{break-inside:avoid}
+#angebot .el-commit .preis{margin:10px 0 0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+#angebot .preis-zahl{font-size:clamp(1.75rem,3vw,2.25rem);font-weight:800;letter-spacing:-.035em;
+  color:var(--nacht);line-height:1.1}
+#angebot .preis-note{font-size:0.8125rem;font-weight:600;color:var(--nacht-60)}
+#angebot .k-cta{margin:22px 0 0}
+#angebot .btn-butter{background:var(--butter);color:var(--nacht);display:block;text-align:center;
+  padding:14px 24px;font-size:0.9375rem}
+#angebot .btn-butter:hover{background:var(--nacht);color:var(--butterw)}
+#angebot .btn-rand{background:transparent;border:2px solid var(--nacht);color:var(--nacht);
+  display:block;text-align:center;padding:12px 24px;font-size:0.9375rem}
+#angebot .btn-rand:hover{background:var(--nacht);color:var(--butterw)}
+#angebot .karte-neben .k-cta{margin-top:auto;padding-top:22px}
+/* Der Follow-up haengt an der Hauptkarte: waermerer Ton, gestrichelte Naht */
+#angebot .followup{background:var(--butterw);border-top:2px dashed #e2d19a;
+  padding:18px 28px 20px}
+#angebot .fu-kopf{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+#angebot .fu-pill{border:1px dashed rgba(44,46,69,.45);border-radius:99px;padding:4px 11px;
+  font-size:0.625rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(44,46,69,.72)}
+#angebot .followup h4{margin:0;font-size:1.125rem;letter-spacing:-.02em;color:var(--nacht)}
+#angebot .followup p{margin:10px 0 0;font-size:0.9375rem;line-height:1.55;color:var(--nacht-2);
+  max-width:62ch}
+@media (max-width:980px){
+  #angebot .angebote{grid-template-columns:1fr}
+  #angebot .ml-zwei{columns:1}
+}
+
 /* ---------- Arbeitsweise: alle Karten gleich hoch ---------- */
 /* grid-auto-rows:1fr hat nur die unsichtbare Huelle gedehnt, nicht die weisse
    Karte darin. Und sobald eine Karte aufgeklappt ist, wuerde 1fr alle Reihen
@@ -840,7 +910,7 @@ footer h2{line-height:1.6}
 /* Startband wie auf bunditas.at */
 .announceband{background:var(--butter);color:var(--nacht);padding:clamp(26px,3.6vw,42px) 0;
   text-align:center;border-top:1px solid #e8c94f;border-bottom:1px solid #e8c94f}
-.announceband p{font-size:clamp(1.125rem,2.4vw,1.75rem);font-weight:800;letter-spacing:-.02em;
+.announceband p{font-size:clamp(1rem,1.7vw,1.1875rem);font-weight:600;letter-spacing:-.005em;
   line-height:1.2}
 /* Die bunditas.-Kachel zeigt wieder das Zeichen statt eines Fotos. */
 #wir .stats .head{padding:0;display:flex;align-items:center;justify-content:center;gap:0}
@@ -1327,6 +1397,80 @@ footer h2{line-height:1.6}
   #wir .team>div{min-height:0}
   #wir .person .lilink,#wir .stats .lilink{margin-top:18px}
 }
+.announceband p b{font-weight:800}
+.announceband p a{color:var(--nacht);font-weight:800;text-underline-offset:3px;white-space:nowrap}
+.announceband p a:hover{text-decoration-thickness:2px}
+.announceband{padding:22px 0}
+.ab-grid{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;
+  column-gap:28px;text-align:left}
+.ab-l{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding-right:28px;max-width:30ch;
+  border-right:1px solid rgba(44,46,69,.28)}
+.ab-t{font-size:1.0625rem;font-weight:800;letter-spacing:-.015em;color:var(--nacht);
+  white-space:nowrap}
+.ab-m{font-size:0.8125rem;font-weight:700;letter-spacing:.01em;color:rgba(44,46,69,.78)}
+/* Specificity: .announceband p setzt 600 und clamp() – daher p.ab-s, nicht .ab-s */
+.announceband p.ab-s{margin:0;font-size:0.96875rem;font-weight:400;line-height:1.6;
+  color:var(--nacht);letter-spacing:0;max-width:58ch}
+.ab-c{margin:0}
+.announceband .ab-c a.ab-btn{background:var(--nacht);color:var(--butterw);
+  padding:12px 22px;font-size:0.90625rem;white-space:nowrap;text-decoration:none;font-weight:700}
+@media (max-width:900px){
+  .announceband .wrap{text-align:left}
+  .ab-grid{grid-template-columns:1fr;row-gap:14px}
+  .ab-c{display:flex}
+  .ab-l{flex-direction:row;align-items:baseline;gap:12px;padding-right:0;border-right:0;
+    padding-bottom:10px;border-bottom:1px solid rgba(44,46,69,.28);flex-wrap:wrap}
+}
+
+/* Gleich hohe Kacheln, Fuss jeweils unten */
+#angebot .buehne{align-items:stretch}
+#angebot .haupt,#angebot .schiene{height:100%}
+#angebot .haupt{display:flex;flex-direction:column}
+#angebot .haupt .anbau{margin-top:auto}
+#angebot .schiene{display:flex}
+#angebot .rail.rail-hell{display:flex;flex-direction:column;width:100%}
+#angebot .rail.rail-hell .rail-l{margin-top:auto!important}
+#angebot .rail-rolle{font-size:0.6875rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--terra);margin:0 20px 7px}
+#angebot .rail.rail-hell .rail-claim{font-weight:700;color:var(--nacht);font-size:1rem;
+  margin-bottom:16px}
+/* Aufklapper pro Element */
+#angebot .kern .k{display:flex;flex-direction:column}
+#angebot .kern .k details{margin-top:auto;padding:8px 0 0;border:0}
+#angebot .kern .k details[open]{margin-top:12px}
+#angebot .kern .k summary{font-size:0.78125rem;font-weight:700;color:var(--terra);
+  padding:0 18px 0 0;display:inline-block;position:relative}
+#angebot .kern .k summary::after{top:-5px;right:0;font-size:1.125rem}
+#angebot .k-mehr{margin-top:8px!important;font-size:0.84375rem;line-height:1.55;
+  color:var(--nacht-60)}
+#angebot .kern-schmal{grid-template-columns:1fr;row-gap:16px;margin:0 20px}
+#angebot .anbau-n{font-weight:600;color:var(--nacht-60);font-size:0.8125rem}
+
+#angebot .rail.rail-hell .rail-l{display:block;margin:auto 20px 0!important;padding-top:16px;
+  border-top:1px solid var(--line)}
+#angebot .rail.rail-hell .rail-l .btn{display:inline-block;padding:11px 20px;font-size:0.875rem}
+#angebot .anbau{grid-template-columns:1fr}
+
+/* Scan: die drei Elemente untereinander, der Aufklapper rechts daneben */
+#angebot .kern.kern-liste{grid-template-columns:1fr;row-gap:16px}
+#angebot .kern.kern-liste .k{display:block;border:0;padding:0;margin:0}
+#angebot .kern.kern-liste .k+.k{padding-top:16px;border-top:1px solid var(--line)}
+#angebot .kern.kern-liste .k>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;
+  column-gap:28px;align-items:start;cursor:pointer;padding:0;font-size:inherit;
+  font-weight:400;color:inherit}
+#angebot .kern.kern-liste .k>summary::after{display:none}
+#angebot .kern.kern-liste .k-t{grid-column:1;grid-row:1;font-weight:800}
+#angebot .kern.kern-liste .k-s{grid-column:1;grid-row:2;display:block;font-size:0.9375rem;
+  line-height:1.5;font-weight:400;color:var(--nacht-2)}
+#angebot .kern.kern-liste .k-mehr-l{grid-column:2;grid-row:1 / span 2;align-self:start;
+  position:relative;padding-right:18px;font-size:0.78125rem;font-weight:700;color:var(--terra);
+  white-space:nowrap}
+#angebot .kern.kern-liste .k-mehr-l::after{content:"+";position:absolute;right:0;top:-5px;
+  font-size:1.125rem;font-weight:400;line-height:1}
+#angebot .kern.kern-liste .k[open] .k-mehr-l::after{content:"–"}
+#angebot .kern.kern-liste .k-mehr{margin:10px 0 0!important;max-width:62ch;font-size:0.84375rem;
+  line-height:1.55;color:var(--nacht-60)}
+#angebot .kern.kern-liste .k>summary:hover .k-mehr-l{text-decoration:underline}
 </style>
 <meta content="#2C2E45" name="theme-color"/><meta content="strict-origin-when-cross-origin" name="referrer"/><script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -1334,19 +1478,19 @@ footer h2{line-height:1.6}
  "@id": "https://bunditas.at/#organisation",
  "name": "bunditas.",
  "legalName": "bunditas. OG",
-  "identifier": [
-    {
-      "@type": "PropertyValue",
-      "name": "Firmenbuchnummer",
-      "value": "FN 690209p"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "GISA-Zahl",
-      "value": "40250748"
-    }
-  ],
-  "globalLocationNumber": "9110040013265",
+ "identifier": [
+  {
+   "@type": "PropertyValue",
+   "name": "Firmenbuchnummer",
+   "value": "FN 690209p"
+  },
+  {
+   "@type": "PropertyValue",
+   "name": "GISA-Zahl",
+   "value": "40250748"
+  }
+ ],
+ "globalLocationNumber": "9110040013265",
  "description": "Unternehmensberatung von Eva Sturm und Maja Tuder für Unternehmen, die schneller gewachsen sind als ihre Strukturen. Schwerpunkte: Produktstrategie, Prozesse und das Zusammenspiel von Produkt und Vertrieb.",
  "url": "https://bunditas.at/",
  "email": "hallo@bunditas.at",
@@ -1455,7 +1599,13 @@ footer h2{line-height:1.6}
 <path class="arm1" d="M100 152H64V116" pathlength="1" stroke-width="17"></path>
 <path class="arm2" d="M100 126h38V98" pathlength="1" stroke-width="17"></path>
 </g>
-</svg><div class="kpunkte pulst"><button aria-controls="kaktustext" aria-expanded="false" aria-label="Die Stacheln" class="kp" data-kp="1" style="left:69%;top:33.8%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Das Topf-Problem" class="kp" data-kp="2" style="left:60%;top:76.9%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Das Übergießen" class="kp" data-kp="3" style="left:50%;top:20%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Die Verholzung" class="kp" data-kp="4" style="left:41%;top:70%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Der Nachtstoffwechsel" class="kp" data-kp="5" style="left:32%;top:40.8%" type="button"></button></div></div><div class="kchips"><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="1" type="button">Die Stacheln</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="2" type="button">Das Topf-Problem</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="3" type="button">Das Übergießen</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="4" type="button">Die Verholzung</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="5" type="button">Der Nachtstoffwechsel</button></div><div aria-live="polite" class="kaktustext" id="kaktustext"><div class="kt an" data-kt="start"><p class="kt-h" data-t="HOME.KAKTUS.START.TITEL">Wo schmerzt es am meisten?</p><p class="kt-b" data-t="HOME.KAKTUS.START.TEXT">Jeder Kreis steht für einen Schmerzpunkt, der in wachsenden Unternehmen immer wieder auftaucht. Welcher trifft auf euch zu?</p></div><div class="kt" data-kt="1"><p class="kt-h" data-t="HOME.KAKTUS.1.TITEL">Die Stacheln</p><p class="kt-b" data-t="HOME.KAKTUS.1.TEXT">Nach außen gerichtet schützen sie. Nach innen gerichtet blockieren sich Produkt und Vertrieb, Schnittstellen schmerzen und Teams verteidigen ihr Revier.</p></div><div class="kt" data-kt="2"><p class="kt-h" data-t="HOME.KAKTUS.2.TITEL">Das Topf-Problem</p><p class="kt-b" data-t="HOME.KAKTUS.2.TEXT">Wächst die Pflanze unbemerkt über ihren Topf hinaus, schnüren die Wurzeln sich selbst ab. Abläufe aus der Anfangszeit verstopfen die Workflows, Entscheidungen dauern plötzlich Wochen.</p></div><div class="kt" data-kt="3"><p class="kt-h" data-t="HOME.KAKTUS.3.TITEL">Das Übergießen</p><p class="kt-b" data-t="HOME.KAKTUS.3.TEXT">Kakteen verfaulen nicht durch Trockenheit, sondern wenn man sie flutet. Mehr Budget, neue Tools, schnelle Neueinstellungen: Aktionismus erstickt Strukturen, die vorher funktioniert haben.</p></div><div class="kt" data-kt="4"><p class="kt-h" data-t="HOME.KAKTUS.4.TITEL">Die Verholzung</p><p class="kt-b" data-t="HOME.KAKTUS.4.TEXT">Im Alter verholzt der Kaktus von innen: mehr Halt, keine Biegsamkeit mehr. Frühere Erfolgsrezepte werden zu Dogmen, und der Markt zieht daran vorbei.</p></div><div class="kt" data-kt="5"><p class="kt-h" data-t="HOME.KAKTUS.5.TITEL">Der Nachtstoffwechsel</p><p class="kt-b" data-t="HOME.KAKTUS.5.TEXT">Wüstenpflanzen atmen nachts und verarbeiten tagsüber. Wer Strategie und Tagesgeschäft nicht trennt, verbrennt die halbe Energie im Klein-Klein.</p></div></div></div><div class="trust"><span data-t="HOME.HERO.TRUST.1">komplementäres eingespieltes Duo</span><span data-t="HOME.HERO.TRUST.2">10+ Jahre gemeinsame Projekte</span><span data-t="HOME.HERO.TRUST.3">Beratung mit Ablaufdatum</span></div></div></div><section class="alt" id="prinzip"><div class="wrap">
+</svg><div class="kpunkte pulst"><button aria-controls="kaktustext" aria-expanded="false" aria-label="Die Stacheln" class="kp" data-kp="1" style="left:69%;top:33.8%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Das Topf-Problem" class="kp" data-kp="2" style="left:60%;top:76.9%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Das Übergießen" class="kp" data-kp="3" style="left:50%;top:20%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Die Verholzung" class="kp" data-kp="4" style="left:41%;top:70%" type="button"></button><button aria-controls="kaktustext" aria-expanded="false" aria-label="Der Nachtstoffwechsel" class="kp" data-kp="5" style="left:32%;top:40.8%" type="button"></button></div></div><div class="kchips"><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="1" type="button">Die Stacheln</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="2" type="button">Das Topf-Problem</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="3" type="button">Das Übergießen</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="4" type="button">Die Verholzung</button><button aria-controls="kaktustext" aria-expanded="false" class="kchip" data-kp="5" type="button">Der Nachtstoffwechsel</button></div><div aria-live="polite" class="kaktustext" id="kaktustext"><div class="kt an" data-kt="start"><p class="kt-h" data-t="HOME.KAKTUS.START.TITEL">Wo schmerzt es am meisten?</p><p class="kt-b" data-t="HOME.KAKTUS.START.TEXT">Jeder Kreis steht für einen Schmerzpunkt, der in wachsenden Unternehmen immer wieder auftaucht. Welcher trifft auf euch zu?</p></div><div class="kt" data-kt="1"><p class="kt-h" data-t="HOME.KAKTUS.1.TITEL">Die Stacheln</p><p class="kt-b" data-t="HOME.KAKTUS.1.TEXT">Nach außen gerichtet schützen sie. Nach innen gerichtet blockieren sich Produkt und Vertrieb, Schnittstellen schmerzen und Teams verteidigen ihr Revier.</p></div><div class="kt" data-kt="2"><p class="kt-h" data-t="HOME.KAKTUS.2.TITEL">Das Topf-Problem</p><p class="kt-b" data-t="HOME.KAKTUS.2.TEXT">Wächst die Pflanze unbemerkt über ihren Topf hinaus, schnüren die Wurzeln sich selbst ab. Abläufe aus der Anfangszeit verstopfen die Workflows, Entscheidungen dauern plötzlich Wochen.</p></div><div class="kt" data-kt="3"><p class="kt-h" data-t="HOME.KAKTUS.3.TITEL">Das Übergießen</p><p class="kt-b" data-t="HOME.KAKTUS.3.TEXT">Kakteen verfaulen nicht durch Trockenheit, sondern wenn man sie flutet. Mehr Budget, neue Tools, schnelle Neueinstellungen: Aktionismus erstickt Strukturen, die vorher funktioniert haben.</p></div><div class="kt" data-kt="4"><p class="kt-h" data-t="HOME.KAKTUS.4.TITEL">Die Verholzung</p><p class="kt-b" data-t="HOME.KAKTUS.4.TEXT">Im Alter verholzt der Kaktus von innen: mehr Halt, keine Biegsamkeit mehr. Frühere Erfolgsrezepte werden zu Dogmen, und der Markt zieht daran vorbei.</p></div><div class="kt" data-kt="5"><p class="kt-h" data-t="HOME.KAKTUS.5.TITEL">Der Nachtstoffwechsel</p><p class="kt-b" data-t="HOME.KAKTUS.5.TEXT">Wüstenpflanzen atmen nachts und verarbeiten tagsüber. Wer Strategie und Tagesgeschäft nicht trennt, verbrennt die halbe Energie im Klein-Klein.</p></div></div></div><div class="trust"><span data-t="HOME.HERO.TRUST.1">komplementäres eingespieltes Duo</span><span data-t="HOME.HERO.TRUST.2">10+ Jahre gemeinsame Projekte</span><span data-t="HOME.HERO.TRUST.3">Beratung mit Ablaufdatum</span></div></div></div><section class="announceband" id="start"><div class="wrap">
+<div class="ab-grid">
+<div class="ab-l"><span class="ab-t" data-t="HOME.BANNER.TITEL">Zeit für Sparring</span><span class="ab-m" data-t="HOME.BANNER.META">20 Minuten – der erste Schritt zu Klarheit statt Chaos.</span></div>
+<p class="ab-s" data-t="HOME.BANNER.TEXT">Wir finden gemeinsam heraus, wo es im System hakt und ob wir die Richtigen für euren nächsten Schritt sind.</p>
+<p class="ab-c"><a class="btn ab-btn" data-t="HOME.BANNER.BUTTON" data-umami-event="erstgespraech" href="#kontakt">Termin vorschlagen</a></p>
+</div>
+</div></section><section class="alt" id="prinzip"><div class="wrap">
 <div class="kicker" data-t="HOME.PRINZIP.KICKER">Herangehensweise</div>
 <h2 data-t="HOME.PRINZIP.H2">bunditas. Prinzip</h2>
 <p class="sub" data-t="HOME.PRINZIP.SUB"><span class="hl">Wir verbinden Zahlen mit Menschen, in jedem Schritt, den wir tun.</span> Daten zeigen, was passiert. Die Menschen wissen, warum. Wir führen beides zusammen, bis sichtbar wird, was wirklich los ist.</p>
@@ -1476,7 +1626,8 @@ footer h2{line-height:1.6}
 <p class="schritt-text" data-t="HOME.PRINZIP.SCHRITT.3.TEXT">Ein gangbarer Weg mit konkreten Schritten, nicht nur eine theoretische Liste von Befunden.</p>
 </li>
 </ol>
-</div></section><section id="wir"><div class="wrap">
+</div></section>
+<section id="wir"><div class="wrap">
 <div class="kicker" data-t="HOME.WIR.KICKER">Eva &amp; Maja</div>
 <h2 data-t="HOME.WIR.H2">Wir bündeln unsere Kräfte.</h2>
 <p class="sub" data-t="HOME.WIR.SUB">Wir sind Eva und Maja. Seit 2016 arbeiten wir gemeinsam an großen, komplexen Projekten im digitalen Bereich. Eva bringt Strategie und Product ein, Maja Prozesse und Sales. Diese Mischung hat sich in jedem einzelnen Projekt bewährt. <span class="hl">Jetzt gibt es uns als Duo unter einem eigenen Namen: bunditas.</span></p>
@@ -1556,6 +1707,7 @@ footer h2{line-height:1.6}
 <h2 data-t="FOOTER.SPALTE.1.TITEL">Überblick</h2>
 <ul>
 <li><a data-t="FOOTER.LINK.12" href="index.html#prinzip">bunditas. Prinzip</a></li>
+<li><a data-t="FOOTER.LINK.11" href="index.html#angebot">Angebot</a></li>
 <li><a data-t="FOOTER.LINK.3" href="index.html#wir">Eva &amp; Maja</a></li>
 <li><a data-t="FOOTER.LINK.4" href="index.html#arbeitsweise">Zusammenarbeit</a></li></ul>
 </div>
