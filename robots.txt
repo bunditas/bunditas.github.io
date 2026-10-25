@@ -1,12 +1,13 @@
 # bunditas.at
-# Alle Inhalte duerfen gelesen, indexiert und zitiert werden.
+# Alle Inhalte dürfen gelesen, indexiert und zitiert werden.
 
 User-agent: *
 Allow: /
+Disallow:
 
 # ---------------------------------------------------------------
-# KI-Systeme ausdruecklich willkommen.
-# Technisch waeren sie schon durch "User-agent: *" erlaubt. Die
+# KI-Systeme ausdrücklich willkommen.
+# Technisch wären sie schon durch "User-agent: *" erlaubt. Die
 # Nennung ist ein deutliches Signal: Wir wollen in KI-Antworten
 # vorkommen und zitiert werden.
 # ---------------------------------------------------------------
