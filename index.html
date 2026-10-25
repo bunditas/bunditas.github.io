@@ -287,7 +287,7 @@ section.dark .pq .who b{color:var(--butterw)}
 .person .body{flex:1;display:flex;flex-direction:column}
 .person .lilink{margin-top:14px;font-size:0.90625rem;font-weight:700}
 .person .lilink a{color:var(--terra);text-decoration:none}
-.person .lilink a:hover{text-decoration:underline}
+.person .lilink a:hover{text-decoration:none}
 .person details{border-bottom:none;padding:0}
 .person details summary{font-size:0.90625rem;font-weight:700;color:var(--terra);padding:10px 26px 0 0}
 .person details summary::after{font-size:1.375rem;top:6px;right:0}
@@ -312,7 +312,7 @@ section.dark .pq .who b{color:var(--butterw)}
 .stats .body p{font-size:0.96875rem;color:var(--nacht-2);line-height:1.62}
 .stats .lilink{margin-top:14px;font-size:0.90625rem;font-weight:700}
 .stats .lilink a{color:var(--terra);text-decoration:none}
-.stats .lilink a:hover{text-decoration:underline}
+.stats .lilink a:hover{text-decoration:none}
 .stats details{border-bottom:none;padding:0}
 .stats details summary{font-size:0.90625rem;font-weight:700;color:var(--terra);padding:10px 26px 0 0}
 .stats details summary::after{font-size:1.375rem;top:6px;right:0}
@@ -398,7 +398,7 @@ section.dark .pq .who b{color:var(--butterw)}
 .person .body{flex:1;display:flex;flex-direction:column}
 .person .lilink{margin-top:14px;font-size:0.90625rem;font-weight:700}
 .person .lilink a{color:var(--terra);text-decoration:none}
-.person .lilink a:hover{text-decoration:underline}
+.person .lilink a:hover{text-decoration:none}
 .person details{border-bottom:none;padding:0}
 .person details summary{font-size:0.90625rem;font-weight:700;color:var(--terra);padding:10px 26px 0 0}
 .person details summary::after{font-size:1.375rem;top:6px;right:0}
@@ -496,7 +496,7 @@ section.dark .pq .who b{color:var(--butterw)}
 .person .body{flex:1;display:flex;flex-direction:column}
 .person .lilink{margin-top:14px;font-size:0.90625rem;font-weight:700}
 .person .lilink a{color:var(--terra);text-decoration:none}
-.person .lilink a:hover{text-decoration:underline}
+.person .lilink a:hover{text-decoration:none}
 .person details{border-bottom:none;padding:0}
 .person details summary{font-size:0.90625rem;font-weight:700;color:var(--terra);padding:10px 26px 0 0}
 .person details summary::after{font-size:1.375rem;top:6px;right:0}
@@ -599,7 +599,7 @@ section.dark .pq .who b{color:var(--butterw)}
 .person .body{flex:1;display:flex;flex-direction:column}
 .person .lilink{margin-top:14px;font-size:0.90625rem;font-weight:700}
 .person .lilink a{color:var(--terra);text-decoration:none}
-.person .lilink a:hover{text-decoration:underline}
+.person .lilink a:hover{text-decoration:none}
 .person details{border-bottom:none;padding:0}
 .person details summary{font-size:0.90625rem;font-weight:700;color:var(--terra);padding:10px 26px 0 0}
 .person details summary::after{font-size:1.375rem;top:6px;right:0}
@@ -795,16 +795,17 @@ footer h2{line-height:1.6}
 }
 
 /* ---------- Unser Angebot (dunkel) ---------- */
-#angebot h2{max-width:44ch}
 #angebot .angebote{margin-top:44px;display:grid;
-  grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px;align-items:stretch}
+  grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px;align-items:start}
+/* Grundhoehe einmal im zugeklappten Zustand gemessen (JS), damit beide Kacheln
+   gleich hoch starten, eine Kachel sich aber unabhaengig oeffnen kann. */
+#angebot .angebote>.karte{min-height:var(--angebothoehe,auto)}
 #angebot .karte{background:var(--white);border:1px solid var(--line);border-radius:16px;
   overflow:hidden;color:var(--nacht);display:flex;flex-direction:column}
 #angebot .karte-haupt{border-color:var(--butter);box-shadow:0 0 0 1px var(--butter)}
 #angebot .k-body{padding:26px 28px 24px;display:flex;flex-direction:column;flex:1}
 #angebot .pill-rolle{align-self:flex-start;background:var(--butter);color:var(--nacht);
-  border-radius:99px;padding:6px 14px;font-size:0.6875rem;font-weight:800;letter-spacing:.11em;
-  text-transform:uppercase}
+  border-radius:99px;padding:6px 14px;font-size:0.8125rem;font-weight:700;letter-spacing:.01em}
 #angebot .pill-grau{background:var(--paper);border:1px solid var(--line);color:var(--nacht-60)}
 #angebot .karte h3{margin:14px 0 4px;font-size:clamp(1.5rem,2.4vw,1.875rem);letter-spacing:-.03em;
   color:var(--nacht)}
@@ -816,28 +817,35 @@ footer h2{line-height:1.6}
 #angebot .el>summary::-webkit-details-marker{display:none}
 #angebot .el>summary::after{display:none}
 #angebot .el-t{grid-column:1;grid-row:1;display:block;font-size:0.625rem;letter-spacing:.14em;
-  text-transform:uppercase;font-weight:800;color:var(--nacht-60);margin-bottom:6px}
-#angebot .el-s{grid-column:1;grid-row:2;display:block;font-size:0.96875rem;font-weight:400;
-  line-height:1.6;color:var(--nacht-2)}
-#angebot .el-m{grid-column:2;grid-row:1 / span 2;align-self:start;
+  text-transform:uppercase;font-weight:700;color:var(--nacht-60);margin-bottom:8px}
+#angebot .el-s{grid-column:1;grid-row:2;display:block;font-size:0.9375rem;font-weight:400;
+  line-height:1.45;letter-spacing:0;color:#5B5E74}
+#angebot .el-m{grid-column:2;grid-row:1 / span 2;align-self:end;
   display:inline-flex;align-items:center;gap:7px;font-size:0.8125rem;font-weight:700;
-  color:var(--terra);white-space:nowrap;line-height:1.2}
+  color:var(--terra);white-space:nowrap;line-height:1.2;
+  /* Unterstreichung als Rahmen: text-decoration greift im inline-flex
+     nicht auf das Plus durch, der Rahmen zieht unter beides eine Linie. */
+  border-bottom:1.5px solid transparent;padding-bottom:1px}
 #angebot .el-m::after{content:"+";font-size:1.0625rem;font-weight:400;line-height:1;
   position:relative;top:-1px}
 #angebot .el[open] .el-m::after{content:"–"}
-#angebot .el>summary:hover .el-m{text-decoration:underline}
+#angebot .el>summary:hover .el-m{border-bottom-color:currentColor}
 #angebot .el .m-zu{display:none}
 #angebot .el[open] .m-auf{display:none}
 #angebot .el[open] .m-zu{display:inline}
 #angebot .ml{list-style:none;margin:12px 0 0;padding:0}
-#angebot .ml li{position:relative;padding-left:18px;margin-bottom:7px;font-size:0.875rem;
-  line-height:1.5;color:var(--nacht-2)}
+#angebot .ml li{position:relative;padding-left:16px;margin-bottom:9px;font-size:0.875rem;
+  line-height:1.5;color:#5B5E74}
 #angebot .ml li b{color:var(--nacht)}
-#angebot .ml li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;
-  border-radius:50%;border:2px solid var(--butter);background:transparent}
-#angebot .ml-zwei{columns:2;column-gap:28px;margin-top:14px}
-#angebot .ml-zwei li{break-inside:avoid}
-#angebot .el-commit .preis{margin:10px 0 0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+#angebot .ml li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;
+  border-radius:50%;background:var(--nacht)}
+#angebot .ml-zwei{columns:1;margin-top:14px}
+#angebot .el-commit{display:grid;grid-template-columns:minmax(0,1fr) auto;
+  column-gap:36px;align-items:start}
+#angebot .el-commit .el-t{grid-column:1 / -1}
+#angebot .el-commit .ml{grid-column:1;grid-row:2;margin-top:2px}
+#angebot .el-commit .preis{grid-column:2;grid-row:2;margin:0;display:flex;
+  flex-direction:column;align-items:flex-start;gap:5px}
 #angebot .preis-zahl{font-size:clamp(1.75rem,3vw,2.25rem);font-weight:800;letter-spacing:-.035em;
   color:var(--nacht);line-height:1.1}
 #angebot .preis-note{font-size:0.8125rem;font-weight:600;color:var(--nacht-60)}
@@ -856,12 +864,24 @@ footer h2{line-height:1.6}
 #angebot .fu-pill{border:1px dashed rgba(44,46,69,.45);border-radius:99px;padding:4px 11px;
   font-size:0.625rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
   color:rgba(44,46,69,.72)}
-#angebot .followup h4{margin:0;font-size:1.125rem;letter-spacing:-.02em;color:var(--nacht)}
-#angebot .followup p{margin:10px 0 0;font-size:0.9375rem;line-height:1.55;color:var(--nacht-2);
-  max-width:62ch}
+#angebot .fu-el{padding:0;border-top:0}
+#angebot .fu-el>summary{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  cursor:pointer;list-style:none;padding:0}
+#angebot .fu-h{font-size:1.0625rem;font-weight:800;letter-spacing:-.015em;color:var(--nacht)}
+#angebot .fu-el>summary .el-m{margin-left:auto;align-self:center}
+#angebot .fu-el .el-t{color:rgba(44,46,69,.72);margin-bottom:6px}
+#angebot .fu-el .el-m{color:#8F4826}
+#angebot .fu-inhalt{margin-top:14px;padding-top:14px;border-top:1px solid rgba(44,46,69,.16)}
+#angebot .fu-text{margin:0;font-size:0.9375rem;line-height:1.45;color:#5B5E74;max-width:62ch}
+#angebot .fu-el .ml{margin-bottom:2px}
 @media (max-width:980px){
   #angebot .angebote{grid-template-columns:1fr}
-  #angebot .ml-zwei{columns:1}
+  #angebot .angebote>.karte{min-height:0}
+  /* Einspaltig: erst die Punkte, der Preis zuletzt - direkt ueber dem Knopf. */
+  #angebot .el-commit{grid-template-columns:1fr;row-gap:14px}
+  #angebot .el-commit .preis,#angebot .el-commit .ml{grid-column:1}
+  #angebot .el-commit .ml{grid-row:2}
+  #angebot .el-commit .preis{grid-row:3}
 }
 
 /* ---------- Arbeitsweise: alle Karten gleich hoch ---------- */
@@ -1065,7 +1085,7 @@ footer h2{line-height:1.6}
 /* Nur noch Klick, kein Umdrehen beim Zeigen. */
 
 .flip.um .flip-front{opacity:1}
-.flip .more:hover{text-decoration:underline}
+.flip .more:hover{text-decoration:none}
 /* Rueckseite: Weniger mit Minus */
 .flip-back .more::after{content:"–"}
 /* Aufzaehlungszeichen in den Kacheln: kleiner und in Nacht */
@@ -1165,7 +1185,10 @@ footer h2{line-height:1.6}
 /* Zwischen 600 und 940 px zwei Spalten statt einer - sechs Kacheln
    untereinander sind sonst eine sehr lange Strecke. */
 @media (min-width:600px) and (max-width:940px){
-  #arbeitsweise .cols3{grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr}
+  /* grid-auto-rows:1fr hat alle Reihen auf die Hoehe der hoechsten gezogen:
+     eine aufgeklappte Kachel blaehte damit auch die uebrigen Reihen auf.
+     auto laesst jede Reihe fuer sich wachsen. */
+  #arbeitsweise .cols3{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
 }
 /* Einspaltig flacher: Symbol kleiner und neben dem Titel. */
 @media (max-width:599px){
@@ -1471,6 +1494,75 @@ footer h2{line-height:1.6}
 #angebot .kern.kern-liste .k-mehr{margin:10px 0 0!important;max-width:62ch;font-size:0.84375rem;
   line-height:1.55;color:var(--nacht-60)}
 #angebot .kern.kern-liste .k>summary:hover .k-mehr-l{text-decoration:underline}
+
+/* ---------- Bannerknopf ---------- */
+.announceband .ab-c a.ab-btn:hover{background:var(--terra);color:#fff}
+
+/* ---------- Aktiver Abschnitt in der Navigation ---------- */
+/* Gelber Marker wie bei den hervorgehobenen Textstellen (.hl). */
+.navmenu a[aria-current="true"]{opacity:1;font-weight:700;
+  background:linear-gradient(transparent 62%,var(--butter) 62%);padding:0 3px}
+@media (max-width:940px){
+  /* Im Klappmenue sind die Verweise volle Zeilen - dort waere ein Marker ueber
+     die ganze Breite unruhig, deshalb eine gelbe Linie unter der Zeile. */
+  .navmenu a[aria-current="true"]{background:none;padding:0.875rem 0;
+    box-shadow:inset 0 -3px 0 var(--butter)}
+}
+
+/* ---------- Mehr + / Weniger – einheitlich ---------- */
+/* Das Zeichen stand bisher absolut am rechten Rand und war damit vom Wort
+   getrennt. Jetzt laeuft es als normaler Inline-Inhalt direkt hinter dem Wort,
+   dadurch zieht die Unterstreichung beim Zeigen ueber beides. */
+/* Plus und Minus stehen jetzt IN derselben Inline-Box wie das Wort. Lagen sie
+   in einem eigenen Pseudo-Element des Knopfes, zeichnete der Browser zwei
+   getrennte Unterstreichungen mit einer Luecke dazwischen. */
+.flip .more{padding-right:0}
+#wir details summary{padding-right:0}
+.flip .more::after,.flip.um .more::after,.flip-back .more::after,
+#wir details summary::after,#wir details[open] summary::after{content:none}
+.flip .more .m-auf::after,#wir details summary .m-auf::after{content:"\00a0+"}
+.flip .more .m-zu::after,.flip .more .mw::after,
+#wir details summary .m-zu::after{content:"\00a0\2013"}
+.flip .more .m-auf::after,.flip .more .m-zu::after,.flip .more .mw::after,
+#wir details summary .m-auf::after,#wir details summary .m-zu::after{
+  font-weight:400;word-spacing:3px}
+/* Unterstreichung als Rahmen statt text-decoration: ein Rahmen ist EINE Linie
+   ueber die ganze Inline-Box. text-decoration zeichnet dagegen pro Box neu, und
+   weil das Zeichen ein anderes Schriftgewicht hat, entstand dort eine Stufe.
+   Gleiche Logik wie im Angebot. */
+.flip .more .m-auf,.flip .more .m-zu,.flip .more .mw,
+#wir details summary .m-auf,#wir details summary .m-zu{
+  text-decoration:none;border-bottom:1.5px solid transparent;padding-bottom:2px}
+/* Nur der LinkedIn-Verweis wird zum inline-block: so ist er 26 statt 21 Pixel
+   hoch und erfuellt die 24-Pixel-Mindestgroesse aus WCAG 2.2. Bei den
+   Mehr-/Weniger-Beschriftungen wuerde inline-block das Umschalten per
+   display:none aushebeln. */
+/* Gleiche Inline-Darstellung wie bei Mehr/Weniger, damit die Linie exakt
+   denselben Abstand zur Schrift hat. Das Polster oben vergroessert nur die
+   Klickflaeche auf die von WCAG 2.2 geforderten 24 Pixel, sichtbar aendert
+   sich nichts. */
+#wir .lilink a{text-decoration:none;border-bottom:1.5px solid transparent;
+  display:inline;padding:7px 0 2px}
+.flip .more:hover .m-auf,.flip .more:hover .m-zu,.flip .more:hover .mw,
+#wir details summary:hover .m-auf,#wir details summary:hover .m-zu,
+#wir .lilink a:hover{text-decoration:none;border-bottom-color:currentColor}
+
+/* Die Rueckseite blendet nur noch ueber .mw, damit .m-zu dort nichts stoert.
+   color:inherit ist noetig, weil eine allgemeine Regel fuer Spans auf der
+   dunklen Rueckseite sonst das Butter des Knopfes mit dem Fliesstext-Ton
+   ueberschreibt. Am Handy bleibt die Beschriftung auf der hellen Vorderseite
+   und damit terracotta. */
+.flip-back .more .mw{display:inline}
+.flip .more .m-auf,.flip .more .m-zu,.flip .more .mw,
+#wir details summary .m-auf,#wir details summary .m-zu{color:inherit}
+
+/* Ohne Inhalt im Knopf-Pseudo greift die alte Positionierung ins Leere. */
+.flip .more{position:relative}
+
+
+/* LinkedIn-Verweise in den Kacheln: gleicher Abstand vor dem Pfeil wie vor dem
+   Plus (dort steckt er im geschuetzten Leerzeichen) und dieselbe Linie. */
+#wir .lilink a{word-spacing:3px}
 </style>
 <meta content="#2C2E45" name="theme-color"/><meta content="strict-origin-when-cross-origin" name="referrer"/><script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -1565,6 +1657,30 @@ footer h2{line-height:1.6}
     }
    }
   ]
+ },
+ "makesOffer": {
+  "@type": "Offer",
+  "name": "bunditas. Scan",
+  "category": "Unternehmensberatung",
+  "availability": "https://schema.org/InStock",
+  "areaServed": "AT",
+  "price": "9625",
+  "priceCurrency": "EUR",
+  "priceSpecification": {
+   "@type": "PriceSpecification",
+   "price": "9625",
+   "priceCurrency": "EUR",
+   "valueAddedTaxIncluded": false
+  },
+  "itemOffered": {
+   "@type": "Service",
+   "name": "bunditas. Scan",
+   "serviceType": "Unternehmensanalyse",
+   "description": "In fuenf Projekttagen Reibungspunkte aufdecken und fundiert entscheiden: Analyse interner Daten und Strukturen, Tiefeninterviews mit Schluesselpersonen und ein Executive Reveal-Workshop. Ergebnis: Executive Summary, Impact Map und Roadmap mit Action Items. Durchlaufzeit 20 Werktage.",
+   "provider": {
+    "@id": "https://bunditas.at/#organisation"
+   }
+  }
  }
 }</script>
 <script type="application/ld+json">{
@@ -1583,14 +1699,14 @@ footer h2{line-height:1.6}
 </head><body>
 <nav><div class="wrap">
 <a class="logo" href="index.html"><svg aria-label="bunditas." role="img" viewbox="0 0 1638.74 325.98" xmlns="http://www.w3.org/2000/svg"><path d="M1591.09,254.43c0,12.36,10.42,22.78,22.78,22.78s22.78-10.42,22.78-22.78-10.41-22.78-22.78-22.78-22.78,10.42-22.78,22.78M1435.55,253.13c16.27,15.94,40.68,24.4,67.36,24.4,42.3,0,65.41-21.16,65.41-48.81,0-37.1-33.52-44.91-60.85-50.76-18.55-4.23-34.17-8.46-34.17-20.51,0-11.06,11.39-17.57,29.28-17.57,19.53,0,37.1,8.13,46.54,18.87l14.32-24.09c-14.32-12.69-34.5-22.12-61.19-22.12-39.7,0-61.83,22.12-61.83,47.83,0,35.14,32.22,42.3,59.23,48.17,19.2,4.23,35.79,9.11,35.79,22.78,0,11.71-10.42,19.2-30.91,19.2s-42.3-10.74-53.37-22.13l-15.62,24.74ZM1370.79,237.84c-7.81,10.73-22.45,16.27-37.42,16.27-19.2,0-33.52-11.07-33.52-27.99s14.32-28.31,33.52-28.31c14.97,0,29.62,5.53,37.42,16.27v23.76ZM1370.79,273.63h34.17v-104.13c0-42.31-30.59-56.95-65.41-56.95-25.06,0-47.84,8.13-66.07,25.38l14,23.76c13.67-13.35,28.97-19.86,46.53-19.86,21.81,0,36.78,11.07,36.78,29.29v23.43c-11.39-13.34-29.62-20.17-50.76-20.17-25.71,0-54.68,14.97-54.68,51.09s28.97,52.07,54.68,52.07c20.82,0,39.05-7.48,50.76-20.82v16.92ZM1211.67,277.53c15.94,0,26.03-4.23,32.21-10.09l-8.13-25.7c-2.61,2.92-8.78,5.53-15.29,5.53-9.77,0-14.97-7.81-14.97-18.55v-82.32h31.89v-29.94h-31.89v-42.96h-34.17v42.96h-26.04v29.94h26.04v90.78c0,26.03,14,40.36,40.36,40.36M1079.55,273.63h34.17V116.45h-34.17v157.17ZM1096.46,90.42c11.71,0,21.16-9.44,21.16-21.16s-9.44-21.15-21.16-21.15-21.15,9.43-21.15,21.15,9.76,21.16,21.15,21.16M1001.12,226.45c-7.81,11.71-24.4,20.82-40.67,20.82-27.01,0-44.26-21.81-44.26-52.07s17.25-52.39,44.26-52.39c16.27,0,32.86,9.43,40.67,21.15v62.49ZM1001.12,273.63h34.17V56.58h-34.17v81.68c-12.69-16.59-30.91-25.7-50.44-25.7-40.68,0-69.96,31.89-69.96,82.65s29.62,82.33,69.96,82.33c20.17,0,38.4-9.77,50.44-25.39v21.48ZM818.57,273.63h34.17v-110.64c0-32.22-16.93-50.44-50.76-50.44-24.74,0-44.91,13.01-55.33,25.38v-21.47h-34.17v157.17h34.17v-109.67c7.81-10.74,22.78-21.15,40.36-21.15,19.2,0,31.56,8.13,31.56,32.54v98.28ZM634.06,273.63h34.17V116.45h-34.17v110.32c-8.13,10.73-23.1,20.5-40.36,20.5-19.2,0-31.56-7.48-31.56-31.89v-98.93h-34.17v111.29c0,32.21,16.59,49.79,50.44,49.79,24.74,0,44.26-12.04,55.65-24.73v20.82ZM379.58,226.45v-62.16c7.48-11.71,24.4-21.47,40.36-21.47,27.33,0,44.58,21.8,44.58,52.39s-17.24,52.07-44.58,52.07c-15.95,0-32.87-9.11-40.36-20.82M345.41,273.63h34.17v-21.48c12.04,15.62,29.94,25.39,50.44,25.39,40.03,0,69.65-30.59,69.65-82.33s-29.29-82.65-69.65-82.65c-19.85,0-38.07,9.11-50.44,25.7V56.58h-34.17v217.05Z" fill="currentColor"></path><path d="M136.81,323.93c-36.6,0-71.75-12.54-94.33-35.06C-6.33,240.15-9.7,162.5,17.8,123.28c5.36-7.65,15.9-9.5,23.55-4.14,7.65,5.36,9.5,15.9,4.14,23.55-17.05,24.33-17.4,84.04,20.88,122.24,21.99,21.94,63.34,30.79,100.55,21.52,20.86-5.2,58.01-20.9,72.33-67.54,10.13-33.01,3.44-58.27-6.76-73.78-5.58,25.61-20.55,48.14-48.13,60.27-35.08,15.38-72.63-1.03-85.75-22.49-14.9-24.4-13.49-62.5,18.03-88.13,21.35-17.37,54.9-20.6,86.07-10.2-6.06-18.93-18.88-35.24-35.4-43.51-22.28-11.15-47.73-6.26-73.58,14.13-7.32,5.79-17.95,4.54-23.75-2.8-5.78-7.33-4.53-17.97,2.8-23.75C121.82-10.06,162.53.85,182.42,10.82c33.96,16.98,56.67,54.46,57.88,94.57,34.72,28.77,46.42,74.07,31.27,123.44-14.02,45.67-49.18,78.63-96.47,90.43-12.63,3.15-25.55,4.67-38.29,4.67ZM166.71,112.39c-11.35,0-21.62,2.82-28.75,8.62-16.47,13.39-17.75,32.41-10.5,44.27,6.95,11.39,27.61,16.22,42.69,9.59,27.74-12.2,31.92-36.27,35.08-52.48-12.31-6.59-26.06-9.99-38.52-9.99Z" fill="currentColor"></path></svg></a>
-<div class="navlinks"><div class="navmenu" id="navmenu"><a data-t="HOME.NAV.8" href="#prinzip">bunditas. Prinzip</a><a data-t="HOME.NAV.3" href="#wir">Eva &amp; Maja</a><a data-t="HOME.NAV.4" href="#arbeitsweise">Zusammenarbeit</a></div><a class="cta" data-t="HOME.NAV.5" data-umami-event="cta-nav" href="#kontakt">Lass uns reden</a><button aria-controls="navmenu" aria-expanded="false" aria-label="Menü öffnen" class="burger" type="button"><span></span><span></span><span></span></button></div></div></nav>
+<div class="navlinks"><div class="navmenu" id="navmenu"><a data-t="HOME.NAV.8" href="#prinzip">bunditas. Prinzip</a><a data-t="HOME.NAV.7" href="#angebot">Angebot</a><a data-t="HOME.NAV.3" href="#wir">Eva &amp; Maja</a><a data-t="HOME.NAV.4" href="#arbeitsweise">Zusammenarbeit</a><a data-t="HOME.NAV.5" data-umami-event="cta-nav" href="#kontakt">Kontakt</a></div><button aria-controls="navmenu" aria-expanded="false" aria-label="Menü öffnen" class="burger" type="button"><span></span><span></span><span></span></button></div></div></nav>
 <main id="inhalt"><div class="hero"><div class="glyphwrap"><svg aria-hidden="true" class="glyph" viewbox="0 0 774 900" xmlns="http://www.w3.org/2000/svg"><path d="M340.5,897.4C272.8,891.1 211.6,870.6 162.0,837.7C110.8,803.7 66.5,749.5 37.4,685.1C31.8,672.8 22.9,649.5 20.5,641.0C19.7,638.5 18.2,633.1 17.0,629.0C-3.8,557.3 -4.6,477.9 14.7,413.0C24.2,380.9 41.3,346.7 54.3,333.7C69.6,318.4 94.1,315.8 112.5,327.5C126.7,336.5 134.2,350.4 134.2,367.5C134.2,378.5 132.2,384.7 125.1,395.8C83.6,460.5 86.0,574.9 130.8,661.0C164.5,725.8 210.2,766.4 273.2,787.4C293.5,794.2 317.2,799.7 333.5,801.5C336.8,801.8 340.4,802.3 341.5,802.6C346.6,803.8 381.7,804.6 397.2,803.9C508.7,798.8 600.9,742.9 646.1,653.0C688.1,569.5 689.4,470.6 649.3,406.7L646.3,401.9L644.1,411.2C635.0,448.3 616.3,484.3 592.0,511.8C561.4,546.5 516.3,572.8 472.3,581.9C437.6,589.0 394.2,585.9 363.0,574.0C360.0,572.8 355.8,571.2 353.7,570.5C333.6,563.0 306.7,545.1 290.2,528.0C254.4,491.2 239.0,423.8 253.5,368.0C269.0,308.1 313.7,256.5 370.0,233.5C401.1,220.8 424.8,216.6 464.5,216.6C499.5,216.6 519.3,219.3 550.2,228.3C558.8,230.8 562.0,231.4 562.0,230.4C562.0,227.6 555.6,211.9 549.6,199.9C514.6,130.3 451.0,90.3 384.6,96.0C345.8,99.3 308.1,115.2 267.6,145.3C261.3,150.0 254.4,154.8 252.3,155.8C220.9,171.9 183.5,148.6 183.9,113.2C184.1,95.6 190.7,84.9 210.6,69.9C297.0,4.6 387.7,-14.8 474.5,13.5C579.5,47.8 660.2,158.6 667.6,278.4L668.2,289.3L686.4,307.4C717.5,338.4 737.4,367.7 751.9,404.3C791.3,503.4 774.5,633.3 709.5,731.5C654.8,814.2 568.5,870.7 466.0,890.8C427.3,898.4 378.6,901.0 340.5,897.4Z M449.6,490.5C460.6,488.5 470.2,485.3 481.0,479.7C517.9,460.8 542.3,432.8 556.3,393.3C562.3,376.4 570.9,340.3 569.5,338.0C568.3,336.1 545.2,325.9 533.0,322.0C482.7,305.7 433.9,306.4 399.2,323.9C375.2,336.0 353.8,362.3 345.9,389.5C342.4,401.3 342.4,427.0 345.8,438.0C353.4,461.9 367.0,475.9 392.3,485.4C408.9,491.6 431.4,493.6 449.6,490.5Z" fill="currentColor" fill-rule="evenodd"></path></svg></div><div class="wrap"><div class="hcol">
 <div class="eyebrow" data-t="HOME.HERO.KICKER">Unternehmensberaterinnen</div>
 <h1 data-t="HOME.HERO.H1">Wir befähigen Unternehmen.</h1>
 <p class="lead" data-t="HOME.HERO.LEAD">Unternehmen sind wie Kakteen: Meister des Überlebens. Doch wer sich weiterentwickeln will, spürt schnell, wo es zwickt – Schnittstellen reiben, Entscheidungen dauern, Kraft versickert im Alltag. Wir schauen uns euer System an, machen sichtbar, wo Zeit und Energie verloren gehen, und bündeln, was euch weiterbringt.</p>
 <div class="btns">
 <a class="btn btn-light" data-t="HOME.HERO.BUTTON.1" data-umami-event="cta-header" href="#kontakt">Lass uns reden</a>
-
+<a class="btn btn-s" data-t="HOME.HERO.BUTTON.2" data-umami-event="cta-angebot" href="#angebot">Unser Angebot</a>
 </div>
 </div><div class="kaktusbox"><div class="kaktusbuehne"><svg aria-hidden="true" class="kaktus" fill="none" viewbox="0 0 200 260">
 <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -1603,7 +1719,7 @@ footer h2{line-height:1.6}
 <div class="ab-grid">
 <div class="ab-l"><span class="ab-t" data-t="HOME.BANNER.TITEL">Zeit für Sparring</span><span class="ab-m" data-t="HOME.BANNER.META">20 Minuten – der erste Schritt zu Klarheit statt Chaos.</span></div>
 <p class="ab-s" data-t="HOME.BANNER.TEXT">Wir finden gemeinsam heraus, wo es im System hakt und ob wir die Richtigen für euren nächsten Schritt sind.</p>
-<p class="ab-c"><a class="btn ab-btn" data-t="HOME.BANNER.BUTTON" data-umami-event="erstgespraech" href="#kontakt">Termin vorschlagen</a></p>
+<p class="ab-c"><a class="btn ab-btn" data-t="HOME.BANNER.BUTTON" data-umami-event="erstgespraech" href="mailto:hallo@bunditas.at?subject=Sparring%20mit%20bunditas.">Termin vorschlagen</a></p>
 </div>
 </div></section><section class="alt" id="prinzip"><div class="wrap">
 <div class="kicker" data-t="HOME.PRINZIP.KICKER">Herangehensweise</div>
@@ -1626,8 +1742,44 @@ footer h2{line-height:1.6}
 <p class="schritt-text" data-t="HOME.PRINZIP.SCHRITT.3.TEXT">Ein gangbarer Weg mit konkreten Schritten, nicht nur eine theoretische Liste von Befunden.</p>
 </li>
 </ol>
-</div></section>
-<section id="wir"><div class="wrap">
+</div></section><section class="dark" id="angebot"><div class="glyphwrap"><svg aria-hidden="true" class="glyph" viewbox="0 0 774 900" xmlns="http://www.w3.org/2000/svg"><path d="M340.5,897.4C272.8,891.1 211.6,870.6 162.0,837.7C110.8,803.7 66.5,749.5 37.4,685.1C31.8,672.8 22.9,649.5 20.5,641.0C19.7,638.5 18.2,633.1 17.0,629.0C-3.8,557.3 -4.6,477.9 14.7,413.0C24.2,380.9 41.3,346.7 54.3,333.7C69.6,318.4 94.1,315.8 112.5,327.5C126.7,336.5 134.2,350.4 134.2,367.5C134.2,378.5 132.2,384.7 125.1,395.8C83.6,460.5 86.0,574.9 130.8,661.0C164.5,725.8 210.2,766.4 273.2,787.4C293.5,794.2 317.2,799.7 333.5,801.5C336.8,801.8 340.4,802.3 341.5,802.6C346.6,803.8 381.7,804.6 397.2,803.9C508.7,798.8 600.9,742.9 646.1,653.0C688.1,569.5 689.4,470.6 649.3,406.7L646.3,401.9L644.1,411.2C635.0,448.3 616.3,484.3 592.0,511.8C561.4,546.5 516.3,572.8 472.3,581.9C437.6,589.0 394.2,585.9 363.0,574.0C360.0,572.8 355.8,571.2 353.7,570.5C333.6,563.0 306.7,545.1 290.2,528.0C254.4,491.2 239.0,423.8 253.5,368.0C269.0,308.1 313.7,256.5 370.0,233.5C401.1,220.8 424.8,216.6 464.5,216.6C499.5,216.6 519.3,219.3 550.2,228.3C558.8,230.8 562.0,231.4 562.0,230.4C562.0,227.6 555.6,211.9 549.6,199.9C514.6,130.3 451.0,90.3 384.6,96.0C345.8,99.3 308.1,115.2 267.6,145.3C261.3,150.0 254.4,154.8 252.3,155.8C220.9,171.9 183.5,148.6 183.9,113.2C184.1,95.6 190.7,84.9 210.6,69.9C297.0,4.6 387.7,-14.8 474.5,13.5C579.5,47.8 660.2,158.6 667.6,278.4L668.2,289.3L686.4,307.4C717.5,338.4 737.4,367.7 751.9,404.3C791.3,503.4 774.5,633.3 709.5,731.5C654.8,814.2 568.5,870.7 466.0,890.8C427.3,898.4 378.6,901.0 340.5,897.4Z M449.6,490.5C460.6,488.5 470.2,485.3 481.0,479.7C517.9,460.8 542.3,432.8 556.3,393.3C562.3,376.4 570.9,340.3 569.5,338.0C568.3,336.1 545.2,325.9 533.0,322.0C482.7,305.7 433.9,306.4 399.2,323.9C375.2,336.0 353.8,362.3 345.9,389.5C342.4,401.3 342.4,427.0 345.8,438.0C353.4,461.9 367.0,475.9 392.3,485.4C408.9,491.6 431.4,493.6 449.6,490.5Z" fill="currentColor" fill-rule="evenodd"></path></svg></div><div class="wrap">
+<div class="kicker">Unser Angebot</div>
+<h2>Klarheit statt Chaos: messbare Ergebnisse in wenigen Tagen.</h2>
+<p class="sub">Schmerzen dulden keine monatelangen Vorlaufzeiten. Wir starten schnell und liefern Ergebnisse in fix definierten Zeiträumen – Beratung mit Ablaufdatum. Mit euch arbeiten immer wir beide, Eva und Maja, mit jahrelanger Erfahrung aus der Praxis.</p>
+<div class="angebote">
+
+<article class="karte karte-haupt">
+<div class="k-body">
+<span class="pill-rolle">Der bunditas. Startpunkt</span>
+<h3>bunditas. Scan</h3>
+<p class="k-claim">In fünf Projekttagen aufzeigen, wo ihr steht und wie ihr ans Ziel kommt.</p>
+<div class="elemente"><details class="el"><summary><span class="el-t">Eure Ausgangslage</span><span class="el-s">Ihr kennt mindestens einen dieser Momente.</span><span class="el-m"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></span></summary><ul class="ml"><li>Es reibt zwischen Teams, an Schnittstellen oder irgendwo, wo ihr es noch nicht genau verorten könnt.</li><li>Ihr habt ein Bauchgefühl und wollt wissen, ob es stimmt, bevor ihr entscheidet.</li><li>Euch fehlt die Richtung. Ihr wollt wissen, wohin es geht, und eine Richtung, die alle mittragen.</li></ul></details><details class="el"><summary><span class="el-t">Unser Versprechen</span><span class="el-s">Ihr erhaltet eine datenbasierte, priorisierte Entscheidungsgrundlage.</span><span class="el-m"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></span></summary><ul class="ml"><li><b>Executive Summary:</b> eigenständiger Bericht mit priorisierten strategischen Stoßrichtungen</li><li><b>Impact Map:</b> die Hebel eingeordnet nach Aufwand und Nutzen</li><li><b>Roadmap:</b> konkreter Fahrplan mit Action Items</li></ul></details><details class="el"><summary><span class="el-t">Unser Setup</span><span class="el-s">Wir verbinden Zahlen mit Menschen.</span><span class="el-m"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></span></summary><ul class="ml"><li>Analyse eurer internen Daten und Strukturen</li><li>Tiefeninterviews mit euren Schlüsselpersonen</li><li>Fragebögen zum Status quo, um die Thesen zu verifizieren</li><li>Executive Reveal-Workshop mit eurer Führungsrunde</li></ul></details><div class="el el-commit">
+<span class="el-t">Euer Commitment und Investment</span>
+<p class="preis"><span class="preis-zahl"><span class="hl">9.625 €</span></span><span class="preis-note">Basis-Scan exkl. USt.</span></p>
+<ul class="ml ml-zwei">
+<li>Zugang zu euren Daten</li>
+<li>Transparente Einblicke und euer Vertrauen</li>
+<li>Zeit eurer Schlüsselpersonen für die Interviews</li>
+</ul>
+</div></div>
+<p class="k-cta"><a class="btn btn-butter" data-umami-event="scan-anfragen" href="mailto:hallo@bunditas.at?subject=bunditas.%20Scan%20Anfrage">bunditas. Scan anfragen</a></p>
+</div><div class="followup">
+<details class="el fu-el"><summary><span class="fu-pill">Optional</span><span class="fu-h">Und nach dem Scan? bunditas. Follow-up</span><span class="el-m"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></span></summary><div class="fu-inhalt"><span class="el-t">Beratung mit Ablaufdatum</span><p class="fu-text">Unser Ziel ist, dass ihr uns schnellstmöglich nicht mehr braucht. Bis dorthin begleiten wir euch für einen klar definierten Zeitraum als strategische Sparringpartnerinnen.</p><ul class="ml"><li>Strategisches Sparring für eure Führungsrunde, in fix vereinbarter Taktung</li><li>Begleitung bei der Umsetzung der Roadmap aus dem Scan</li><li>Ziel, Umfang und Enddatum stehen vorab fest</li></ul></div></details>
+</div>
+</article>
+
+<article class="karte karte-neben">
+<div class="k-body">
+<span class="pill-rolle pill-grau">Für spezifische Engpässe</span>
+<h3>Fokus-Formate</h3>
+<p class="k-claim">Individuell gestaltet, auf eure Bedürfnisse abgestimmt.</p>
+<div class="elemente"><div class="el"><span class="el-t">Eure Ausgangslage</span><span class="el-s">Ihr wisst, woran es hapert, und braucht Begleitung oder den Austausch mit einer neutralen Person.</span></div><div class="el"><span class="el-t">Unser Versprechen</span><span class="el-s">Ihr bekommt eine neutrale Einordnung von uns als Sparringpartnerinnen, und wir setzen mit um.</span></div><div class="el"><span class="el-t">Unser Setup</span><span class="el-s">Wir definieren Ziel und Rahmen vorab. Ob moderierter Workshop, fokussierte Impuls-Session oder die Lösung eines akuten Schnittstellen-Konflikts: Das Format passt sich eurem Engpass an.</span></div></div>
+<p class="k-cta"><a class="btn btn-rand" data-umami-event="format-anfragen" href="mailto:hallo@bunditas.at?subject=Fokus-Format%20mit%20bunditas.">Fokus-Format anfragen</a></p>
+</div>
+</article>
+
+</div>
+</div></section><section id="wir"><div class="wrap">
 <div class="kicker" data-t="HOME.WIR.KICKER">Eva &amp; Maja</div>
 <h2 data-t="HOME.WIR.H2">Wir bündeln unsere Kräfte.</h2>
 <p class="sub" data-t="HOME.WIR.SUB">Wir sind Eva und Maja. Seit 2016 arbeiten wir gemeinsam an großen, komplexen Projekten im digitalen Bereich. Eva bringt Strategie und Product ein, Maja Prozesse und Sales. Diese Mischung hat sich in jedem einzelnen Projekt bewährt. <span class="hl">Jetzt gibt es uns als Duo unter einem eigenen Namen: bunditas.</span></p>
@@ -1677,12 +1829,12 @@ footer h2{line-height:1.6}
 <h2 data-t="HOME.ARBEITSWEISE.H2">Was euch mit uns erwartet.</h2>
 <p class="sub" data-t="HOME.ARBEITSWEISE.SUB"><span class="hl">Verlässlich, auf den Punkt und unkompliziert.</span> Wir stellen genau die richtigen Fragen, sagen klar, was wir sehen, und das auf Augenhöhe per Du. Seit über zehn Jahren arbeiten wir erfolgreich zusammen, und davon profitieren nun unsere Kundinnen und Kunden.</p>
 <div class="cols3">
-<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><circle cx="17.4" cy="6.4" r="2.9"></circle><path d="M2.6 20.4h18.8"></path><path d="M8.6 20.4V6.6"></path><path d="M8.6 14.2H6.2v-3.4"></path><path d="M8.6 11.6h2.3V8.8"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.1.TITEL">Ihr entscheidet mit Weitblick.</span><button aria-controls="grundsatz-1" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.1.TEXT" id="grundsatz-1">Wir zeigen Möglichkeiten und deren Wirkung auf und erarbeiten daraus eine Entscheidungsgrundlage.</span><button aria-controls="grundsatz-1" aria-expanded="false" class="more" tabindex="-1" type="button">Weniger</button></span></div></div>
-<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M4.6 21h14.8"></path><path d="M9.4 21V6.8"></path><path d="M9.4 14.4H7.2v-3.2"></path><path d="M9.4 11.4h1.6V9.8"></path><path d="M14.6 21V9.2"></path><path d="M14.6 16.2h2.2v-2.8"></path><path d="M14.6 13.2h-1.8v-2"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.2.TITEL">Ihr startet ohne Anlaufzeit.</span><button aria-controls="grundsatz-2" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.2.TEXT" id="grundsatz-2">Wo bunditas. draufsteht, sind immer Eva und Maja dabei. Seit 2016 als eingespieltes, komplementäres Duo und immer mit 100 % Engagement und Expertise.</span><button aria-controls="grundsatz-2" aria-expanded="false" class="more" tabindex="-1" type="button">Weniger</button></span></div></div>
-<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><circle cx="10.4" cy="10.4" r="7"></circle><path d="M15.4 15.4 20.6 20.6"></path><path d="M10.4 15V6.4"></path><path d="M10.4 11.2H8.4V8.8"></path><path d="M10.4 9.6h2V7.6"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.3.TITEL">Ihr entdeckt blinde Flecken.</span><button aria-controls="grundsatz-3" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.3.TEXT" id="grundsatz-3">Wir kommen ohne vorgefertigte Meinung und ohne Lieblingslösung. So sehen wir Hürden im System, die von innen kaum noch auffallen.</span><button aria-controls="grundsatz-3" aria-expanded="false" class="more" tabindex="-1" type="button">Weniger</button></span></div></div>
-<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M2.8 16.8h18.4"></path><path d="M12 16.8V3"></path><path d="M12 10.6H9.6V7.2"></path><path d="M12 8h2.3V5.2"></path><path d="M12 16.8v4.4"></path><path d="M12 18.2c-1.3.7-2 1.5-2.3 2.6"></path><path d="M12 18.2c1.3.7 2 1.5 2.3 2.6"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.4.TITEL">Ihr bringt Klarheit ins Zusammenspiel.</span><button aria-controls="grundsatz-4" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.4.TEXT" id="grundsatz-4">Aus euren Daten und unserer Erfahrung wird eine Grundlage, die Klarheit ins Zusammenspiel von Teams und Kundschaft bringt.</span><button aria-controls="grundsatz-4" aria-expanded="false" class="more" tabindex="-1" type="button">Weniger</button></span></div></div>
-<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M2.6 20.4h18.8"></path><path d="M15.4 9.4H7.2l1 11h6.2z"></path><path d="M6 9.4h10.6"></path><path d="M7.6 9.4a3 3 0 0 1 5.4 0"></path><path d="M15.4 12.2 20.2 9.6"></path><path d="M19.4 8.2 21 11"></path><g stroke-width=".85"><path d="M11.2 18.2v-4.9"></path><path d="M11.2 16.6H9.8v-1.8"></path><path d="M11.2 15.2h1.4v-1.7"></path></g></svg></span><span class="t" data-t="HOME.GRUNDSATZ.5.TITEL">Ihr stärkt Rollen und Prozesse.</span><button aria-controls="grundsatz-5" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.5.TEXT" id="grundsatz-5">Reibung entsteht an den Schnittstellen: zwischen euren Teams und zu euren Kundinnen und Kunden. Wir schauen dabei auf Rollen und Prozesse im System, nie auf einzelne Personen.</span><button aria-controls="grundsatz-5" aria-expanded="false" class="more" tabindex="-1" type="button">Weniger</button></span></div></div>
-<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M7 15.4h10"></path><path d="M8 15.4l.9 5.4h6.2l.9-5.4"></path><path d="M12 15.4V4.4"></path><path d="M12 10.6H9.4V7.6"></path><path d="M12 8.6h2.6V6"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.6.TITEL">Ihr macht euch unabhängig.</span><button aria-controls="grundsatz-6" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.6.TEXT" id="grundsatz-6">Unser Auftrag ist erfüllt, wenn ihr ohne uns weiterkommt, nicht wenn der nächste Folgetermin steht. Und wenn ihr wiederkommt, dann gerne – aber mit einer neuen Herausforderung. 😉</span><button aria-controls="grundsatz-6" aria-expanded="false" class="more" tabindex="-1" type="button">Weniger</button></span></div></div>
+<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><circle cx="17.4" cy="6.4" r="2.9"></circle><path d="M2.6 20.4h18.8"></path><path d="M8.6 20.4V6.6"></path><path d="M8.6 14.2H6.2v-3.4"></path><path d="M8.6 11.6h2.3V8.8"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.1.TITEL">Ihr entscheidet mit Weitblick.</span><button aria-controls="grundsatz-1" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.1.TEXT" id="grundsatz-1">Wir zeigen Möglichkeiten und deren Wirkung auf und erarbeiten daraus eine Entscheidungsgrundlage.</span><button aria-controls="grundsatz-1" aria-expanded="false" class="more" tabindex="-1" type="button"><span class="mw">Weniger</span></button></span></div></div>
+<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M4.6 21h14.8"></path><path d="M9.4 21V6.8"></path><path d="M9.4 14.4H7.2v-3.2"></path><path d="M9.4 11.4h1.6V9.8"></path><path d="M14.6 21V9.2"></path><path d="M14.6 16.2h2.2v-2.8"></path><path d="M14.6 13.2h-1.8v-2"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.2.TITEL">Ihr startet ohne Anlaufzeit.</span><button aria-controls="grundsatz-2" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.2.TEXT" id="grundsatz-2">Wo bunditas. draufsteht, sind immer Eva und Maja dabei. Seit 2016 als eingespieltes, komplementäres Duo und immer mit 100 % Engagement und Expertise.</span><button aria-controls="grundsatz-2" aria-expanded="false" class="more" tabindex="-1" type="button"><span class="mw">Weniger</span></button></span></div></div>
+<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><circle cx="10.4" cy="10.4" r="7"></circle><path d="M15.4 15.4 20.6 20.6"></path><path d="M10.4 15V6.4"></path><path d="M10.4 11.2H8.4V8.8"></path><path d="M10.4 9.6h2V7.6"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.3.TITEL">Ihr entdeckt blinde Flecken.</span><button aria-controls="grundsatz-3" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.3.TEXT" id="grundsatz-3">Wir kommen ohne vorgefertigte Meinung und ohne Lieblingslösung. So sehen wir Hürden im System, die von innen kaum noch auffallen.</span><button aria-controls="grundsatz-3" aria-expanded="false" class="more" tabindex="-1" type="button"><span class="mw">Weniger</span></button></span></div></div>
+<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M2.8 16.8h18.4"></path><path d="M12 16.8V3"></path><path d="M12 10.6H9.6V7.2"></path><path d="M12 8h2.3V5.2"></path><path d="M12 16.8v4.4"></path><path d="M12 18.2c-1.3.7-2 1.5-2.3 2.6"></path><path d="M12 18.2c1.3.7 2 1.5 2.3 2.6"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.4.TITEL">Ihr bringt Klarheit ins Zusammenspiel.</span><button aria-controls="grundsatz-4" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.4.TEXT" id="grundsatz-4">Aus euren Daten und unserer Erfahrung wird eine Grundlage, die Klarheit ins Zusammenspiel von Teams und Kundschaft bringt.</span><button aria-controls="grundsatz-4" aria-expanded="false" class="more" tabindex="-1" type="button"><span class="mw">Weniger</span></button></span></div></div>
+<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M2.6 20.4h18.8"></path><path d="M15.4 9.4H7.2l1 11h6.2z"></path><path d="M6 9.4h10.6"></path><path d="M7.6 9.4a3 3 0 0 1 5.4 0"></path><path d="M15.4 12.2 20.2 9.6"></path><path d="M19.4 8.2 21 11"></path><g stroke-width=".85"><path d="M11.2 18.2v-4.9"></path><path d="M11.2 16.6H9.8v-1.8"></path><path d="M11.2 15.2h1.4v-1.7"></path></g></svg></span><span class="t" data-t="HOME.GRUNDSATZ.5.TITEL">Ihr stärkt Rollen und Prozesse.</span><button aria-controls="grundsatz-5" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.5.TEXT" id="grundsatz-5">Reibung entsteht an den Schnittstellen: zwischen euren Teams und zu euren Kundinnen und Kunden. Wir schauen dabei auf Rollen und Prozesse im System, nie auf einzelne Personen.</span><button aria-controls="grundsatz-5" aria-expanded="false" class="more" tabindex="-1" type="button"><span class="mw">Weniger</span></button></span></div></div>
+<div class="flip"><div class="flip-in"><span class="flip-front"><span aria-hidden="true" class="sym"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24"><path d="M7 15.4h10"></path><path d="M8 15.4l.9 5.4h6.2l.9-5.4"></path><path d="M12 15.4V4.4"></path><path d="M12 10.6H9.4V7.6"></path><path d="M12 8.6h2.6V6"></path></svg></span><span class="t" data-t="HOME.GRUNDSATZ.6.TITEL">Ihr macht euch unabhängig.</span><button aria-controls="grundsatz-6" aria-expanded="false" class="more" type="button"><span class="m-auf">Mehr</span><span class="m-zu">Weniger</span></button></span><span class="flip-back"><span data-t="HOME.GRUNDSATZ.6.TEXT" id="grundsatz-6">Unser Auftrag ist erfüllt, wenn ihr ohne uns weiterkommt, nicht wenn der nächste Folgetermin steht. Und wenn ihr wiederkommt, dann gerne – aber mit einer neuen Herausforderung. 😉</span><button aria-controls="grundsatz-6" aria-expanded="false" class="more" tabindex="-1" type="button"><span class="mw">Weniger</span></button></span></div></div>
 </div>
 </div></section><section class="dark" id="kontakt">
 <div class="glyphwrap"><svg aria-hidden="true" aria-label="bunditas." class="glyph" role="img" viewbox="0 0 774 900" xmlns="http://www.w3.org/2000/svg"><path d="M340.5,897.4C272.8,891.1 211.6,870.6 162.0,837.7C110.8,803.7 66.5,749.5 37.4,685.1C31.8,672.8 22.9,649.5 20.5,641.0C19.7,638.5 18.2,633.1 17.0,629.0C-3.8,557.3 -4.6,477.9 14.7,413.0C24.2,380.9 41.3,346.7 54.3,333.7C69.6,318.4 94.1,315.8 112.5,327.5C126.7,336.5 134.2,350.4 134.2,367.5C134.2,378.5 132.2,384.7 125.1,395.8C83.6,460.5 86.0,574.9 130.8,661.0C164.5,725.8 210.2,766.4 273.2,787.4C293.5,794.2 317.2,799.7 333.5,801.5C336.8,801.8 340.4,802.3 341.5,802.6C346.6,803.8 381.7,804.6 397.2,803.9C508.7,798.8 600.9,742.9 646.1,653.0C688.1,569.5 689.4,470.6 649.3,406.7L646.3,401.9L644.1,411.2C635.0,448.3 616.3,484.3 592.0,511.8C561.4,546.5 516.3,572.8 472.3,581.9C437.6,589.0 394.2,585.9 363.0,574.0C360.0,572.8 355.8,571.2 353.7,570.5C333.6,563.0 306.7,545.1 290.2,528.0C254.4,491.2 239.0,423.8 253.5,368.0C269.0,308.1 313.7,256.5 370.0,233.5C401.1,220.8 424.8,216.6 464.5,216.6C499.5,216.6 519.3,219.3 550.2,228.3C558.8,230.8 562.0,231.4 562.0,230.4C562.0,227.6 555.6,211.9 549.6,199.9C514.6,130.3 451.0,90.3 384.6,96.0C345.8,99.3 308.1,115.2 267.6,145.3C261.3,150.0 254.4,154.8 252.3,155.8C220.9,171.9 183.5,148.6 183.9,113.2C184.1,95.6 190.7,84.9 210.6,69.9C297.0,4.6 387.7,-14.8 474.5,13.5C579.5,47.8 660.2,158.6 667.6,278.4L668.2,289.3L686.4,307.4C717.5,338.4 737.4,367.7 751.9,404.3C791.3,503.4 774.5,633.3 709.5,731.5C654.8,814.2 568.5,870.7 466.0,890.8C427.3,898.4 378.6,901.0 340.5,897.4Z M449.6,490.5C460.6,488.5 470.2,485.3 481.0,479.7C517.9,460.8 542.3,432.8 556.3,393.3C562.3,376.4 570.9,340.3 569.5,338.0C568.3,336.1 545.2,325.9 533.0,322.0C482.7,305.7 433.9,306.4 399.2,323.9C375.2,336.0 353.8,362.3 345.9,389.5C342.4,401.3 342.4,427.0 345.8,438.0C353.4,461.9 367.0,475.9 392.3,485.4C408.9,491.6 431.4,493.6 449.6,490.5Z" fill="currentColor" fill-rule="evenodd"></path></svg></div>
@@ -1709,12 +1861,13 @@ footer h2{line-height:1.6}
 <li><a data-t="FOOTER.LINK.12" href="index.html#prinzip">bunditas. Prinzip</a></li>
 <li><a data-t="FOOTER.LINK.11" href="index.html#angebot">Angebot</a></li>
 <li><a data-t="FOOTER.LINK.3" href="index.html#wir">Eva &amp; Maja</a></li>
-<li><a data-t="FOOTER.LINK.4" href="index.html#arbeitsweise">Zusammenarbeit</a></li></ul>
+<li><a data-t="FOOTER.LINK.4" href="index.html#arbeitsweise">Zusammenarbeit</a></li>
+<li><a data-t="FOOTER.LINK.5" href="index.html#kontakt">Kontakt</a></li></ul>
 </div>
 <div>
 <h2 data-t="FOOTER.SPALTE.2.TITEL">Kontaktmöglichkeiten</h2>
 <ul>
-<li><a data-t="FOOTER.LINK.5" href="#kontakt">Kontakt</a></li>
+
 <li><a data-t="FOOTER.LINK.6" href="mailto:hallo@bunditas.at">hallo@bunditas.at</a></li>
 <li><a data-t="FOOTER.LINK.7" href="https://www.linkedin.com/in/evamaria-sturm/" rel="noopener noreferrer" target="_blank">LinkedIn Eva</a></li>
 <li><a data-t="FOOTER.LINK.8" href="https://www.linkedin.com/in/maja-tuder/" rel="noopener noreferrer" target="_blank">LinkedIn Maja</a></li>
@@ -1980,9 +2133,23 @@ document.querySelectorAll('#arbeitsweise .flip').forEach(function (karte) {
   function messen(){
     if(team.querySelector('details[open]')) return;      /* offen: nicht messen */
     team.style.removeProperty('--kachelhoehe');
+    kacheln.forEach(function(k){
+      var li=k.querySelector('.lilink'); if(li) li.style.marginTop='';
+    });
     var h=0;
     kacheln.forEach(function(k){ h=Math.max(h, k.getBoundingClientRect().height); });
     if(h>0) team.style.setProperty('--kachelhoehe', Math.ceil(h)+'px');
+    /* "margin-top:auto" schiebt LinkedIn und Mehr ans untere Ende, damit sie
+       in allen drei Kacheln auf einer Linie liegen. Sobald eine Kachel
+       aufklappt, faellt dieser Abstand weg und der Block springt nach oben.
+       Deshalb frieren wir den jetzt gemessenen Wert fest ein. */
+    kacheln.forEach(function(k){
+      var li=k.querySelector('.lilink');
+      if(!li) return;
+      li.style.marginTop='';
+      var mt=parseFloat(window.getComputedStyle(li).marginTop);
+      if(!isNaN(mt)) li.style.marginTop=mt+'px';
+    });
   }
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(messen);
   window.addEventListener('load', messen);
@@ -1990,6 +2157,58 @@ document.querySelectorAll('#arbeitsweise .flip').forEach(function (karte) {
   window.addEventListener('resize', function(){ clearTimeout(t); t=setTimeout(messen, 200); });
   team.addEventListener('toggle', function(){ setTimeout(messen, 0); }, true);
   messen();
+})();
+/* Dasselbe fuer die beiden Angebots-Kacheln. */
+(function(){
+  var grid=document.querySelector('#angebot .angebote'); if(!grid) return;
+  var karten=grid.querySelectorAll(':scope > .karte');
+  function messen(){
+    if(grid.querySelector('details[open]')) return;
+    grid.style.removeProperty('--angebothoehe');
+    var h=0;
+    karten.forEach(function(k){ h=Math.max(h, k.getBoundingClientRect().height); });
+    if(h>0) grid.style.setProperty('--angebothoehe', Math.ceil(h)+'px');
+  }
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(messen);
+  window.addEventListener('load', messen);
+  var t=null;
+  window.addEventListener('resize', function(){ clearTimeout(t); t=setTimeout(messen, 200); });
+  grid.addEventListener('toggle', function(){ setTimeout(messen, 0); }, true);
+  messen();
+})();
+
+/* Aktiven Abschnitt in der Navigation markieren: beim Klicken wie beim Scrollen.
+   Massgeblich ist, welcher Abschnitt gerade unter der klebenden Leiste beginnt. */
+(function(){
+  var leiste=document.querySelector('nav');
+  var links=[].slice.call(document.querySelectorAll('.navmenu a[href^="#"]'));
+  if(!links.length) return;
+  var ziele=links.map(function(a){
+    try{ return document.querySelector(a.getAttribute('href')); }catch(e){ return null; }
+  });
+  var wartet=false;
+  function markieren(){
+    wartet=false;
+    var hoehe=leiste ? leiste.getBoundingClientRect().height : 0;
+    var grenze=window.scrollY + hoehe + 24;
+    var aktiv=-1;
+    ziele.forEach(function(z,i){
+      if(!z) return;
+      var oben=z.getBoundingClientRect().top + window.scrollY;
+      if(oben <= grenze) aktiv=i;
+    });
+    links.forEach(function(a,i){
+      if(!a) return;
+      if(i===aktiv) a.setAttribute('aria-current','true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll', function(){
+    if(!wartet){ wartet=true; requestAnimationFrame(markieren); }
+  }, {passive:true});
+  window.addEventListener('resize', markieren);
+  window.addEventListener('load', markieren);
+  markieren();
 })();
 </script>
 </body></html>
