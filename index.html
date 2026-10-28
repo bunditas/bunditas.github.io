@@ -1263,7 +1263,8 @@ footer h2{line-height:1.6}
 /* ---------- Menü am Handy ---------- */
 /* Am Handy standen nur noch Logo und Kontaktknopf in der Leiste, die beiden
    Verweise waren ausgeblendet. Jetzt klappen sie über einen Menüknopf auf. */
-.navmenu{display:flex;align-items:center;gap:28px}
+.navmenu{display:flex;align-items:center;gap:22px}
+.navmenu a{padding:0 3px}
 .burger{display:none}
 @media (max-width:940px){
   nav .wrap{gap:12px}
@@ -1502,11 +1503,14 @@ footer h2{line-height:1.6}
 /* Gelber Marker wie bei den hervorgehobenen Textstellen (.hl). */
 .navmenu a[aria-current="true"]{opacity:1;font-weight:700;
   background:linear-gradient(transparent 62%,var(--butter) 62%);padding:0 3px}
+/* Beim Zeigen derselbe Marker, aber ohne Fettung: sonst springen die Nachbarn. */
+.navmenu a:hover,.navmenu a:focus-visible{opacity:1;
+  background:linear-gradient(transparent 62%,var(--butter) 62%)}
 @media (max-width:940px){
   /* Im Klappmenue sind die Verweise volle Zeilen - dort waere ein Marker ueber
      die ganze Breite unruhig, deshalb eine gelbe Linie unter der Zeile. */
-  .navmenu a[aria-current="true"]{background:none;padding:0.875rem 0;
-    box-shadow:inset 0 -3px 0 var(--butter)}
+  .navmenu a[aria-current="true"],.navmenu a:hover,.navmenu a:focus-visible{
+    background:none;padding:0.875rem 0;box-shadow:inset 0 -3px 0 var(--butter)}
 }
 
 /* ---------- Mehr + / Weniger – einheitlich ---------- */
@@ -1820,13 +1824,13 @@ footer h2{line-height:1.6}
 <div class="v1-grid">
 <div class="v1-links">
 <h2 data-t="HOME.CASE.TITEL">Das ist eine reine Führungsfrage.</h2>
-<p class="sub" data-t="HOME.CASE.STORY">Der bunditas. Scan legte vier strategische Handlungsfelder offen, allesamt datenbelegt. Der Aha-Moment kam im gemeinsamen Deep Dive mit dem C-Level. Selbst wenn alle aufgezeigten Symptome behoben werden, bleibt das Kernproblem bestehen: fehlende operative Verbindlichkeit. Ein Führungsthema, über alle Ebenen hinweg.</p>
+<p class="sub" data-t="HOME.CASE.STORY">Der bunditas. Scan legte vier strategische Handlungsfelder offen, allesamt datenbelegt. Der <span class="hl">Aha-Moment</span> kam im gemeinsamen Executive Reveal Workshop mit dem C-Level. Selbst wenn alle aufgezeigten Symptome behoben werden, bleibt das Kernproblem bestehen: fehlende operative Verbindlichkeit. Ein Führungsthema, über alle Ebenen hinweg.</p>
 <figure class="v1-zitat"><p data-t="HOME.CASE.ZITAT">„Kompliment an euch […] Ihr habt die wunden Punkte und den Schmerz identifiziert. Das ist gut, dass das offen liegt und durch Daten belegt ist.“</p><figcaption data-t="HOME.CASE.ZITAT.ROLLE">Chief Growth Officer</figcaption></figure>
 <p class="v1-cta"><a class="btn btn-light" data-t="HOME.CASE.BUTTON.1" data-umami-event="case-scan" href="mailto:hallo@bunditas.at?subject=bunditas.%20Scan%20Anfrage">bunditas. Scan anfragen</a></p>
 </div>
 <div class="v1-steck">
 <h3 data-t="HOME.CASE.STECK.TITEL">Auf einen Blick</h3>
-<dl><div class="sb-z"><dt data-t="HOME.CASE.STECK.1.LABEL">Kunde</dt><dd data-t="HOME.CASE.STECK.1.WERT">SaaS-Unternehmen im DACH-Raum, 50+ Mitarbeitende</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.2.LABEL">Auftraggeber</dt><dd data-t="HOME.CASE.STECK.2.WERT">C-Level</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.3.LABEL">Kernfrage</dt><dd data-t="HOME.CASE.STECK.3.WERT">Was muss zusammenspielen, um stärker zu wachsen?</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.4.LABEL">Setup</dt><dd data-t="HOME.CASE.STECK.4.WERT">5 Projekttage innerhalb von 15 Werktagen, 100% remote</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.5.LABEL">Methodik</dt><dd data-t="HOME.CASE.STECK.5.WERT">157 Datenquellen · 8 Interviews · 12 Checkups · Executive Reveal Workshop</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.6.LABEL">Ergebnis</dt><dd data-t="HOME.CASE.STECK.6.WERT">Executive Summary · Impact Map · Roadmap</dd></div></dl>
+<dl><div class="sb-z"><dt data-t="HOME.CASE.STECK.1.LABEL">Format</dt><dd data-t="HOME.CASE.STECK.1.WERT">bunditas. Scan</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.2.LABEL">Kunde</dt><dd data-t="HOME.CASE.STECK.2.WERT">SaaS-Unternehmen im DACH-Raum, 50+ Mitarbeitende</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.3.LABEL">Auftraggeber</dt><dd data-t="HOME.CASE.STECK.3.WERT">C-Level</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.4.LABEL">Kernfrage</dt><dd data-t="HOME.CASE.STECK.4.WERT">Was muss zusammenspielen, um stärker zu wachsen?</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.5.LABEL">Setup</dt><dd data-t="HOME.CASE.STECK.5.WERT">5 Projekttage innerhalb von 15 Werktagen, 100% remote</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.6.LABEL">Methodik</dt><dd data-t="HOME.CASE.STECK.6.WERT">157 Datenquellen · 8 Interviews · 12 Checkups · Executive Reveal Workshop</dd></div><div class="sb-z"><dt data-t="HOME.CASE.STECK.7.LABEL">Output</dt><dd data-t="HOME.CASE.STECK.7.WERT">Executive Summary · Impact Map · Roadmap</dd></div></dl>
 </div>
 </div>
 </div></section>
