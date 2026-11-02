@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der bunditas. Check-In</title>
+<meta name="description" content="Wie geht es dir gerade? Beschreib deine Situation mit drei Eigenschaftswörtern und finde den Kaktus, der genau so drauf ist wie du.">
+<meta property="og:title" content="Der bunditas. Check-In">
+<meta property="og:description" content="Drei Eigenschaftswörter, ein Kaktus. Wie geht es dir gerade?">
+<meta property="og:url" content="https://bunditas.at/kaktus-checkin-voll/">
+<meta name="theme-color" content="#2C2E45">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-12%20-2%20300%20330%22%3E%3Cpath%20fill%3D%22%232C2E45%22%20d%3D%22M136.81%2C323.93c-36.6%2C0-71.75-12.54-94.33-35.06C-6.33%2C240.15-9.7%2C162.5%2C17.8%2C123.28c5.36-7.65%2C15.9-9.5%2C23.55-4.14%2C7.65%2C5.36%2C9.5%2C15.9%2C4.14%2C23.55-17.05%2C24.33-17.4%2C84.04%2C20.88%2C122.24%2C21.99%2C21.94%2C63.34%2C30.79%2C100.55%2C21.52%2C20.86-5.2%2C58.01-20.9%2C72.33-67.54%2C10.13-33.01%2C3.44-58.27-6.76-73.78-5.58%2C25.61-20.55%2C48.14-48.13%2C60.27-35.08%2C15.38-72.63-1.03-85.75-22.49-14.9-24.4-13.49-62.5%2C18.03-88.13%2C21.35-17.37%2C54.9-20.6%2C86.07-10.2-6.06-18.93-18.88-35.24-35.4-43.51-22.28-11.15-47.73-6.26-73.58%2C14.13-7.32%2C5.79-17.95%2C4.54-23.75-2.8-5.78-7.33-4.53-17.97%2C2.8-23.75C121.82-10.06%2C162.53.85%2C182.42%2C10.82c33.96%2C16.98%2C56.67%2C54.46%2C57.88%2C94.57%2C34.72%2C28.77%2C46.42%2C74.07%2C31.27%2C123.44-14.02%2C45.67-49.18%2C78.63-96.47%2C90.43-12.63%2C3.15-25.55%2C4.67-38.29%2C4.67ZM166.71%2C112.39c-11.35%2C0-21.62%2C2.82-28.75%2C8.62-16.47%2C13.39-17.75%2C32.41-10.5%2C44.27%2C6.95%2C11.39%2C27.61%2C16.22%2C42.69%2C9.59%2C27.74-12.2%2C31.92-36.27%2C35.08-52.48-12.31-6.59-26.06-9.99-38.52-9.99Z%22/%3E%3C/svg%3E">
+<script defer src="https://eu.umami.is/script.js" data-website-id="072d5834-243f-4d5f-8fbc-fea8a45baaed"></script>
+<style>
+/* ---- bunditas. Website: Schrift, Farben, Menü und Footer (übernommen von bunditas.at) ---- */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/montserrat-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/montserrat-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--nacht:#2C2E45;--nacht-2:#3d4060;--nacht-60:#717285;--nacht-35:#b4b5c0;--butterw:#F2E8C4;--butter:#F7D65B;--terra:#B05D33;--terra-alt:#C86A3A;--teal:#2BADA7;--paper:#FBFAF6;--line:#e6e2d6;--white:#fff;--maxw:1140px}
+*{box-sizing:border-box;margin:0;padding:0}
+a{color:inherit}
+body{font-family:Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--paper);color:var(--nacht);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:1rem}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:50;background:rgba(251,250,246,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:block;text-decoration:none;flex-shrink:0;color:var(--nacht);padding:4px 0}
+.logo svg{height:30px;width:auto;display:block}
+.navlinks{display:flex;align-items:center;gap:28px;font-size:.90625rem;font-weight:600}
+.navlinks a{text-decoration:none;color:var(--nacht);opacity:.78;transition:opacity .15s}
+.navlinks a:hover{opacity:1}
+.navmenu{display:flex;align-items:center;gap:22px}
+.navmenu a{padding:0 3px}
+.navmenu a:hover,.navmenu a:focus-visible{opacity:1;background:linear-gradient(transparent 62%,var(--butter) 62%)}
+.burger{display:none}
+footer{background:var(--nacht);color:rgba(242,232,196,.6);padding:64px 0 40px;font-size:.90625rem}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(242,232,196,.16)}
+footer .logo{color:var(--butterw)}
+footer .logo svg{height:34px}
+footer h2{font-size:.71875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--butter);margin-bottom:16px;font-weight:700;line-height:1.6}
+footer ul{list-style:none}
+footer li{margin-bottom:10px}
+footer a{text-decoration:none;transition:color .15s}
+footer a:hover{color:var(--butterw)}
+.fbottom{padding-top:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.8125rem;color:rgba(242,232,196,.65)}
+/* Menü: Burger-Menü auf allen Bildschirmgrößen */
+nav .wrap{gap:12px}
+.navlinks .burger{margin-right:-.35rem}
+.burger{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:2.75rem;height:2.75rem;padding:0;border:0;background:none;cursor:pointer;border-radius:99px;flex:0 0 auto}
+.burger:hover{background:rgba(44,46,69,.06)}
+.burger span{display:block;width:1.25rem;height:2px;border-radius:2px;background:var(--nacht);transition:transform .2s,opacity .2s}
+nav.offen .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.offen .burger span:nth-child(2){opacity:0}
+nav.offen .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.navmenu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:.5rem 1.75rem 1rem;box-shadow:0 12px 24px rgba(44,46,69,.07)}
+nav.offen .navmenu{display:flex}
+.navmenu a{padding:.875rem 0;border-bottom:1px solid var(--line);opacity:1}
+.navmenu a:last-child{border-bottom:0}
+.navmenu a:hover,.navmenu a:focus-visible{background:none;padding:.875rem 0;box-shadow:inset 0 -3px 0 var(--butter)}
+@media (min-width:941px){
+ .navmenu{left:auto;right:max(28px,calc((100% - var(--maxw))/2 + 28px));width:300px;border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px}
+}
+@media (max-width:940px){
+ .fgrid{grid-template-columns:1fr}
+ .logo svg{height:24px}
+ footer .logo svg{height:28px}
+}
+@media (max-width:420px){
+ nav .wrap{padding-left:1rem;padding-right:1rem;gap:.5rem}
+ nav .logo svg{height:1.25rem}
+ .burger{width:2.5rem;height:2.5rem}
+ .navmenu{padding-left:1rem;padding-right:1rem}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="/"><svg aria-label="bunditas." role="img" viewBox="0 0 1638.74 325.98" xmlns="http://www.w3.org/2000/svg"><path d="M1591.09,254.43c0,12.36,10.42,22.78,22.78,22.78s22.78-10.42,22.78-22.78-10.41-22.78-22.78-22.78-22.78,10.42-22.78,22.78M1435.55,253.13c16.27,15.94,40.68,24.4,67.36,24.4,42.3,0,65.41-21.16,65.41-48.81,0-37.1-33.52-44.91-60.85-50.76-18.55-4.23-34.17-8.46-34.17-20.51,0-11.06,11.39-17.57,29.28-17.57,19.53,0,37.1,8.13,46.54,18.87l14.32-24.09c-14.32-12.69-34.5-22.12-61.19-22.12-39.7,0-61.83,22.12-61.83,47.83,0,35.14,32.22,42.3,59.23,48.17,19.2,4.23,35.79,9.11,35.79,22.78,0,11.71-10.42,19.2-30.91,19.2s-42.3-10.74-53.37-22.13l-15.62,24.74ZM1370.79,237.84c-7.81,10.73-22.45,16.27-37.42,16.27-19.2,0-33.52-11.07-33.52-27.99s14.32-28.31,33.52-28.31c14.97,0,29.62,5.53,37.42,16.27v23.76ZM1370.79,273.63h34.17v-104.13c0-42.31-30.59-56.95-65.41-56.95-25.06,0-47.84,8.13-66.07,25.38l14,23.76c13.67-13.35,28.97-19.86,46.53-19.86,21.81,0,36.78,11.07,36.78,29.29v23.43c-11.39-13.34-29.62-20.17-50.76-20.17-25.71,0-54.68,14.97-54.68,51.09s28.97,52.07,54.68,52.07c20.82,0,39.05-7.48,50.76-20.82v16.92ZM1211.67,277.53c15.94,0,26.03-4.23,32.21-10.09l-8.13-25.7c-2.61,2.92-8.78,5.53-15.29,5.53-9.77,0-14.97-7.81-14.97-18.55v-82.32h31.89v-29.94h-31.89v-42.96h-34.17v42.96h-26.04v29.94h26.04v90.78c0,26.03,14,40.36,40.36,40.36M1079.55,273.63h34.17V116.45h-34.17v157.17ZM1096.46,90.42c11.71,0,21.16-9.44,21.16-21.16s-9.44-21.15-21.16-21.15-21.15,9.43-21.15,21.15,9.76,21.16,21.15,21.16M1001.12,226.45c-7.81,11.71-24.4,20.82-40.67,20.82-27.01,0-44.26-21.81-44.26-52.07s17.25-52.39,44.26-52.39c16.27,0,32.86,9.43,40.67,21.15v62.49ZM1001.12,273.63h34.17V56.58h-34.17v81.68c-12.69-16.59-30.91-25.7-50.44-25.7-40.68,0-69.96,31.89-69.96,82.65s29.62,82.33,69.96,82.33c20.17,0,38.4-9.77,50.44-25.39v21.48ZM818.57,273.63h34.17v-110.64c0-32.22-16.93-50.44-50.76-50.44-24.74,0-44.91,13.01-55.33,25.38v-21.47h-34.17v157.17h34.17v-109.67c7.81-10.74,22.78-21.15,40.36-21.15,19.2,0,31.56,8.13,31.56,32.54v98.28ZM634.06,273.63h34.17V116.45h-34.17v110.32c-8.13,10.73-23.1,20.5-40.36,20.5-19.2,0-31.56-7.48-31.56-31.89v-98.93h-34.17v111.29c0,32.21,16.59,49.79,50.44,49.79,24.74,0,44.26-12.04,55.65-24.73v20.82ZM379.58,226.45v-62.16c7.48-11.71,24.4-21.47,40.36-21.47,27.33,0,44.58,21.8,44.58,52.39s-17.24,52.07-44.58,52.07c-15.95,0-32.87-9.11-40.36-20.82M345.41,273.63h34.17v-21.48c12.04,15.62,29.94,25.39,50.44,25.39,40.03,0,69.65-30.59,69.65-82.33s-29.29-82.65-69.65-82.65c-19.85,0-38.07,9.11-50.44,25.7V56.58h-34.17v217.05Z" fill="currentColor"></path><path d="M136.81,323.93c-36.6,0-71.75-12.54-94.33-35.06C-6.33,240.15-9.7,162.5,17.8,123.28c5.36-7.65,15.9-9.5,23.55-4.14,7.65,5.36,9.5,15.9,4.14,23.55-17.05,24.33-17.4,84.04,20.88,122.24,21.99,21.94,63.34,30.79,100.55,21.52,20.86-5.2,58.01-20.9,72.33-67.54,10.13-33.01,3.44-58.27-6.76-73.78-5.58,25.61-20.55,48.14-48.13,60.27-35.08,15.38-72.63-1.03-85.75-22.49-14.9-24.4-13.49-62.5,18.03-88.13,21.35-17.37,54.9-20.6,86.07-10.2-6.06-18.93-18.88-35.24-35.4-43.51-22.28-11.15-47.73-6.26-73.58,14.13-7.32,5.79-17.95,4.54-23.75-2.8-5.78-7.33-4.53-17.97,2.8-23.75C121.82-10.06,162.53.85,182.42,10.82c33.96,16.98,56.67,54.46,57.88,94.57,34.72,28.77,46.42,74.07,31.27,123.44-14.02,45.67-49.18,78.63-96.47,90.43-12.63,3.15-25.55,4.67-38.29,4.67ZM166.71,112.39c-11.35,0-21.62,2.82-28.75,8.62-16.47,13.39-17.75,32.41-10.5,44.27,6.95,11.39,27.61,16.22,42.69,9.59,27.74-12.2,31.92-36.27,35.08-52.48-12.31-6.59-26.06-9.99-38.52-9.99Z" fill="currentColor"></path></svg></a>
+<div class="navlinks"><div class="navmenu" id="navmenu"><a href="/#prinzip">bunditas. Prinzip</a><a href="/#angebot">Angebot</a><a href="/#case">Projekte</a><a href="/#wir">Eva &amp; Maja</a><a href="/#arbeitsweise">Zusammenarbeit</a><a href="/#kontakt" data-umami-event="cta-nav">Kontakt</a></div><button aria-controls="navmenu" aria-expanded="false" aria-label="Menü öffnen" class="burger" type="button"><span></span><span></span><span></span></button></div></div></nav>
+
+
+<!-- ===================== bunditas Kaktus-Check: ab hier in die Website einbetten ===================== -->
+<div id="bunditas-kaktus">
+<style>
+#bunditas-kaktus{--bk-bg:#F2E8C4;--bk-cream:#F8F4E6;--bk-navy:#2C2E45;--bk-teal:#2BAFA8;--bk-pot:#C8693A;--bk-yellow:#F5CF57;color:var(--bk-navy);background:var(--bk-bg);padding:72px 16px 88px;font-family:inherit;line-height:1.5}
+#bunditas-kaktus *{box-sizing:border-box}
+#bunditas-kaktus .bk-wrap{max-width:1120px;margin:0 auto}
+#bunditas-kaktus .bk-head{text-align:center;max-width:660px;margin:0 auto 40px}
+#bunditas-kaktus .bk-eyebrow{display:inline-block;background:var(--bk-navy);color:var(--bk-cream);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:99px;margin:0 0 16px}
+#bunditas-kaktus h2{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:0 0 14px;font-weight:800;letter-spacing:-.01em}
+#bunditas-kaktus .bk-head p{font-size:18px;margin:0;opacity:.85}
+#bunditas-kaktus .bk-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}
+@media (max-width:840px){#bunditas-kaktus .bk-grid{grid-template-columns:minmax(0,1fr);gap:28px}#bunditas-kaktus .bk-form{padding:22px 18px}}
+#bunditas-kaktus .bk-form{background:var(--bk-cream);border-radius:28px;padding:28px}
+#bunditas-kaktus .bk-form h3{margin:0 0 6px;font-size:20px;font-weight:800}
+#bunditas-kaktus .bk-form .bk-sub{margin:0 0 22px;font-size:15px;opacity:.75}
+#bunditas-kaktus .bk-field{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+#bunditas-kaktus .bk-num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--bk-navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;transition:background .2s,color .2s}
+#bunditas-kaktus .bk-field.is-filled .bk-num{background:var(--bk-yellow);color:var(--bk-navy)}
+#bunditas-kaktus .bk-field input{flex:1;min-width:0;width:100%;font:inherit;font-size:17px;padding:14px 16px;border:2px solid transparent;border-radius:14px;background:#fff;color:var(--bk-navy);outline:none;transition:border-color .2s}
+#bunditas-kaktus .bk-field input:focus{border-color:var(--bk-teal)}
+#bunditas-kaktus .bk-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#bunditas-kaktus .bk-btn{width:100%;margin-top:10px;font:inherit;font-weight:800;font-size:18px;padding:16px 20px;border:0;border-radius:99px;background:var(--bk-navy);color:#fff;cursor:pointer;transition:transform .15s,background .2s,opacity .2s}
+#bunditas-kaktus .bk-btn:hover:not(:disabled){transform:translateY(-2px);background:#1d1f30}
+#bunditas-kaktus .bk-btn:disabled{opacity:.35;cursor:not-allowed}
+#bunditas-kaktus .bk-hint{font-size:13px;opacity:.6;margin:10px 0 0;text-align:center}
+#bunditas-kaktus .bk-stage{display:flex;flex-direction:column;align-items:center;text-align:center}
+#bunditas-kaktus .bk-art{width:100%;max-width:440px}
+#bunditas-kaktus .bk-art svg{width:100%;height:auto;display:block}
+#bunditas-kaktus .bk-plant{transform-origin:150px 272px}
+#bunditas-kaktus .bk-grow .bk-plant{animation:bkGrow .75s cubic-bezier(.2,1.5,.4,1) both}
+#bunditas-kaktus .bk-grow .bk-disc{animation:bkPop .45s ease-out both}
+@keyframes bkGrow{from{transform:scale(.2,.05);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes bkPop{from{transform:scale(.85);opacity:.4}to{transform:scale(1);opacity:1}}
+#bunditas-kaktus .bk-disc{transform-origin:150px 150px}
+#bunditas-kaktus .bk-result{max-width:480px;margin-top:8px}
+#bunditas-kaktus .bk-result h3{font-size:clamp(24px,3.4vw,32px);margin:0 0 8px;font-weight:800}
+#bunditas-kaktus .bk-result .bk-text{font-size:17px;margin:0 0 14px}
+#bunditas-kaktus .bk-tip{background:var(--bk-cream);border-radius:18px;padding:14px 18px;font-size:15px;text-align:left;margin:0 0 14px}
+#bunditas-kaktus .bk-tip b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--bk-pot);margin-bottom:2px}
+#bunditas-kaktus .bk-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 18px}
+#bunditas-kaktus .bk-chip{background:var(--bk-navy);color:#fff;border-radius:99px;padding:4px 12px;font-size:13px;font-weight:600}
+#bunditas-kaktus .bk-chip.is-pos{background:var(--bk-yellow);color:var(--bk-navy)}
+#bunditas-kaktus .bk-mood{display:inline-block;margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px;background:var(--bk-navy);color:#fff}
+#bunditas-kaktus .bk-mood.is-pos{background:var(--bk-yellow);color:var(--bk-navy)}
+#bunditas-kaktus .bk-mood.is-mix{background:var(--bk-cream);color:var(--bk-navy)}
+#bunditas-kaktus .bk-gal-h{grid-column:1/-1;text-align:left;font-size:22px;font-weight:800;margin:24px 0 0;border-bottom:2px solid rgba(43,45,66,.15);padding-bottom:8px}
+#bunditas-kaktus .bk-gal-h span{font-weight:600;opacity:.5}
+#bunditas-kaktus .bk-chip.is-soft{background:transparent;color:var(--bk-navy);border:1.5px solid rgba(43,45,66,.3)}
+#bunditas-kaktus .bk-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#bunditas-kaktus .bk-ghost{font:inherit;font-weight:700;font-size:15px;padding:11px 18px;border-radius:99px;border:2px solid var(--bk-navy);background:transparent;color:var(--bk-navy);cursor:pointer}
+#bunditas-kaktus .bk-ghost:hover{background:var(--bk-navy);color:#fff}
+#bunditas-kaktus .bk-related{margin-top:48px;text-align:center}
+#bunditas-kaktus .bk-related h4,#bunditas-kaktus .bk-gallery summary{font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:0 0 16px}
+#bunditas-kaktus .bk-rel-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+#bunditas-kaktus .bk-card{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;width:160px;text-align:center}
+#bunditas-kaktus .bk-card svg{width:100%;height:auto;display:block;transition:transform .2s}
+#bunditas-kaktus .bk-card:hover svg{transform:translateY(-4px) rotate(-2deg)}
+#bunditas-kaktus .bk-card span{display:block;font-weight:700;font-size:14px;margin-top:6px}
+#bunditas-kaktus .bk-card small{display:block;font-size:12px;opacity:.6;line-height:1.35;margin-top:2px}
+#bunditas-kaktus .bk-gallery{margin-top:56px;text-align:center}
+#bunditas-kaktus .bk-gallery summary{cursor:pointer;display:inline-block;list-style:none;border:2px solid var(--bk-navy);border-radius:99px;padding:10px 22px;margin:0}
+#bunditas-kaktus .bk-gallery summary::-webkit-details-marker{display:none}
+#bunditas-kaktus .bk-gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:28px 18px;margin-top:32px}
+#bunditas-kaktus .bk-gal-grid .bk-card{width:auto}
+#bunditas-kaktus .bk-result{margin-top:20px}
+#bunditas-kaktus .bk-brand{display:none;margin-top:48px;text-align:center;font-weight:800;font-size:20px;opacity:.9}
+</style>
+
+<div class="bk-wrap">
+  <header class="bk-head">
+    <h2>Der bunditas. Check-In</h2>
+    <p>Beschreib deine aktuelle Situation mit drei Begriffen. Wir finden den Kaktus, der genau so drauf ist wie du.</p>
+  </header>
+
+  <div class="bk-grid">
+    <form class="bk-form" novalidate>
+      <h3>Wie geht es dir gerade?</h3>
+      <p class="bk-sub">Verwende 3 Eigenschaftswörter.</p>
+      <div class="bk-field"><span class="bk-num" aria-hidden="true">1</span><label class="bk-sr" for="bk-in1">Eigenschaftswort 1</label><input id="bk-in1" type="text" maxlength="40" autocomplete="off" placeholder="z. B. gestresst"></div>
+      <div class="bk-field"><span class="bk-num" aria-hidden="true">2</span><label class="bk-sr" for="bk-in2">Eigenschaftswort 2</label><input id="bk-in2" type="text" maxlength="40" autocomplete="off" placeholder="z. B. motiviert"></div>
+      <div class="bk-field"><span class="bk-num" aria-hidden="true">3</span><label class="bk-sr" for="bk-in3">Eigenschaftswort 3</label><input id="bk-in3" type="text" maxlength="40" autocomplete="off" placeholder="z. B. müde"></div>
+      <button class="bk-btn" type="submit" disabled>Kaktus pflanzen</button>
+      <p class="bk-hint">Fülle alle drei Felder aus, dann wächst dein Kaktus.</p>
+    </form>
+
+    <div class="bk-stage" aria-live="polite">
+      <div class="bk-art"></div>
+      <div class="bk-result" hidden>
+        <p class="bk-mood"></p>
+        <h3 class="bk-name"></h3>
+        <p class="bk-text"></p>
+        <div class="bk-tip"><b>Pflegetipp</b><span class="bk-tiptext"></span></div>
+        <div class="bk-chips"></div>
+        <div class="bk-actions">
+          <button type="button" class="bk-ghost bk-dl">Als Bild speichern</button>
+          <button type="button" class="bk-ghost bk-reset">Neu starten</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bk-related" hidden>
+    <h4>Auch verwandt mit deinen Begriffen</h4>
+    <div class="bk-rel-row"></div>
+  </div>
+
+  <details class="bk-gallery">
+    <summary>Alle Kakteen ansehen</summary>
+    <div class="bk-gal-grid"></div>
+  </details>
+
+  <p class="bk-brand">bunditas.</p>
+</div>
+
+<script>
+(function(){
+/* ---------- Farben ---------- */
+var N='#2B2D42',Y='#F5CF57',O='#D2693A',POT='#C8693A',RIM='#B0573A',CR='#F8F4E6',W='#FFFFFF',BL='#8FD3D8',RED='#E0533D',GR='#A39E93';
+var COL={teal:'#2BAFA8',pale:'#8FCBC5',dry:'#A9AE6E',icy:'#A6DAE2',sick:'#A9C35C',pink:'#E8899A'};
+var FONT='font-family="Arial,Helvetica,sans-serif"';
+
+/*DATA-START*/
+var CACTI=[
+{id:'burnout',name:'Der Ausgebrannte',body:'classic',face:'tired',col:'dry',acc:['fire'],kw:['burnout','ausgebrannt','erschöpft','erschöpfung','überlastet','überlastung','ausgelaugt','kraftlos','leer','am ende'],text:'Zu lange zu viel gegeben. Jetzt brennt es an allen Ecken, nur innen ist es still geworden.',tip:'Nicht noch mehr Dünger. Last reduzieren, echte Pausen einplanen und früh Unterstützung holen.'},
+{id:'ueberstunden',name:'Die Nachteule',body:'classic',face:'tired',bg:'dark',acc:['moon','laptop'],kw:['überstunden','nachtschicht','spät','abends','nachts','feierabend','länger arbeiten','mehrarbeit','workload','arbeitszeit'],text:'Wenn alle schon schlafen, leuchtet hier noch der Bildschirm.',tip:'Feierabend ist kein Bonus, sondern Teil des Gießplans. Ein fixes Ende pro Tag hilft.'},
+{id:'stress',name:'Der Stachelige',body:'classic',face:'angry',acc:['spikes','sweat'],kw:['stress','gestresst','druck','hektik','anspannung','nervös','gereizt','angespannt','unruhe','hetze'],text:'Alle Stacheln ausgefahren. Wer jetzt zu nahe kommt, wird gepikst.',tip:'Kurz raus aus dem Topf: drei tiefe Atemzüge, ein Spaziergang, eine Aufgabe weniger.'},
+{id:'deadline',name:'Der Fristenjäger',body:'classic',face:'stressed',acc:['clock','sweat'],kw:['deadline','frist','zeitdruck','termin','abgabe','eile','knapp','zeitnot','last minute','fristen'],text:'Die Uhr tickt lauter als jeder Gedanke. Alles war gestern fällig.',tip:'Puffer einplanen und Fristen früh verhandeln, statt sie spät zu reißen.'},
+{id:'wachstum',name:'Der Topfsprenger',body:'big',face:'worried',acc:['crackedPot'],kw:['wachstum','skalierung','zu schnell','wachsen','expansion','platzmangel','wachstumsschmerzen','startup','scale-up','eng'],text:'Schneller gewachsen als der Topf. Strukturen, die gestern gepasst haben, platzen heute.',tip:'Größeren Topf besorgen: Prozesse, Rollen und Räume mitwachsen lassen.'},
+{id:'infoflut',name:'Der Überflutete',body:'droopy',face:'dizzy',acc:['water'],kw:['informationsflut','e-mails','mails','nachrichten','overload','zu viel input','flut','posteingang','inbox','chats'],text:'Zu viel Wasser von allen Seiten. Jede Nachricht ein Tropfen, zusammen eine Überschwemmung.',tip:'Kanäle bündeln, Benachrichtigungen drosseln, feste Zeiten für den Posteingang.'},
+{id:'krank',name:'Der Eingewickelte',body:'classic',face:'none',acc:['bandage'],kw:['krank','krankheit','krankenstand','gesundheit','verletzt','verletzung','erholung','heilung','ausfall','genesung'],text:'Gerade nicht ganz heil. Verband drum, Kopf hoch, langsam wieder wachsen.',tip:'Gesund werden geht vor. Übergaben klären, damit niemand krank weiterarbeitet.'},
+{id:'meetings',name:'Der Meeting-Marathon',body:'classic',face:'dizzy',acc:['meeting','calendar'],kw:['meeting','meetings','besprechung','besprechungen','calls','videocall','zoom','termine','abstimmungen','jour fixe'],text:'Von Call zu Call gestolpert. Zum eigentlichen Arbeiten bleibt nur der Feierabend.',tip:'Meetingfreie Blöcke einführen und jede Einladung fragen: Braucht es mich wirklich?'},
+{id:'konflikt',name:'Die Streithähne',body:'duo',face:'angry',acc:['lightningDuo'],kw:['konflikt','konflikte','streit','spannungen','uneinigkeit','reibung','auseinandersetzung','zoff','krach','teamkonflikt'],text:'Zwei Kakteen, ein Topf, zu wenig Platz. Es blitzt bei jedem Wort.',tip:'Früh ansprechen, nicht schwelen lassen. Eine neutrale Moderation wirkt Wunder.'},
+{id:'kommunikation',name:'Der Missverstandene',body:'classic',face:'worried',acc:['talkQ'],kw:['kommunikation','missverständnis','missverständnisse','unklar','aneinander vorbei','stille post','informationsfluss','intransparenz','transparenz','nicht informiert'],text:'Alle reden, keiner versteht. Was ankommt, ist selten, was gemeint war.',tip:'Nachfragen ist kein Zeichen von Schwäche. Wichtiges schriftlich zusammenfassen.'},
+{id:'einsam',name:'Der Einzelgänger',body:'loner',face:'sad',acc:['wifi'],kw:['einsam','einsamkeit','isolation','isoliert','homeoffice','remote','allein','distanz','abgeschnitten','kein austausch'],text:'Großer Topf, kleiner Kaktus, kein Nachbar in Sicht. Das WLAN ist stabiler als der Kontakt.',tip:'Bewusst Nähe schaffen: virtuelle Kaffeepausen, Teamtage, ein Anruf statt einer Mail.'},
+{id:'stimmung',name:'Der Bewölkte',body:'classic',face:'sad',acc:['rain'],kw:['stimmung','schlechte stimmung','frust','frustriert','unzufrieden','unzufriedenheit','negativ','betriebsklima','miese laune','jammern'],text:'Über diesem Topf hängt eine Wolke. Und sie zieht einfach nicht weiter.',tip:'Gründe für den Frust sammeln und offen besprechen. Kleine Erfolge sichtbar machen.'},
+{id:'motivation',name:'Der Hängende',body:'down',face:'tired',acc:['meh'],kw:['motivation','demotiviert','antriebslos','lustlos','keine lust','demotivation','null bock','gleichgültig','innere kündigung','dienst nach vorschrift'],text:'Die Arme hängen, die Lust auch. Funktioniert noch, aber nur auf Sparflamme.',tip:'Nach dem Warum fragen. Sinnvolle Ziele und Mitsprache gießen besser als jeder Bonus.'},
+{id:'energie',name:'Der Akku-leer-Kaktus',body:'out',face:'tired',acc:['battery'],kw:['energie','energielos','akku','akku leer','aufladen','schlapp','müde','ausgepowert','power','kraft'],text:'Noch 3 % Akku und kein Ladekabel in Sicht.',tip:'Was lädt dich auf? Genau davon mehr in den Kalender, bevor der Bildschirm schwarz wird.'},
+{id:'schlaf',name:'Der Schlafmangel-Kaktus',body:'out',face:'sleep',acc:['zzz'],kw:['schlaf','schlafmangel','schlaflos','schlafprobleme','wenig schlaf','gähnen','übermüdet','nachts wach','grübeln','müdigkeit'],text:'Schläft im Stehen ein, nur nicht dann, wenn er soll.',tip:'Abends Bildschirm aus, Gedanken aufschreiben, Schlaf als Leistungsfaktor ernst nehmen.'},
+{id:'fachkraefte',name:'Der Allein-im-Topf',body:'tiny',wide:true,face:'worried',acc:['slots'],kw:['fachkräftemangel','personalmangel','unterbesetzt','recruiting','bewerber','offene stellen','stellen','personal','besetzung','keine leute'],text:'Hier sollten eigentlich drei Kakteen stehen. Einer macht die Arbeit für alle.',tip:'Prioritäten radikal kürzen, bis die Lücken gefüllt sind. Employer Branding ist Langzeitdünger.'},
+{id:'fluktuation',name:'Der Kofferpacker',body:'classic',face:'neutral',acc:['suitcase'],kw:['kündigung','kündigen','fluktuation','abgang','verlassen','jobwechsel','retention','weggehen','abwanderung','mitarbeiterbindung'],text:'Der Koffer steht schon neben dem Topf. Gute Leute gehen leise.',tip:'Gespräche führen, bevor gepackt wird. Bleibegespräche sind billiger als Exitgespräche.'},
+{id:'onboarding',name:'Der Neuling',body:'tiny',face:'worried',acc:['neu'],kw:['onboarding','neu','einarbeitung','neustart','erster tag','junior','neue stelle','probezeit','ankommen','orientierung'],text:'Frisch eingetopft, noch keine Wurzeln geschlagen. Alles ist neu und ein bisschen viel.',tip:'Eine feste Ansprechperson und ein klarer Plan für die ersten 90 Tage.'},
+{id:'change',name:'Der Umgetopfte',body:'lean',face:'dizzy',acc:['cycle'],kw:['veränderung','change','umstrukturierung','transformation','neuausrichtung','umbruch','reorganisation','restrukturierung','wandel','fusion'],text:'Schon wieder umgetopft. Kaum angewurzelt, dreht sich alles erneut.',tip:'Veränderung erklären, nicht nur verkünden. Menschen brauchen ein Warum und Zeit.'},
+{id:'digital',name:'Der Verkabelte',body:'classic',face:'stressed',acc:['cables'],kw:['digitalisierung','software','tools','it','technik','systeme','digital','technikprobleme','tool-chaos','tech'],text:'Verheddert in Kabeln, Logins und Tools, die nicht miteinander reden.',tip:'Weniger Tools, besser eingeführt. Schulung ist Teil der Digitalisierung.'},
+{id:'ki',name:'Der Robo-Kaktus',body:'classic',face:'robot',acc:['robot'],kw:['ki','ai','künstliche intelligenz','automatisierung','chatgpt','roboter','zukunft der arbeit','ersetzt','technologie','algorithmus'],text:'Halb Kaktus, halb Maschine. Was bleibt meine Aufgabe, wenn die KI mitarbeitet?',tip:'Ausprobieren statt fürchten. Gemeinsam festlegen, wofür KI hilft und wofür nicht.'},
+{id:'buerokratie',name:'Der Aktenberg',body:'classic',face:'tired',acc:['papers'],kw:['bürokratie','papierkram','formulare','verwaltung','dokumentation','regeln','compliance','administration','prozesse','vorschriften'],text:'Unter Formularen begraben. Zum Wachsen fehlt schlicht das Licht.',tip:'Jede Regel einmal im Jahr hinterfragen: Wem nützt sie noch?'},
+{id:'budget',name:'Der Sparkaktus',body:'up',face:'worried',acc:['coins'],kw:['budget','geld','kosten','sparen','finanzen','kürzungen','sparkurs','liquidität','sparmaßnahmen','kostendruck'],text:'Die Münzen fliegen davon, schneller als er sie fangen kann.',tip:'Transparent machen, wo gespart wird und warum. Unsicherheit kostet mehr als Zahlen.'},
+{id:'gehalt',name:'Der Unterbezahlte',body:'classic',face:'sad',acc:['wallet'],kw:['gehalt','lohn','bezahlung','gehaltserhöhung','unterbezahlt','inflation','teuerung','verdienst','einkommen','gehaltsverhandlung'],text:'Viel Leistung, wenig im Börserl. Die Rechnung geht nicht mehr auf.',tip:'Gut vorbereitet ins Gespräch gehen: Marktwerte kennen, Erfolge belegen.'},
+{id:'mikromanagement',name:'Der Beobachtete',body:'classic',face:'worried',acc:['magnifier'],kw:['mikromanagement','kontrolle','überwachung','kontrollzwang','misstrauen','vertrauen','kontrolliert','bevormundung','autonomie','freiraum'],text:'Jeder Stachel wird unter der Lupe gezählt. Wachsen unter Beobachtung ist schwer.',tip:'Ergebnisse vereinbaren statt Wege vorschreiben. Vertrauen ist der beste Dünger.'},
+{id:'fuehrung',name:'Der Kronenlose',body:'classic',face:'neutral',acc:['crown'],kw:['führung','chef','chefin','vorgesetzte','vorgesetzter','management','leadership','boss','führungskraft','führungsstil'],text:'Die Krone sitzt schief. Wer führt hier eigentlich und wohin?',tip:'Führung ist ein Handwerk. Feedback von unten einholen und ernst nehmen.'},
+{id:'wertschaetzung',name:'Der Übersehene',body:'classic',face:'sad',acc:['brokenHeart'],kw:['wertschätzung','anerkennung','lob','unsichtbar','ignoriert','übersehen','dank','nicht gesehen','undank','respekt'],text:'Wächst still vor sich hin, aber niemand gießt mit einem Danke.',tip:'Konkret loben, zeitnah und ehrlich. Ein Satz reicht oft schon.'},
+{id:'feedback',name:'Der Feedback-Hungrige',body:'classic',face:'worried',acc:['exclaim'],kw:['feedback','kritik','rückmeldung','mitarbeitergespräch','beurteilung','review','bewertung','kein feedback','performance','zielvereinbarung'],text:'Weiß nicht, ob er richtig wächst. Rückmeldung kommt selten oder nur als Kritik.',tip:'Regelmäßige, kurze Feedbackschleifen statt einmal jährlich das große Gespräch.'},
+{id:'laerm',name:'Der Lärmgeplagte',body:'classic',face:'angry',acc:['headphones'],kw:['lärm','großraumbüro','laut','lautstärke','open space','ruhe','geräusche','open office','telefonieren','krach im büro'],text:'Kopfhörer auf, und trotzdem hört er jedes Telefonat im Raum.',tip:'Ruhezonen und Fokuszeiten vereinbaren. Konzentration braucht Platz.'},
+{id:'ablenkung',name:'Der Dauer-Ping',body:'classic',face:'dizzy',acc:['phone'],kw:['ablenkung','unterbrechungen','benachrichtigungen','handy','smartphone','pings','fokus','konzentration','konzentrationsprobleme','zerstreut'],text:'Ping, ping, ping. Kein Gedanke darf länger als drei Minuten bleiben.',tip:'Benachrichtigungen aus, Fokusblöcke rein. Die Welt wartet 60 Minuten.'},
+{id:'multitasking',name:'Der Jongleur',body:'up',face:'stressed',acc:['juggle'],kw:['multitasking','zu viele aufgaben','jonglieren','gleichzeitig','aufgabenflut','to-do','to-do-liste','viele projekte','parallel','zu viel auf einmal'],text:'Hält fünf Bälle gleichzeitig in der Luft. Fragt sich nur, wie lange noch.',tip:'Weniger parallel, mehr nacheinander. Fertig machen schlägt anfangen.'},
+{id:'prioritaeten',name:'Der Ziellose',body:'classic',face:'worried',acc:['target'],kw:['prioritäten','priorisierung','ziele','ziellos','strategie','richtung','orientierung','fokus fehlt','okr','was ist wichtig'],text:'Gibt alles, trifft aber nichts. Weil niemand gesagt hat, wo die Mitte ist.',tip:'Drei Prioritäten, nicht dreißig. Und klar sagen, was gerade nicht wichtig ist.'},
+{id:'stillstand',name:'Der Verstaubte',body:'classic',face:'neutral',acc:['cobweb'],kw:['stillstand','stagnation','routine','monotonie','keine entwicklung','eingerostet','eintönig','trott','alltagstrott','festgefahren'],text:'Steht seit Jahren am selben Fensterbrett. Sogar die Spinne hat sich eingerichtet.',tip:'Neue Aufgaben, neues Projekt, neue Perspektive. Ein Platzwechsel wirkt manchmal Wunder.'},
+{id:'boreout',name:'Der Gelangweilte',body:'round',face:'tired',acc:['yawn','clock'],kw:['boreout','unterforderung','unterfordert','langeweile','gelangweilt','nichts zu tun','leerlauf','sinnlose aufgaben','unterbeschäftigt','öde'],text:'Rund, gemütlich und furchtbar unterfordert. Die Uhr bewegt sich gefühlt rückwärts.',tip:'Unterforderung offen ansprechen. Mehr Verantwortung ist oft die beste Kur.'},
+{id:'karriere',name:'Die Sackgasse',body:'classic',face:'sad',acc:['ladder'],kw:['karriere','aufstieg','beförderung','entwicklung','perspektive','sackgasse','keine perspektive','weiterkommen','karriereleiter','laufbahn'],text:'Die Leiter steht da, aber ein paar Sprossen fehlen.',tip:'Entwicklungswege sichtbar machen, auch seitlich. Nicht jede Karriere geht nur nach oben.'},
+{id:'imposter',name:'Der Maskierte',body:'classic',face:'none',acc:['mask'],kw:['hochstapler','imposter','impostor','selbstzweifel','unsicher','selbstwert','unsicherheit','versagensangst','nicht gut genug','zweifel'],text:'Trägt eine Maske und hofft, dass niemand merkt, dass er nur ein Kaktus ist.',tip:'Erfolge aufschreiben und lesen. Du bist nicht zufällig hier.'},
+{id:'angst',name:'Der Zitternde',body:'classic',face:'worried',acc:['shake','qmarks'],kw:['angst','jobangst','sorgen','zukunftsangst','ungewissheit','existenzangst','verunsicherung','panik','ängste','jobverlust'],text:'Zittert in jedem Windhauch. Was kommt als Nächstes?',tip:'Sorgen aussprechen hilft. Gute Führung schafft Klarheit, wo es geht.'},
+{id:'krise',name:'Der Sturmerprobte',body:'lean',face:'stressed',acc:['storm'],kw:['krise','rezession','wirtschaftskrise','umsatzrückgang','insolvenz','sturm','schwierige zeiten','auftragsrückgang','abschwung','kurzarbeit'],text:'Mitten im Sturm, schief, aber noch verwurzelt.',tip:'Offen kommunizieren und zusammenhalten. Krisen überlebt man im Team.'},
+{id:'silo',name:'Der Eingeglaste',body:'classic',face:'neutral',acc:['jar'],kw:['silo','silodenken','abteilungen','zusammenarbeit','abschottung','bereichsdenken','schnittstellen','kooperation','abteilungsdenken','abgeschottet'],text:'Wächst schön unter seiner Glasglocke. Nur: Mit den anderen redet er nie.',tip:'Gemeinsame Ziele über Abteilungen hinweg. Und einfach mal beim Nachbartisch Kaffee trinken.'},
+{id:'perfektionismus',name:'Der Perfektionist',body:'tall',face:'angry',acc:['ruler'],kw:['perfektionismus','perfektionist','perfekt','hohe ansprüche','detailverliebt','nie fertig','pingelig','100 prozent','überkorrekt','makellos'],text:'Jeder Stachel exakt 2,0 mm. Fertig wird er trotzdem nie.',tip:'Gut genug ist oft genau richtig. 80 % ausliefern, dann verbessern.'},
+{id:'fehlerkultur',name:'Der Sündenbock',body:'classic',face:'sad',acc:['bandaid','pointers'],kw:['fehler','fehlerkultur','schuld','schuldzuweisung','sündenbock','angst vor fehlern','blame','vorwürfe','fingerpointing','rechtfertigen'],text:'Alle zeigen auf ihn. Wer Fehler versteckt, lernt nichts daraus.',tip:'Fragen, was passiert ist, nicht wer schuld ist. Fehler sind Lerngelegenheiten.'},
+{id:'balance',name:'Der Schieflage-Kaktus',body:'classic',face:'worried',acc:['balanceScale'],kw:['work-life-balance','balance','privatleben','familie','vereinbarkeit','freizeit','beruf und familie','kinder','care-arbeit','ausgleich'],text:'Die Waage kippt immer zur Arbeit. Das Leben wartet auf der anderen Seite.',tip:'Grenzen sichtbar machen: Kalender blocken, Erreichbarkeit klar kommunizieren.'},
+{id:'erreichbarkeit',name:'Der Immer-Online',body:'classic',face:'tired',bg:'dark',acc:['moon','phone'],kw:['erreichbarkeit','immer online','always on','abschalten','wochenende','nach feierabend','ständig erreichbar','mails am abend','rufbereitschaft','offline'],text:'Mitternacht, und das Handy leuchtet schon wieder.',tip:'Offline-Zeiten vereinbaren und vorleben. Abschalten ist keine Faulheit.'},
+{id:'urlaub',name:'Der Urlaubsreife',body:'classic',face:'none',acc:['sun','shades','sweat'],kw:['urlaub','urlaubsreif','auszeit','pause','erholung','ferien','sommer','sabbatical','reif für die insel','durchatmen'],text:'Sonnenbrille ist schon auf. Der Rest von ihm sitzt leider noch im Büro.',tip:'Urlaub wirklich nehmen, wirklich abschalten. Eine gute Vertretung macht es möglich.'},
+{id:'kaelte',name:'Der Unterkühlte',body:'classic',face:'neutral',col:'icy',acc:['snow'],kw:['kälte','distanziert','frostig','unpersönlich','kühl','unterkühlt','anonym','keine nähe','emotionslos','steif'],text:'Hier ist es frostig. Höflich, korrekt und eiskalt.',tip:'Wärme beginnt im Kleinen: Interesse am Menschen, nicht nur an der Aufgabe.'},
+{id:'toxisch',name:'Der Vergiftete',body:'classic',face:'dizzy',col:'sick',acc:['poison'],kw:['toxisch','giftig','mobbing','intrigen','schikane','toxische kultur','manipulation','machtspiele','belästigung','feindselig'],text:'Im Gießwasser ist etwas, das nicht reingehört. Er wird langsam grün und nicht im guten Sinn.',tip:'Nicht hinnehmen. Dokumentieren, Vertrauenspersonen einbinden, Hilfe holen.'},
+{id:'geruechte',name:'Die Gerüchteküche',body:'classic',face:'worried',acc:['whisper'],kw:['gerüchte','tratsch','flurfunk','klatsch','lästern','getuschel','hinter dem rücken','gossip','gerede','flüstern'],text:'Psst, hast du schon gehört? Über ihn reden alle, nur nicht mit ihm.',tip:'Gerüchten mit Fakten begegnen. Wo offen informiert wird, verstummt der Flurfunk.'},
+{id:'hybrid',name:'Der Hin-und-Hergerissene',body:'classic',face:'dizzy',acc:['houseOffice'],kw:['hybrid','hybrides arbeiten','homeoffice','büro','präsenz','rückkehr ins büro','präsenzpflicht','remote work','flexibilität','mobiles arbeiten'],text:'Halb zu Hause, halb im Büro, ganz durcheinander.',tip:'Klare, gemeinsam vereinbarte Spielregeln: Wer ist wann wo und wofür?'},
+{id:'pendeln',name:'Der Pendler',body:'classic',face:'tired',acc:['car','clock'],kw:['pendeln','arbeitsweg','stau','fahrtzeit','öffis','anfahrt','pendler','verkehr','zug','verspätung'],text:'Verbringt mehr Zeit im Stau als in der Sonne.',tip:'Flexible Zeiten oder Homeoffice-Tage sparen Nerven. Fahrtzeit sinnvoll nutzen.'},
+{id:'generationen',name:'Alt und Jung',body:'duoBig',faces:['neutral','happy'],acc:['gen'],kw:['generationen','generationenkonflikt','gen z','boomer','millennials','alt','jung','altersunterschied','ältere','jüngere'],text:'Der Große sagt „Früher“, der Kleine sagt „lol“. Beide haben ein bisschen recht.',tip:'Voneinander lernen: Mentoring in beide Richtungen.'},
+{id:'aussenseiter',name:'Der Andersfarbige',body:'group',col2:'pink',faces:['neutral','neutral','sad'],acc:[],kw:['außenseiter','ausgegrenzt','ausgeschlossen','diversität','inklusion','anders','zugehörigkeit','diskriminierung','vorurteile','nicht dazugehören'],text:'Drei Kakteen im Topf, einer ist anders. Und das spürt er jeden Tag.',tip:'Vielfalt aktiv einladen. Zugehörigkeit entsteht, wenn alle mitreden dürfen.'},
+{id:'rollen',name:'Der Hutständer',body:'classic',face:'dizzy',acc:['hats'],kw:['rollen','rollenklarheit','zuständigkeit','zuständigkeiten','verantwortlichkeiten','aufgabenverteilung','kompetenzen','wer macht was','viele hüte','doppelrolle'],text:'Trägt drei Hüte gleichzeitig und weiß nicht, welcher gerade gilt.',tip:'Rollen und Zuständigkeiten schriftlich klären. Eine einfache Matrix reicht.'},
+{id:'last',name:'Der Lastenträger',body:'classic',face:'stressed',acc:['boulder'],kw:['verantwortung','last','bürde','schwer','alles allein','belastung','druck von oben','tragen','schultern','einzelkämpfer'],text:'Trägt einen Felsen auf dem Kopf und sagt trotzdem „Passt schon“.',tip:'Verantwortung teilen. Delegieren ist keine Schwäche, sondern Statik.'},
+{id:'kunden',name:'Der Kundenmagnet',body:'classic',face:'stressed',acc:['arrowsIn'],kw:['kunden','kundenbeschwerden','reklamationen','beschwerden','kundendruck','anspruchsvolle kunden','support','service','kundenservice','eskalation'],text:'Von allen Seiten fliegen Anfragen, Wünsche und Beschwerden auf ihn zu.',tip:'Klare Erwartungen und Reaktionszeiten. Und: Das Team schützt sich gegenseitig.'},
+{id:'wettbewerb',name:'Der Zweitplatzierte',body:'classic',face:'sad',acc:['trophy'],kw:['konkurrenz','wettbewerb','markt','mitbewerber','vergleich','marktanteil','wettbewerbsdruck','preisdruck','überholt','rivalität'],text:'Silbermedaille um den Hals, den Pokal hat ein anderer.',tip:'Weniger auf die anderen schauen, mehr auf die eigenen Stärken und Kund:innen.'},
+{id:'innovation',name:'Der Ideenlose',body:'classic',face:'neutral',acc:['bulbOff'],kw:['innovation','ideen','kreativität','keine ideen','kreativblockade','neue ideen','ideenlos','innovationsstau','inspiration','einfallslos'],text:'Die Glühbirne über dem Kopf bleibt dunkel.',tip:'Raum für Experimente schaffen. Ideen brauchen Zeit, Austausch und die Erlaubnis zu scheitern.'},
+{id:'altlasten',name:'Der Angekettete',body:'classic',face:'sad',acc:['chain'],kw:['altlasten','legacy','alte systeme','technische schulden','verkrustet','altsystem','ballast','das war schon immer so','traditionen','vergangenheit'],text:'Will wachsen, aber die Kugel am Bein sagt: Das war schon immer so.',tip:'Ballast bewusst abwerfen. Jedes Quartal eine Altlast angehen.'},
+{id:'lieferkette',name:'Der Leere-Kisten-Kaktus',body:'classic',face:'worried',acc:['boxes'],kw:['lieferkette','lieferketten','lieferengpass','material','materialmangel','lieferung','logistik','verzögerung','engpass','ressourcen'],text:'Die Kisten sind da, nur leider leer.',tip:'Alternativen und Puffer aufbauen. Ehrlich kommunizieren, was wann kommt.'},
+{id:'chaos',name:'Der Chaot',body:'classic',face:'dizzy',acc:['scribble'],kw:['chaos','chaotisch','durcheinander','planlos','unorganisiert','organisation','projektchaos','kein plan','unstrukturiert','wirrwarr'],text:'Im Kopf ein einziges Knäuel. Wo war nochmal der Anfang?',tip:'Ein Board, eine Liste, ein Ort für alles. Struktur schafft Ruhe.'},
+{id:'entscheidung',name:'Der Wegweiser',body:'classic',face:'worried',acc:['signpost'],kw:['entscheidung','entscheidungen','unentschlossen','entscheidungsstau','freigabe','warten','zögern','hin und her','abwarten','entscheidungsschwäche'],text:'Steht an der Kreuzung und wartet seit Wochen auf ein Okay.',tip:'Entscheidungswege klären: Wer entscheidet was bis wann?'},
+{id:'kaffee',name:'Der Koffein-Kaktus',body:'classic',face:'stressed',acc:['mugs'],kw:['kaffee','koffein','keine pause','pausen','durcharbeiten','mittagspause','pausenlos','energy drink','aufputschen','nonstop'],text:'Läuft auf Kaffee statt auf Wasser. Die vierte Tasse ist schon leer.',tip:'Echte Pausen statt Koffein-Nachschub. Mittagspause ist Arbeitsschutz.'},
+{id:'ruecken',name:'Der Krummrücken',body:'lean',face:'sad',acc:['ache'],kw:['rücken','rückenschmerzen','ergonomie','sitzen','schmerzen','haltung','bewegungsmangel','nacken','verspannung','bildschirmarbeit'],text:'Zu lange schief gestanden. Jetzt zwickt es überall.',tip:'Aufstehen, bewegen, Arbeitsplatz einstellen. Der Körper ist kein Möbelstück.'},
+{id:'verlust',name:'Der Abschied',body:'classic',face:'sad',acc:['fallenFlower','tear'],kw:['verlust','trauer','abschied','todesfall','schicksal','schicksalsschlag','kollege geht','loslassen','vermissen','trennung'],text:'Die Blüte ist abgefallen. Manches braucht einfach Zeit.',tip:'Raum für Trauer lassen. Nachfragen und da sein wirkt mehr als große Worte.'},
+{id:'neid',name:'Der Neidische',body:'duoBig',faces:['happy','sad'],acc:['flower'],kw:['neid','eifersucht','vergleichen','bevorzugung','liebling','ungleich','missgunst','konkurrenzdenken','eifersüchtig','lieblinge'],text:'Der Nachbar blüht, er nicht. Warum immer der?',tip:'Transparente Kriterien statt Gefühl. Und jeder Kaktus blüht zu seiner Zeit.'},
+{id:'fairness',name:'Die Waage',body:'classic',face:'angry',acc:['fairScale'],kw:['ungerecht','ungerechtigkeit','fairness','gerechtigkeit','gleichbehandlung','gender pay gap','unfair','gleichberechtigung','benachteiligt','willkür'],text:'Die Waage hängt schief, und alle sehen es.',tip:'Klare, nachvollziehbare Regeln für alle. Fairness muss sichtbar sein.'},
+{id:'sinn',name:'Der Sinnsucher',body:'classic',face:'worried',acc:['bigQ'],kw:['sinn','sinnkrise','purpose','wozu','warum','bedeutung','erfüllung','sinnlos','identifikation','werte'],text:'Steht im Topf und fragt sich: Wofür eigentlich das alles?',tip:'Den Beitrag der eigenen Arbeit sichtbar machen. Sinn entsteht durch Wirkung.'},
+{id:'grenzen',name:'Der Neinsager-Lehrling',body:'classic',face:'angry',acc:['stop'],kw:['grenzen','nein sagen','abgrenzung','ausnutzen','ausgenutzt','people pleaser','zu nett','harmoniesucht','überengagement','ja-sager'],text:'Übt gerade das schwierigste Wort der Welt: Nein.',tip:'Ein Nein zu etwas ist ein Ja zu etwas anderem. Freundlich, klar, ohne Rechtfertigung.'},
+{id:'lernen',name:'Der Bücherturm',body:'classic',face:'stressed',acc:['books'],kw:['lernen','weiterbildung','wissen','schulung','neue skills','fortbildung','lernkurve','upskilling','umschulung','kurs'],text:'Der Stapel an Dingen, die er lernen sollte, wächst schneller als er selbst.',tip:'Lernzeit fix im Kalender verankern. Kleine Häppchen statt großer Brocken.'},
+{id:'international',name:'Der Weltenbummler',body:'classic',face:'dizzy',acc:['globe'],kw:['international','sprache','sprachbarriere','kulturen','interkulturell','zeitzonen','englisch','global','kulturunterschiede','auslandsteam'],text:'Hi, Hallo, Hola: Alle reden, aber nicht dieselbe Sprache.',tip:'Gemeinsame Sprache und Regeln festlegen. Kulturunterschiede neugierig besprechen.'},
+{id:'ueberforderung',name:'Der Überforderte',body:'classic',face:'dizzy',acc:['swirl','sweat'],kw:['überforderung','überfordert','zu viel','alles zu viel','nicht zu schaffen','land unter','überwältigt','kapazität','belastungsgrenze','am limit'],text:'Sieht schon Sterne. Es ist einfach von allem zu viel.',tip:'Stopp sagen ist erlaubt. Gemeinsam sortieren, was wirklich jetzt sein muss.'},
+{id:'aprilwetter',mood:'mix',name:'Der Aprilwetter-Kaktus',body:'classic',face:'neutral',acc:['sunCloud'],kw:['gemischt','durchwachsen','auf und ab','mal so mal so','wechselhaft','achterbahn','ambivalent','so lala','geht so','gemischte gefühle'],text:'Ein bisschen Sonne, ein bisschen Regen. Vieles läuft gut, manches zwickt.',tip:'Beides ernst nehmen: Das Gute bewusst feiern, das Schwierige konkret angehen.'},
+/* ---------- positive Kakteen ---------- */
+{id:'zufrieden',mood:'pos',name:'Der Zufriedene',body:'classic',face:'joy',acc:['flower'],kw:['zufrieden','zufriedenheit','glücklich','happy','wohlfühlen','gute laune','gut gelaunt','positiv','alles gut','rundum zufrieden'],text:'Steht in der Sonne, hat genug Wasser und blüht einfach vor sich hin.',tip:'Bewusst wahrnehmen, was gerade gut läuft, und es dem Team auch sagen.'},
+{id:'produktiv',mood:'pos',name:'Der Macher',body:'classic',face:'focused',acc:['laptop','mug'],kw:['produktiv','produktivität','effizient','flow','im flow','fokussiert','konzentriert','erledigt','deep work','durchziehen'],text:'Kaffee neben sich, Fokus vor sich. Heute geht richtig was weiter.',tip:'Diese Fokuszeiten schützen und wiederholen. Produktiv ist, wer auch Pausen macht.'},
+{id:'teamplayer',mood:'pos',name:'Die Teamplayer',body:'group',faces:['happy','happy','happy'],acc:['loveTop'],kw:['zusammenarbeit','teamwork','team','zusammenhalt','miteinander','gemeinsam','kooperation','teamgeist','kollegen','wir-gefühl'],text:'Drei Kakteen, ein Topf, null Gepikse. Gemeinsam wächst es sich einfach besser.',tip:'Erfolge als Team feiern und neue Kolleg:innen bewusst in den Topf holen.'},
+{id:'party',mood:'pos',name:'Der Partykaktus',body:'up',face:'joy',bg:'dark',acc:['party'],kw:['feiern','party','meilenstein','jubiläum','celebration','firmenfeier','launch','durchbruch','geburtstag','anstoßen'],text:'Hütchen auf, Konfetti in der Luft. Hier wird ein Erfolg gefeiert.',tip:'Nicht gleich zum nächsten Projekt hetzen. Feiern gibt Energie für das nächste Ziel.'},
+{id:'erholt',mood:'pos',name:'Der Aufgetankte',body:'out',face:'joy',acc:['sun','sparkles'],kw:['erholt','ausgeschlafen','ausgeruht','regeneriert','frisch','aufgetankt','energie getankt','neue kraft','wie neu','urlaub gemacht'],text:'Akku voll, Kopf frei. Er streckt sich in der Sonne und ist bereit für alles.',tip:'Merken, was so gut getan hat, und es fix in den Alltag einbauen.'},
+{id:'gipfel',mood:'pos',name:'Der Gipfelstürmer',body:'classic',face:'focused',acc:['mountain','headband'],kw:['herausforderung','mutig','mut','abenteuer','ambitioniert','ehrgeizig','gipfel','über mich hinaus','neues wagen','sportlich'],text:'Stirnband um, Gipfel im Blick. Schwierig? Umso besser.',tip:'Große Ziele in Etappen teilen und jede Zwischenstation würdigen.'},
+{id:'geniesser',mood:'pos',name:'Der Genießer',body:'classic',face:'happy',acc:['chef','wine'],kw:['genuss','genießen','teamessen','afterwork','belohnung','essen','wein','gemütlich','lebensfreude','kulinarik'],text:'Kochmütze auf, Glas in der Hand. Arbeit darf auch Genuss sein.',tip:'Gemeinsame Mahlzeiten verbinden. Das nächste Teamessen schon einplanen.'},
+{id:'motiviert',mood:'pos',name:'Der Motivierte',body:'up',face:'joy',acc:['sparkles'],kw:['motiviert','motivation','tatendrang','begeistert','begeisterung','engagiert','leidenschaft','voller energie','antrieb','energiegeladen'],text:'Arme hoch, Funken sprühen. Dieser Kaktus will loslegen.',tip:'Die Energie in klare Ziele lenken und darauf achten, dass sie nicht verpufft.'},
+{id:'bluehend',mood:'pos',name:'Der Blühende',body:'tall',face:'happy',acc:['flower','sparkles'],kw:['weiterentwicklung','entfalten','aufblühen','blühen','persönliche entwicklung','potenzial','fortschritt','chance','chancen','wachstum'],text:'Er ist über sich hinausgewachsen und trägt jetzt sogar eine Blüte.',tip:'Weiter gießen: neue Aufgaben, Mentoring und Raum zum Ausprobieren.'},
+{id:'aufsteiger',mood:'pos',name:'Der Aufsteiger',body:'classic',face:'joy',acc:['ladderUp'],kw:['beförderung','befördert','aufstieg','karriere','karrieresprung','neue rolle','perspektive','laufbahn','aufwärts','verantwortung übernehmen'],text:'Sprosse für Sprosse nach oben, und oben weht schon die Fahne.',tip:'Mit der neuen Rolle auch die eigenen Grenzen neu abstecken.'},
+{id:'wissbegierig',mood:'pos',name:'Der Wissbegierige',body:'classic',face:'happy',acc:['gradCap','booksSmall'],kw:['lernen','weiterbildung','neugierig','neugier','wissen','wissbegierig','schulung','kurs','zertifikat','skills'],text:'Doktorhut auf, Bücher daneben. Jeder Tag ist ein Lerntag.',tip:'Gelerntes teilen: Wer es erklärt, lernt es doppelt.'},
+{id:'ideenreich',mood:'pos',name:'Der Ideenreiche',body:'classic',face:'joy',acc:['bulbOn'],kw:['kreativ','kreativität','ideen','innovation','inspiration','inspiriert','einfallsreich','geistesblitz','brainstorming','innovativ'],text:'Über seinem Kopf leuchtet es hell. Eine Idee jagt die nächste.',tip:'Ideen festhalten und die besten mutig ausprobieren.'},
+{id:'geschaetzt',mood:'pos',name:'Der Geschätzte',body:'classic',face:'joy',acc:['heartsFloat'],kw:['wertschätzung','anerkennung','lob','gelobt','dankbar','dankbarkeit','gesehen','geschätzt','respekt','applaus'],text:'Rundherum fliegen Herzen. Er wird gesehen, und das merkt man.',tip:'Wertschätzung weitergeben. Sie wächst, wenn man sie teilt.'},
+{id:'vertrauen',mood:'pos',name:'Der Vertrauensvolle',body:'classic',face:'happy',acc:['shield'],kw:['vertrauen','psychologische sicherheit','sicherheit','autonomie','freiraum','eigenverantwortung','selbstbestimmt','verlässlich','rückhalt','geborgen'],text:'Hier darf man Fragen stellen, Fehler machen und eigene Wege gehen.',tip:'Vertrauen ist ein Vorschuss. Pflegen durch Offenheit und gehaltene Zusagen.'},
+{id:'ausbalanciert',mood:'pos',name:'Der Ausbalancierte',body:'classic',face:'happy',acc:['scaleLevel'],kw:['work-life-balance','balance','ausgeglichen','vereinbarkeit','familie','freizeit','ausgleich','harmonie','privatleben','zeit für mich'],text:'Arbeit und Leben halten sich die Waage. Selten, aber wunderschön.',tip:'Die Grenzen, die das möglich machen, auch in stressigen Wochen halten.'},
+{id:'champion',mood:'pos',name:'Der Champion',body:'up',face:'joy',acc:['trophyBig','confetti'],kw:['erfolg','erfolgreich','gewonnen','sieg','ziel erreicht','champion','rekord','bestleistung','gewinner','top'],text:'Pokal in die Höhe! Ziel erreicht, und zwar mit Stil.',tip:'Kurz zurückschauen: Was hat zum Erfolg geführt? Das wiederholen.'},
+{id:'kompass',mood:'pos',name:'Der Kompass',body:'classic',face:'happy',acc:['compass'],kw:['klarheit','klar','orientierung','strategie','richtung','fokus','prioritäten','plan','überblick','vision'],text:'Weiß genau, wohin er wächst. Klare Richtung, ruhiger Kopf.',tip:'Die Richtung regelmäßig teilen, damit das ganze Team denselben Norden hat.'},
+{id:'kerngesund',mood:'pos',name:'Der Kerngesunde',body:'classic',face:'joy',acc:['headband','dumbbell'],kw:['gesund','gesundheit','sport','bewegung','fit','fitness','wohlbefinden','ernährung','aktiv','betriebssport'],text:'Fit wie ein Turnschuh, äh, Kaktus. Bewegung tut ihm sichtlich gut.',tip:'Bewegung in den Arbeitstag holen: Walk-Meetings, Stiegen statt Lift.'},
+{id:'gespraechig',mood:'pos',name:'Der Gesprächige',body:'classic',face:'happy',acc:['talkHappy'],kw:['kommunikation','austausch','offenheit','transparenz','zuhören','dialog','feedbackkultur','ehrlichkeit','gespräch','gute kommunikation'],text:'Hier wird geredet, zugehört und Danke gesagt. Missverständnisse haben keine Chance.',tip:'Offene Fragen stellen und wirklich zuhören. Das ist das ganze Geheimnis.'},
+{id:'freigeist',mood:'pos',name:'Der Freigeist',body:'classic',face:'happy',acc:['houseOffice'],kw:['flexibel','flexibilität','homeoffice','remote','hybrid','freiheit','ortsunabhängig','workation','gleitzeit','vertrauensarbeitszeit'],text:'Mal zu Hause, mal im Büro, immer da, wo er am besten wächst.',tip:'Flexibilität braucht Verbindung. Bewusst Zeit für echte Begegnungen einplanen.'},
+{id:'bunt',mood:'pos',name:'Die Bunte Truppe',body:'group',col2:'pink',faces:['happy','happy','joy'],acc:['rainbow'],kw:['vielfalt','diversität','inklusion','bunt','zugehörigkeit','gemeinschaft','willkommen','akzeptanz','dazugehören','offen'],text:'Jeder anders, alle im selben Topf. Und genau das macht sie stark.',tip:'Verschiedene Perspektiven aktiv einholen. Vielfalt wirkt nur, wenn alle mitreden.'},
+{id:'sinnstifter',mood:'pos',name:'Der Sinnstifter',body:'classic',face:'joy',acc:['sun','loveTop'],kw:['sinn','sinnvoll','purpose','erfüllung','erfüllt','werte','bedeutung','wirkung','impact','stolz'],text:'Weiß, wofür er wächst. Und das wärmt mehr als jede Sonne.',tip:'Die Wirkung der eigenen Arbeit sichtbar machen, auch für die anderen.'},
+{id:'frischling',mood:'pos',name:'Der Frischling',body:'tiny',face:'joy',acc:['sprout','sparkles'],kw:['neustart','neuer job','neuanfang','frischer wind','aufbruch','neue chance','gut angekommen','start','neues kapitel','willkommen geheißen'],text:'Frisch eingetopft und schon der erste Trieb. Ein Neuanfang, der Lust macht.',tip:'Neugierig bleiben und Fragen stellen, solange alles noch neu ist.'},
+{id:'gelassen',mood:'pos',name:'Der Gelassene',body:'round',face:'sleep',acc:['aura'],kw:['gelassen','gelassenheit','ruhig','ruhe','achtsam','achtsamkeit','meditation','innere ruhe','entspannt','yoga'],text:'Rund, ruhig, in sich ruhend. Ihn bringt so schnell nichts aus dem Topf.',tip:'Kleine Ruheinseln im Tag einbauen, auch wenn es mal hektisch wird.'},
+{id:'strukturiert',mood:'pos',name:'Der Strukturierte',body:'classic',face:'focused',acc:['checklist'],kw:['organisiert','struktur','ordnung','checkliste','alles im griff','geplant','übersichtlich','abgehakt','strukturiert','routinen'],text:'Haken, Haken, Haken. Alles hat seinen Platz, alles läuft.',tip:'Gute Strukturen dokumentieren, damit sie auch im Team funktionieren.'},
+{id:'senkrechtstarter',mood:'pos',name:'Der Senkrechtstarter',body:'up',face:'joy',acc:['rocket'],kw:['durchstarten','senkrechtstarter','aufschwung','boom','rekordjahr','umsatzplus','expansion','wachstum','skalierung','neue kunden'],text:'Die Rakete ist gezündet, es geht steil nach oben.',tip:'Beim Wachsen den Topf im Blick behalten: Strukturen müssen mitkommen.'},
+{id:'buerofreunde',mood:'pos',name:'Die Bürofreunde',body:'duo',faces:['joy','joy'],acc:['heartBetween'],kw:['freunde','freundschaft','kollegialität','nette kollegen','spaß','lachen','humor','gute stimmung','hilfsbereit','füreinander da'],text:'Zwei Kakteen, die sich mögen. Mit ihnen macht sogar Montag Spaß.',tip:'Zeit für Gespräche abseits der Arbeit einplanen. Daraus wächst Zusammenhalt.'},
+{id:'vorbild',mood:'pos',name:'Der Vorbild-Kaktus',body:'classic',face:'happy',acc:['crownStraight','sparkles'],kw:['gute führung','vorbild','mentor','leadership','führung','chef','unterstützung','rückendeckung','empowerment','wertschätzende führung'],text:'Trägt die Krone gerade und lässt andere neben sich wachsen.',tip:'Gute Führung weitergeben: Mentoring und ehrliches Feedback in beide Richtungen.'}
+];
+/* Zusätzliche Eigenschaftswörter je Kaktus (werden an die Keywords angehängt) */
+var ADJ={
+burnout:['kaputt','platt','fertig','ausgezehrt'],ueberstunden:['überarbeitet','übernächtigt'],stress:['gehetzt','hektisch','getrieben','unter strom'],deadline:['unter zeitdruck','spät dran','eilig'],wachstum:['eingeengt','beengt'],infoflut:['überflutet','überladen','zugemüllt'],krank:['angeschlagen','kränklich','erkältet','verletzt'],meetings:['zugetaktet','ausgebucht','verplant'],konflikt:['wütend','sauer','streitlustig','zerstritten'],kommunikation:['unverstanden','missverstanden','verwirrt','ahnungslos'],einsam:['alleingelassen','abgeschottet','vergessen'],stimmung:['genervt','grantig','mies','schlecht','unglücklich','mürrisch','schlecht gelaunt','frustriert'],motivation:['unmotiviert','motivationslos','faul','träge'],energie:['matt','energielos','leer gelaufen'],schlaf:['unausgeschlafen','verschlafen','schläfrig'],fachkraefte:['allein gelassen'],fluktuation:['wechselwillig','kündigungsreif'],onboarding:['unerfahren','grün hinter den ohren'],change:['überrumpelt','entwurzelt'],digital:['technikmüde','abgehängt'],ki:['ersetzbar','überflüssig'],buerokratie:['gefesselt','ausgebremst'],budget:['pleite','knapp bei kasse'],gehalt:['unterbewertet','ausgebeutet'],mikromanagement:['überwacht','bevormundet','eingeschränkt'],fuehrung:['führungslos','kopflos'],wertschaetzung:['unterschätzt','übergangen','ungesehen','nicht wertgeschätzt'],feedback:['ratlos','im dunkeln'],laerm:['gestört','lärmempfindlich'],ablenkung:['abgelenkt','unkonzentriert'],multitasking:['zerrissen','busy','beschäftigt'],prioritaeten:['orientierungslos','verloren'],stillstand:['blockiert','gelähmt','stagnierend'],karriere:['stagniert','feststeckend'],imposter:['verunsichert','minderwertig','klein'],angst:['ängstlich','besorgt','verängstigt','panisch','unruhig'],krise:['krisengebeutelt','gebeutelt'],silo:['eingeigelt'],perfektionismus:['kritisch','selbstkritisch'],fehlerkultur:['schuldig','beschuldigt','ertappt'],balance:['unausgeglichen'],erreichbarkeit:['angebunden','erreichbar'],urlaub:['ferienreif','reif'],kaelte:['kalt'],toxisch:['gemobbt','schikaniert','vergiftet'],geruechte:['misstrauisch'],hybrid:['hin- und hergerissen'],pendeln:['unterwegs'],generationen:['altmodisch'],aussenseiter:['fremd','fehl am platz'],rollen:['verzettelt'],last:['belastet','beladen'],kunden:['überrannt','belagert'],wettbewerb:['unterlegen'],innovation:['uninspiriert'],altlasten:['gefangen','gebremst'],lieferkette:['wartend'],chaos:['konfus'],entscheidung:['unschlüssig','zögerlich'],kaffee:['aufgedreht','hibbelig','überdreht'],ruecken:['verspannt','krumm'],verlust:['traurig','betrübt','niedergeschlagen','bedrückt'],neid:['neidisch'],fairness:['ungerecht behandelt','unfair behandelt'],sinn:['sinnentleert'],grenzen:['gutmütig','zu gutmütig'],lernen:['lernmüde'],
+aprilwetter:['okay','ok','mittel','neutral','launisch','zwiegespalten','normal'],
+zufrieden:['fröhlich','froh','gut','super','optimistisch','zuversichtlich','heiter','gut drauf','sonnig'],produktiv:['fleißig','effektiv','tüchtig'],teamplayer:['verbunden','eingebunden','unterstützt','kollegial'],party:['ausgelassen','feierlich','überschwänglich','aufgeregt'],erholt:['erfrischt','munter','wach'],gipfel:['abenteuerlustig','entschlossen','tapfer'],geniesser:['satt','genießerisch','hungrig'],motiviert:['hoffnungsvoll','leidenschaftlich','hochmotiviert'],bluehend:['aufblühend','wachsend','gestärkt'],aufsteiger:['aufstrebend'],wissbegierig:['lernbegierig','interessiert'],ideenreich:['verspielt'],geschaetzt:['wertgeschätzt','anerkannt','gehört'],vertrauen:['vertrauensvoll','getragen'],ausbalanciert:['balanciert','im gleichgewicht','geerdet'],champion:['siegreich','unschlagbar','stark'],kompass:['orientiert','zielstrebig','zielgerichtet'],kerngesund:['vital','energetisch'],gespraechig:['kommunikativ','redselig'],freigeist:['frei','unabhängig','selbstständig'],bunt:['akzeptiert','dazugehörig','angenommen'],sinnstifter:['sinnerfüllt','wirksam'],frischling:['gespannt','vorfreudig'],gelassen:['tiefenentspannt','relaxed','chillig'],strukturiert:['ordentlich','vorbereitet'],senkrechtstarter:['euphorisch','beflügelt','unaufhaltbar'],buerofreunde:['lustig','albern','gesellig','witzig'],vorbild:['gefördert','bestärkt','gut geführt']
+};
+CACTI.forEach(function(c){(ADJ[c.id]||[]).forEach(function(w){if(c.kw.indexOf(w)<0)c.kw.push(w);});});
+var FALLBACK={id:'raetsel',name:'Der Rätselhafte',body:'classic',face:'neutral',acc:['qmarks'],kw:[],text:'Deine Begriffe sind so einzigartig, dass selbst unsere Kakteen grübeln. Ein Kaktus mit Geheimnissen.',tip:'Probiere es mit anderen Eigenschaftswörtern, z. B. gestresst, motiviert, müde oder zufrieden.'};
+/*DATA-END*/
+
+/* ---------- SVG-Helfer ---------- */
+function darker(hex){var n=parseInt(hex.slice(1),16),f=.8;return 'rgb('+Math.round((n>>16)*f)+','+Math.round((n>>8&255)*f)+','+Math.round((n&255)*f)+')';}
+function S(d,c,w,x){return '<path d="'+d+'" fill="none" stroke="'+(c||N)+'" stroke-width="'+(w||3)+'" stroke-linecap="round" stroke-linejoin="round" '+(x||'')+'/>';}
+function trunk(x,top,bot,w,c){var r=w/2,o=w*.18,rc=darker(c);return '<line x1="'+x+'" y1="'+bot+'" x2="'+x+'" y2="'+(top+r)+'" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round"/>'+S('M'+(x-o)+' '+(top+r*.75)+' V'+bot,rc,2.2,'opacity=".7"')+S('M'+(x+o)+' '+(top+r*.75)+' V'+bot,rc,2.2,'opacity=".7"');}
+function arm(d,c,w){return S(d,c,w||24);}
+function txt(x,y,t,s,c,x2){return '<text x="'+x+'" y="'+y+'" font-size="'+s+'" font-weight="800" fill="'+(c||N)+'" '+FONT+' text-anchor="middle" '+(x2||'')+'>'+t+'</text>';}
+function drop(x,y,s,c){s=s||1;return '<path d="M'+x+' '+(y-9*s)+' C'+(x+7*s)+' '+(y+s)+' '+(x+5*s)+' '+(y+6*s)+' '+x+' '+(y+6*s)+' C'+(x-5*s)+' '+(y+6*s)+' '+(x-7*s)+' '+(y+s)+' '+x+' '+(y-9*s)+'Z" fill="'+(c||BL)+'"/>';}
+function bubble(x,y,w,h,t,f,tail,fs){f=f||W;fs=fs||15;var tx=tail==='r'?x+w-16:x+16,d=tail==='r'?'M'+tx+' '+(y+h-3)+' l4 13 l-16 -13Z':'M'+tx+' '+(y+h-3)+' l-4 13 l16 -13Z';return '<path d="'+d+'" fill="'+f+'"/><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(h/2.3)+'" fill="'+f+'"/>'+txt(x+w/2,y+h/2+fs*.36,t,fs);}
+function star4(x,y,s,c){return '<path d="M'+x+' '+(y-s)+' Q'+x+' '+y+' '+(x+s)+' '+y+' Q'+x+' '+y+' '+x+' '+(y+s)+' Q'+x+' '+y+' '+(x-s)+' '+y+' Q'+x+' '+y+' '+x+' '+(y-s)+'Z" fill="'+(c||Y)+'"/>';}
+function cloud(x,y,c){return '<g fill="'+c+'"><circle cx="'+(x-24)+'" cy="'+(y+8)+'" r="17"/><circle cx="'+x+'" cy="'+y+'" r="24"/><circle cx="'+(x+25)+'" cy="'+(y+8)+'" r="17"/><rect x="'+(x-41)+'" y="'+(y+6)+'" width="83" height="20" rx="10"/></g>';}
+function heart(x,y,s,c){return '<path transform="translate('+x+' '+y+') scale('+s+')" d="M0 10 C-14 0 -16 -12 -8 -15 C-4 -16 -1 -14 0 -10 C1 -14 4 -16 8 -15 C16 -12 14 0 0 10Z" fill="'+c+'"/>';}
+function coin(x,y,r){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+Y+'" stroke="#DDA93A" stroke-width="3"/>'+txt(x,y+r*.4,'€',r*1.1,'#B98A2A');}
+function arrow(x1,y1,x2,y2,c,w){c=c||O;var a=Math.atan2(y2-y1,x2-x1),L=13,p=function(k){return (x2-L*Math.cos(a+k)).toFixed(1)+' '+(y2-L*Math.sin(a+k)).toFixed(1);};return S('M'+x1+' '+y1+' L'+x2+' '+y2,c,w||5)+'<path d="M'+x2+' '+y2+' L'+p(-.5)+' L'+p(.5)+'Z" fill="'+c+'"/>';}
+function mug(x,y,c){c=c||N;return '<rect x="'+x+'" y="'+y+'" width="15" height="19" rx="2.5" fill="'+c+'"/>'+S('M'+(x+15)+' '+(y+5)+' a5 5 0 0 1 0 10',c,3)+S('M'+(x+4)+' '+(y-4)+' q-3 -5 0 -10 M'+(x+10)+' '+(y-4)+' q-3 -5 0 -10','#A8A49A',2);}
+function flowerAt(x,y){var s='';for(var i=0;i<5;i++){var a=i*72*Math.PI/180-Math.PI/2;s+='<circle cx="'+(x+9*Math.cos(a)).toFixed(1)+'" cy="'+(y+9*Math.sin(a)).toFixed(1)+'" r="7.5" fill="'+O+'"/>';}return s+'<circle cx="'+x+'" cy="'+y+'" r="5.5" fill="'+Y+'"/>';}
+function badge(x,y,t){return '<circle cx="'+x+'" cy="'+y+'" r="11" fill="'+RED+'"/>'+txt(x,y+4,t,11,W);}
+function lightning(x,y,s){return '<path transform="translate('+x+' '+y+') scale('+s+')" d="M0 0 L-10 22 H2 L-6 44 L16 14 H4 L10 0Z" fill="'+Y+'"/>';}
+function flake(x,y,r){return S('M'+(x-r)+' '+y+' H'+(x+r)+' M'+(x-r/2)+' '+(y-r*.87)+' L'+(x+r/2)+' '+(y+r*.87)+' M'+(x-r/2)+' '+(y+r*.87)+' L'+(x+r/2)+' '+(y-r*.87),'#7CC3CF',2.5);}
+function scaleBase(left,right){return S('M150 46 V30',N,4)+'<path d="M150 52 l-9 -16 h18z" fill="'+N+'"/>'+S('M88 40 L212 62',N,4)+S('M88 40 L76 70 M88 40 L100 70 M212 62 L200 92 M212 62 L224 92',N,2)+'<path d="M70 70 h36 q-4 12 -18 12 q-14 0 -18 -12z" fill="'+N+'"/><path d="M194 92 h36 q-4 12 -18 12 q-14 0 -18 -12z" fill="'+N+'"/>'+left+right;}
+
+/* ---------- Körperformen ---------- */
+var BODIES={
+ classic:function(c){return {svg:arm('M128 178 H103 V146',c)+arm('M172 160 H197 V124',c)+trunk(150,92,215,52,c),h:[150,92],f:[[150,128]]};},
+ up:function(c){return {svg:arm('M128 172 H101 V126',c)+arm('M172 168 H199 V126',c)+trunk(150,92,215,52,c),h:[150,92],f:[[150,128]]};},
+ down:function(c){return {svg:arm('M128 142 H104 V180',c)+arm('M172 136 H196 V174',c)+trunk(150,96,215,52,c),h:[150,96],f:[[150,132]]};},
+ out:function(c){return {svg:arm('M128 172 H94',c,26)+arm('M172 172 H206',c,26)+trunk(150,100,215,52,c),h:[150,100],f:[[150,136]]};},
+ tall:function(c){return {svg:arm('M131 172 H109 V140',c,22)+arm('M169 140 H191 V100',c,22)+trunk(150,58,215,46,c),h:[150,58],f:[[150,94]]};},
+ tiny:function(c){return {svg:trunk(150,138,215,50,c),h:[150,138],f:[[150,170]]};},
+ loner:function(c){return {svg:trunk(150,150,215,40,c),h:[150,150],f:[[150,178,.85]],wide:true};},
+ big:function(c){return {svg:arm('M114 166 H86 V122',c,30)+arm('M186 146 H214 V110',c,30)+trunk(150,86,215,78,c),h:[150,86],f:[[150,128]]};},
+ droopy:function(c){return {svg:S('M150 215 V150 Q150 102 188 102 Q210 102 210 126',c,50)+S('M140 215 V150 Q140 92 186 92',darker(c),2.2,'opacity=".7"'),h:[188,77],f:[[150,168]]};},
+ round:function(c){var rc=darker(c);return {svg:'<ellipse cx="150" cy="166" rx="56" ry="54" fill="'+c+'"/><ellipse cx="150" cy="166" rx="20" ry="52" fill="none" stroke="'+rc+'" stroke-width="2.2" opacity=".7"/><ellipse cx="150" cy="166" rx="40" ry="53" fill="none" stroke="'+rc+'" stroke-width="2.2" opacity=".5"/>',h:[150,112],f:[[150,160]]};},
+ lean:function(c){var b=BODIES.classic(c);b.rot=-14;b.h=[120,96];return b;},
+ duo:function(c){return {svg:arm('M95 172 H82 V148',c,20)+trunk(115,104,215,44,c)+arm('M208 164 H220 V140',c,20)+trunk(188,122,215,44,c),h:[115,104],h2:[188,122],f:[[115,136,.9],[188,154,.9]],wide:true};},
+ duoBig:function(c){return {svg:arm('M104 170 H84 V134',c,22)+trunk(126,86,215,50,c)+trunk(198,150,215,38,c),h:[126,86],h2:[198,150],f:[[126,122],[198,178,.75]],wide:true};},
+ group:function(c,c2){return {svg:trunk(104,152,215,34,c)+trunk(150,100,215,48,c)+trunk(198,144,215,38,c2),h:[150,100],f:[[150,134],[104,176,.7],[198,170,.75]],wide:true};}
+};
+
+/* ---------- Gesichter ---------- */
+var FS='fill="none" stroke="'+N+'" stroke-width="2.6" stroke-linecap="round"';
+var DOTS='<circle cx="-11" cy="0" r="3.6"/><circle cx="11" cy="0" r="3.6"/>';
+var FACES={
+ happy:DOTS+'<path d="M-7 9 Q0 16 7 9" '+FS+'/>',
+ tired:'<path d="M-17 0 Q-11.5 5 -6 0" '+FS+'/><path d="M6 0 Q11.5 5 17 0" '+FS+'/><path d="M-4 13 H4" '+FS+'/>',
+ sleep:'<path d="M-17 0 Q-11.5 5 -6 0" '+FS+'/><path d="M6 0 Q11.5 5 17 0" '+FS+'/>',
+ sad:DOTS+'<path d="M-7 15 Q0 9 7 15" '+FS+'/>',
+ stressed:'<circle cx="-11" cy="0" r="6.5" fill="#fff"/><circle cx="11" cy="0" r="6.5" fill="#fff"/><circle cx="-11" cy="0" r="2.6"/><circle cx="11" cy="0" r="2.6"/><path d="M-9 15 l4.5 -3 l4.5 3 l4.5 -3 l4.5 3" '+FS+'/>',
+ angry:'<path d="M-18 -8 L-6 -3 M18 -8 L6 -3" '+FS+'/><circle cx="-11" cy="3" r="3.4"/><circle cx="11" cy="3" r="3.4"/><path d="M-5 14 H5" '+FS+'/>',
+ worried:'<path d="M-17 -5 L-7 -9 M17 -5 L7 -9" '+FS+'/>'+DOTS+'<circle cx="0" cy="13" r="3.2" '+FS+'/>',
+ dizzy:'<path d="M-15 -4 L-7 4 M-7 -4 L-15 4 M7 -4 L15 4 M15 -4 L7 4" '+FS+'/><path d="M-8 14 Q-4 10 0 14 Q4 18 8 14" '+FS+'/>',
+ neutral:DOTS+'<path d="M-6 12 H6" '+FS+'/>',
+ robot:'<rect x="-16" y="-5" width="10" height="10" rx="1.5"/><rect x="6" y="-5" width="10" height="10" rx="1.5"/><path d="M-8 14 H8" '+FS+' stroke-dasharray="2.5 3"/>',
+ joy:'<path d="M-17 2 Q-11.5 -6 -6 2 M6 2 Q11.5 -6 17 2" '+FS+'/><path d="M-8 9 Q0 19 8 9 Z"/>',
+ focused:'<path d="M-17 -3 L-6 1 M17 -3 L6 1" '+FS+'/>',
+ none:''
+};
+function face(t,x,y,s){if(!t||t==='none')return '';return '<g fill="'+N+'" transform="translate('+x+' '+y+') scale('+(s||1)+')">'+FACES[t]+'</g>';}
+
+/* ---------- Accessoires ---------- */
+var BACK={moon:1,sun:1,cycle:1,cobweb:1,bigQ:1,houseOffice:1,ladder:1,signpost:1,mountain:1,ladderUp:1,rainbow:1,aura:1};
+function confetti(){var cols=[Y,O,BL,COL.pink,'#7FD0C9'],pts=[[70,70,20],[96,40,-30],[210,44,40],[236,86,-15],[60,130,60],[246,140,10],[120,26,-50],[188,24,25],[40,96,0],[262,110,70],[84,170,35],[228,180,-40]];return pts.map(function(p,i){return '<rect x="'+(p[0]-4)+'" y="'+(p[1]-1.5)+'" width="8" height="3.5" rx="1.5" fill="'+cols[i%5]+'" transform="rotate('+p[2]+' '+p[0]+' '+p[1]+')"/>';}).join('');}
+var A={
+ fire:function(k){var x=k.hx,y=k.hy;return '<path d="M'+(x-24)+' '+(y+12)+' C'+(x-34)+' '+(y-10)+' '+(x-16)+' '+(y-22)+' '+(x-14)+' '+(y-36)+' C'+(x-4)+' '+(y-24)+' '+(x-2)+' '+(y-18)+' '+x+' '+(y-26)+' C'+(x+2)+' '+(y-44)+' '+(x+14)+' '+(y-50)+' '+(x+16)+' '+(y-56)+' C'+(x+18)+' '+(y-36)+' '+(x+34)+' '+(y-24)+' '+(x+26)+' '+(y+12)+' Z" fill="'+O+'"/><path d="M'+(x-13)+' '+(y+12)+' C'+(x-17)+' '+(y-4)+' '+(x-5)+' '+(y-10)+' '+(x-3)+' '+(y-22)+' C'+(x+6)+' '+(y-10)+' '+(x+17)+' '+(y-6)+' '+(x+13)+' '+(y+12)+' Z" fill="'+Y+'"/>'+S('M90 120 q-6 -10 2 -18 M210 110 q6 -10 -2 -18','#B9B2A0',3);},
+ moon:function(){return '<circle cx="222" cy="72" r="20" fill="'+Y+'"/><circle cx="231" cy="64" r="17" fill="'+N+'"/>'+[[78,62],[108,38],[176,34],[58,118],[252,128],[96,96],[244,176],[48,170]].map(function(p,i){return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(i%3?2:3)+'" fill="'+CR+'"/>';}).join('');},
+ laptop:function(){return '<rect x="110" y="166" width="80" height="50" rx="5" fill="'+N+'" stroke="#1B1C2B" stroke-width="2"/><rect x="116" y="172" width="68" height="38" rx="2" fill="#E3ECEE"/>'+S('M123 182 H160 M123 191 H172 M123 200 H150',COL.teal,3)+'<rect x="100" y="214" width="100" height="7" rx="3.5" fill="#1B1C2B"/>';},
+ spikes:function(){var s='';[112,136,160,184].forEach(function(y){s+='<path d="M124 '+(y-5)+' L111 '+y+' L124 '+(y+5)+'Z M176 '+(y-5)+' L189 '+y+' L176 '+(y+5)+'Z" fill="'+N+'"/>';});s+='<path d="M91 155 L80 160 L91 165Z M91 132 L80 137 L91 142Z M209 135 L220 140 L209 145Z M209 112 L220 117 L209 122Z" fill="'+N+'"/>';return s+S('M92 124 l-8 -6 M90 132 l-11 0 M208 108 l8 -6 M210 116 l11 0 M141 84 l4 -6 l4 6 l4 -6 l4 6',O,2.5);},
+ sweat:function(k){return drop(k.hx+40,k.hy+20)+drop(k.hx-38,k.hy+34,.8)+drop(k.hx+50,k.hy+46,.7);},
+ clock:function(){return '<circle cx="228" cy="76" r="26" fill="'+W+'" stroke="'+N+'" stroke-width="5"/>'+S('M228 76 V60 M228 76 L240 82',N,4)+S('M206 52 l-6 -6 M250 52 l6 -6',N,4)+'<circle cx="228" cy="76" r="3" fill="'+O+'"/>';},
+ crackedPot:function(){return S('M150 227 l-6 12 l9 7 l-7 13 l5 13',N,2.5)+S('M98 234 l-12 -4 M96 247 l-14 0 M202 234 l12 -4 M204 247 l14 0',N,2.5)+S('M136 272 q-8 8 -18 6 M150 272 v12 M164 272 q8 8 18 6',N,2.5);},
+ water:function(k){var x=k.hx,y=k.hy;return drop(x-32,y-8)+drop(x-2,y-24)+drop(x+26,y-12,.9)+drop(x-58,y+28,.8)+drop(x+44,y+20,.8)+drop(x-80,y-4,.7)+'<path d="M103 211 q12 -8 23.5 0 t23.5 0 t23.5 0 t23.5 0 v6 h-94z" fill="'+BL+'"/>'+S('M106 216 v22 M194 216 v18',BL,5)+'<ellipse cx="150" cy="281" rx="66" ry="6" fill="'+BL+'" opacity=".85"/>';},
+ bandage:function(){var s='',B='#F4ECD6',E='#E2D6B5';[98,120,142,164,186].forEach(function(y,i){s+='<rect x="118" y="'+y+'" width="64" height="11" rx="2" fill="'+B+'" stroke="'+E+'" stroke-width="1" transform="rotate('+(i%2?8:-10)+' 150 '+(y+5)+')"/>';});s+='<rect x="90" y="152" width="26" height="9" fill="'+B+'"/><rect x="90" y="170" width="26" height="9" fill="'+B+'"/><rect x="184" y="128" width="26" height="9" fill="'+B+'"/><rect x="184" y="146" width="26" height="9" fill="'+B+'"/>';return s+S('M200 160 q14 10 4 26 q-6 10 4 18',B,6);},
+ meeting:function(){return bubble(40,56,54,30,'bla',W,'r')+bubble(198,40,62,30,'bla?',Y,'l')+bubble(214,118,50,30,'…',W,'l')+bubble(32,128,46,28,'+1',Y,'r',14);},
+ calendar:function(){var s='<rect x="214" y="226" width="42" height="38" rx="4" fill="'+W+'"/><rect x="214" y="226" width="42" height="11" rx="4" fill="'+O+'"/>';for(var r=0;r<3;r++)for(var c=0;c<4;c++)s+='<rect x="'+(219+c*9)+'" y="'+(241+r*7.5)+'" width="6" height="5" rx="1" fill="'+N+'" opacity="'+((r*4+c)%5===3?.25:.85)+'"/>';return s;},
+ lightningDuo:function(){return lightning(152,70,1.15)+S('M136 76 l-8 -8 M170 72 l8 -8 M132 96 l-10 0 M172 96 l10 0',O,3);},
+ talkQ:function(){return bubble(40,52,46,40,'?',W,'r',26)+bubble(206,42,46,40,'!',Y,'l',26)+bubble(220,120,42,32,'??',W,'l',16);},
+ qmarks:function(){return txt(70,96,'?',38,O)+txt(232,74,'?',30,N)+txt(244,156,'?',22,O)+txt(58,160,'?',20,N);},
+ rain:function(k){var s=cloud(k.hx,k.hy-58,'#B7BCC9');[-26,-10,6,22].forEach(function(d){s+=S('M'+(k.hx+d)+' '+(k.hy-26)+' l-5 12',BL,3);});return s;},
+ storm:function(k){var s=cloud(k.hx+10,k.hy-58,'#6E7388')+lightning(k.hx+8,k.hy-36,.8);[-22,-6,26].forEach(function(d){s+=S('M'+(k.hx+10+d)+' '+(k.hy-26)+' l-6 13',BL,3);});return s+S('M34 126 q20 -8 40 0 M44 146 q16 -6 32 0 M228 170 q16 -6 32 0',N,3,'opacity=".5"');},
+ battery:function(){return '<rect x="204" y="56" width="46" height="24" rx="4" fill="'+W+'" stroke="'+N+'" stroke-width="4"/><rect x="250" y="62" width="5" height="12" rx="1.5" fill="'+N+'"/><rect x="209" y="61" width="8" height="14" rx="1.5" fill="'+RED+'"/>'+txt(227,104,'3 %',14,RED);},
+ slots:function(){return '<rect x="84" y="148" width="30" height="68" rx="15" fill="none" stroke="'+N+'" stroke-width="2.5" stroke-dasharray="6 5" opacity=".45"/><rect x="186" y="128" width="30" height="88" rx="15" fill="none" stroke="'+N+'" stroke-width="2.5" stroke-dasharray="6 5" opacity=".45"/>'+txt(99,138,'?',22,O)+txt(201,118,'?',22,O);},
+ suitcase:function(){return '<rect x="208" y="228" width="46" height="34" rx="5" fill="'+O+'"/><rect x="208" y="241" width="46" height="4" fill="'+RIM+'"/>'+S('M222 228 v-8 h18 v8',N,4)+bubble(196,58,82,28,'Tschüss!',Y,'l',14);},
+ neu:function(){return S('M196 212 L214 150',RIM,5)+'<g transform="rotate(8 220 136)"><rect x="194" y="120" width="54" height="30" rx="5" fill="'+Y+'"/>'+txt(221,141,'NEU',16)+'</g>';},
+ cycle:function(){return S('M52 140 A100 100 0 0 1 126 52',O,6)+'<path d="M122 40 L140 52 L122 64Z" fill="'+O+'"/>'+S('M174 52 A100 100 0 0 1 248 140',O,6)+'<path d="M236 136 L248 154 L260 136Z" fill="'+O+'"/>';},
+ cables:function(){return S('M40 262 C52 196 118 234 112 192 C106 150 196 168 190 208 C186 236 244 228 240 178',N,4)+'<rect x="233" y="160" width="14" height="18" rx="3" fill="'+N+'"/>'+S('M237 160 v-7 M243 160 v-7',N,3)+S('M262 252 C240 210 200 252 180 200 C166 168 120 184 104 150 C92 126 70 140 66 114',O,4)+'<rect x="59" y="98" width="14" height="18" rx="3" fill="'+O+'"/>'+txt(100,82,'404',16,RED);},
+ robot:function(k){return S('M'+k.hx+' '+(k.hy+4)+' V'+(k.hy-24),N,4)+'<circle cx="'+k.hx+'" cy="'+(k.hy-30)+'" r="7" fill="'+RED+'"/>'+S('M'+(k.hx+14)+' '+(k.hy-40)+' a14 14 0 0 1 0 20 M'+(k.hx-14)+' '+(k.hy-40)+' a14 14 0 0 0 0 20',N,2.5)+txt(232,90,'01',16,N,'opacity=".5"')+txt(70,120,'10',16,N,'opacity=".5"');},
+ papers:function(k){var s='',i;for(i=0;i<9;i++)s+='<rect x="'+(40+(i%3)*3)+'" y="'+(256-i*9)+'" width="50" height="9" rx="1.5" fill="'+W+'" stroke="#D8CFB8" stroke-width="1.2"/>';for(i=0;i<5;i++)s+='<rect x="'+(210-(i%2)*3)+'" y="'+(256-i*9)+'" width="46" height="9" rx="1.5" fill="'+W+'" stroke="#D8CFB8" stroke-width="1.2"/>';return s+'<g transform="rotate(-12 '+k.hx+' '+(k.hy-6)+')"><rect x="'+(k.hx-17)+'" y="'+(k.hy-20)+'" width="34" height="24" rx="2" fill="'+W+'" stroke="#D8CFB8" stroke-width="1.2"/>'+S('M'+(k.hx-11)+' '+(k.hy-13)+' h22 M'+(k.hx-11)+' '+(k.hy-6)+' h16',N,1.6,'opacity=".5"')+'</g>';},
+ coins:function(){return coin(72,94,13)+coin(98,58,10)+coin(228,96,14)+coin(252,58,9)+coin(56,150,8)+coin(232,258,11)+S('M72 116 v10 M228 120 v10 M98 76 v8',N,2,'opacity=".4"');},
+ wallet:function(){return '<rect x="38" y="232" width="52" height="32" rx="6" fill="'+O+'"/><rect x="62" y="242" width="28" height="12" rx="4" fill="'+RIM+'"/><circle cx="70" cy="248" r="2.5" fill="'+Y+'"/>'+coin(232,258,11)+txt(64,222,'?',24,N);},
+ magnifier:function(){return '<circle cx="200" cy="100" r="34" fill="#fff" fill-opacity=".35" stroke="'+N+'" stroke-width="7"/>'+S('M224 124 L254 156',N,11)+S('M182 84 a22 22 0 0 1 14 -8',W,4);},
+ crown:function(k){var x=k.hx,y=k.hy+2;return '<g transform="rotate(-20 '+x+' '+y+')"><path d="M'+(x-22)+' '+y+' L'+(x-25)+' '+(y-26)+' L'+(x-11)+' '+(y-13)+' L'+x+' '+(y-32)+' L'+(x+11)+' '+(y-13)+' L'+(x+25)+' '+(y-26)+' L'+(x+22)+' '+y+'Z" fill="'+Y+'"/><circle cx="'+x+'" cy="'+(y-8)+'" r="3" fill="'+RED+'"/></g>'+S('M'+(x+34)+' '+(y-30)+' l8 -4 M'+(x+36)+' '+(y-18)+' l9 0',N,2.5);},
+ brokenHeart:function(k){return heart(k.hx,k.hy-36,1.9,O)+S('M'+k.hx+' '+(k.hy-55)+' l-4 7 l6 6 l-4 8',CR,3);},
+ exclaim:function(){return bubble(192,40,46,44,'!',Y,'l',30)+bubble(232,104,36,30,'?',W,'l',18);},
+ headphones:function(k){var x=k.hx,y=k.hy;return S('M'+(x-31)+' '+(y+36)+' V'+(y+20)+' A31 31 0 0 1 '+(x+31)+' '+(y+20)+' V'+(y+36),N,6)+'<rect x="'+(x-40)+'" y="'+(y+22)+'" width="15" height="28" rx="6" fill="'+O+'"/><rect x="'+(x+25)+'" y="'+(y+22)+'" width="15" height="28" rx="6" fill="'+O+'"/>'+S('M76 94 q-10 12 0 24 M62 86 q-16 20 0 40 M224 94 q10 12 0 24 M238 86 q16 20 0 40',O,3.5);},
+ phone:function(){return '<rect x="214" y="146" width="32" height="54" rx="6" fill="'+N+'"/><rect x="218" y="153" width="24" height="38" rx="2" fill="#E3ECEE"/>'+badge(244,148,'9+')+badge(66,74,'3')+badge(92,46,'12')+badge(238,96,'!');},
+ juggle:function(){return S('M92 102 Q150 -6 208 102',N,2,'stroke-dasharray="4 6"')+'<circle cx="104" cy="70" r="10" fill="'+O+'"/><circle cx="150" cy="40" r="10" fill="'+Y+'"/><circle cx="196" cy="70" r="10" fill="'+COL.pink+'"/><circle cx="230" cy="112" r="9" fill="'+BL+'"/><circle cx="70" cy="112" r="9" fill="'+N+'"/>';},
+ target:function(){return '<circle cx="234" cy="84" r="26" fill="'+O+'"/><circle cx="234" cy="84" r="17" fill="'+CR+'"/><circle cx="234" cy="84" r="8" fill="'+O+'"/>'+arrow(104,66,52,40,N,4)+txt(70,96,'?',22,O);},
+ cobweb:function(){var cx=66,cy=66,s='',i,a;for(i=0;i<8;i++){a=i*Math.PI/4;s+=S('M'+cx+' '+cy+' L'+(cx+42*Math.cos(a)).toFixed(1)+' '+(cy+42*Math.sin(a)).toFixed(1),'#B5AF9F',1.5);}[14,26,38].forEach(function(r){var d='';for(i=0;i<=8;i++){a=i*Math.PI/4;d+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*Math.sin(a)).toFixed(1)+' ';}s+=S(d,'#B5AF9F',1.5);});return s+S('M96 96 V128','#B5AF9F',1.2)+'<circle cx="96" cy="132" r="5" fill="'+N+'"/>'+S('M90 128 l-5 -3 M90 134 l-5 3 M102 128 l5 -3 M102 134 l5 3',N,1.5);},
+ zzz:function(k){return txt(k.hx+32,k.hy+8,'Z',24)+txt(k.hx+48,k.hy-10,'z',18)+txt(k.hx+60,k.hy-24,'z',13);},
+ ladder:function(){var s=S('M52 262 L68 66',RIM,5)+S('M82 262 L98 66',RIM,5);[236,206,176,116,86].forEach(function(y){var o=(262-y)*16/196;s+=S('M'+(52+o)+' '+y+' H'+(82+o),RIM,4);});var o=(262-146)*16/196;return s+S('M'+(52+o)+' 146 h9 M'+(82+o)+' 146 h-7',RIM,4);},
+ mask:function(k){return '<g transform="translate('+k.fx+' '+k.fy+')"><path d="M-27 -12 Q0 -20 27 -12 Q29 6 14 12 Q0 8 -14 12 Q-29 6 -27 -12Z" fill="'+W+'"/><ellipse cx="-11" cy="-3" rx="6" ry="4" fill="'+N+'"/><ellipse cx="11" cy="-3" rx="6" ry="4" fill="'+N+'"/></g>'+S('M'+(k.fx+27)+' '+(k.fy-8)+' l12 30',N,2)+'<path d="M'+(k.fx+34)+' '+(k.fy+22)+' l6 18 h-12 z" fill="'+Y+'"/>'+txt(k.fx+40,k.fy-26,'?',18,O);},
+ shake:function(){return S('M108 104 q-7 7 0 14 q7 7 0 14 M192 104 q7 7 0 14 q-7 7 0 14 M84 172 q-6 6 0 12 M216 150 q6 6 0 12',N,2.5);},
+ jar:function(){return '<path d="M90 212 V96 Q90 36 150 36 Q210 36 210 96 V212" fill="#DFF1F2" fill-opacity=".35" stroke="#9CCFD3" stroke-width="4"/>'+S('M104 190 V100 Q104 64 130 52',W,5,'opacity=".75"')+'<rect x="140" y="28" width="20" height="10" rx="4" fill="#9CCFD3"/>';},
+ ruler:function(){var s='<rect x="214" y="68" width="18" height="144" rx="2" fill="'+Y+'"/>';for(var y=74,i=0;y<208;y+=10,i++)s+=S('M214 '+y+' h'+(i%2?6:10),N,2);return s+star4(84,74,10)+star4(68,120,7)+star4(118,46,8);},
+ bandaid:function(){return '<g transform="rotate(35 150 164)"><rect x="124" y="157" width="52" height="15" rx="7.5" fill="#F2C29B"/><rect x="142" y="157" width="16" height="15" fill="#E3A47A"/></g><g transform="rotate(-35 150 164)"><rect x="124" y="157" width="52" height="15" rx="7.5" fill="#F2C29B"/><rect x="142" y="157" width="16" height="15" fill="#E3A47A"/></g>';},
+ pointers:function(){return arrow(30,56,90,96,N,4)+arrow(272,52,212,92,N,4)+arrow(272,190,222,180,N,4);},
+ fairScale:function(){return scaleBase(coin(88,62,8),coin(212,82,12)+coin(198,88,8)+coin(226,88,8));},
+ balanceScale:function(){return scaleBase(heart(88,58,1,O),'<rect x="198" y="74" width="28" height="18" rx="2" fill="'+N+'"/><rect x="194" y="90" width="36" height="3" fill="'+N+'"/>');},
+ sun:function(){var s='<circle cx="64" cy="64" r="20" fill="'+Y+'"/>';for(var i=0;i<8;i++){var a=i*Math.PI/4;s+=S('M'+(64+27*Math.cos(a)).toFixed(1)+' '+(64+27*Math.sin(a)).toFixed(1)+' L'+(64+36*Math.cos(a)).toFixed(1)+' '+(64+36*Math.sin(a)).toFixed(1),Y,4);}return s;},
+ shades:function(k){return '<g transform="translate('+k.fx+' '+k.fy+')"><rect x="-24" y="-7" width="20" height="13" rx="5" fill="'+N+'"/><rect x="4" y="-7" width="20" height="13" rx="5" fill="'+N+'"/>'+S('M-4 -3 H4',N,3)+S('M-6 14 Q0 18 6 14',N,2.6)+'</g>';},
+ snow:function(k){var s='';[[60,80],[96,44],[226,58],[252,118],[48,160],[238,190]].forEach(function(p){s+=flake(p[0],p[1],8);});s+='<rect x="'+(k.hx-20)+'" y="'+(k.hy-16)+'" width="40" height="24" rx="4" fill="#E2F4F7" stroke="#A6DAE2" stroke-width="2" opacity=".95"/>';return s+'<path d="M95 190 l4 12 l4 -12z M106 190 l3 9 l3 -9z M187 172 l4 12 l4 -12z M198 172 l3 9 l3 -9z" fill="#A6DAE2"/>';},
+ poison:function(){return '<path d="M58 192 h16 v16 l14 26 q3 8 -5 8 h-34 q-8 0 -5 -8 l14 -26z" fill="#9DD35A"/><rect x="56" y="186" width="20" height="8" rx="2" fill="'+N+'"/><path d="M48 230 h36 l4 6 q2 6 -5 6 h-34 q-7 0 -5 -6z" fill="#7DB83E"/>'+'<circle cx="122" cy="196" r="6" fill="#A9C35C" opacity=".85"/><circle cx="178" cy="176" r="8" fill="#A9C35C" opacity=".85"/><circle cx="130" cy="150" r="5" fill="#A9C35C" opacity=".85"/><circle cx="190" cy="118" r="6" fill="#A9C35C" opacity=".85"/><circle cx="108" cy="110" r="4" fill="#A9C35C" opacity=".85"/>';},
+ whisper:function(){return bubble(34,64,58,28,'psst',W,'r',14)+bubble(210,52,58,28,'…?',W,'l',16)+bubble(220,140,52,26,'pss',Y,'l',13);},
+ houseOffice:function(){var s='<path d="M36 156 L62 132 L88 156Z" fill="'+O+'"/><rect x="44" y="156" width="36" height="30" fill="'+W+'"/><rect x="57" y="168" width="10" height="18" fill="'+N+'"/><rect x="222" y="104" width="38" height="82" fill="'+N+'"/>';for(var r=0;r<4;r++)for(var c=0;c<3;c++)s+='<rect x="'+(228+c*11)+'" y="'+(112+r*16)+'" width="6" height="9" fill="'+Y+'" opacity="'+((r+c)%3?1:.35)+'"/>';return s+S('M78 112 Q150 30 224 92',N,2.5,'stroke-dasharray="5 6"')+'<path d="M224 92 l-14 -2 l7 -10z M78 112 l3 -14 l9 9z" fill="'+N+'"/>';},
+ car:function(){return '<rect x="30" y="240" width="60" height="17" rx="6" fill="'+O+'"/><rect x="42" y="228" width="34" height="16" rx="6" fill="'+O+'"/><rect x="47" y="231" width="11" height="9" rx="2" fill="#E3ECEE"/><rect x="61" y="231" width="11" height="9" rx="2" fill="#E3ECEE"/><circle cx="44" cy="258" r="7" fill="'+N+'"/><circle cx="76" cy="258" r="7" fill="'+N+'"/><circle cx="22" cy="250" r="6" fill="#C9C4B5"/><circle cx="12" cy="243" r="4" fill="#C9C4B5"/>';},
+ gen:function(){return bubble(28,36,86,28,'Früher…',W,'r',14)+bubble(214,100,52,28,'lol',Y,'l',14);},
+ hats:function(k){var x=k.hx,y=k.hy;return '<g transform="rotate(8 '+x+' '+y+')"><path d="M'+(x-22)+' '+(y+6)+' A22 22 0 0 1 '+(x+22)+' '+(y+6)+'Z" fill="'+O+'"/><rect x="'+(x+8)+'" y="'+(y+2)+'" width="26" height="6" rx="3" fill="'+RIM+'"/><rect x="'+(x-21)+'" y="'+(y-21)+'" width="42" height="6" rx="2" fill="'+N+'"/><rect x="'+(x-14)+'" y="'+(y-45)+'" width="28" height="26" rx="2" fill="'+N+'"/><path d="M'+(x-12)+' '+(y-45)+' L'+x+' '+(y-74)+' L'+(x+12)+' '+(y-45)+'Z" fill="'+Y+'"/><circle cx="'+x+'" cy="'+(y-76)+'" r="4" fill="'+O+'"/></g>';},
+ boulder:function(k){var x=k.hx,y=k.hy;return '<ellipse cx="'+x+'" cy="'+(y-26)+'" rx="44" ry="30" fill="'+GR+'"/><ellipse cx="'+(x-14)+'" cy="'+(y-34)+'" rx="8" ry="5" fill="#8E897E"/><ellipse cx="'+(x+18)+'" cy="'+(y-20)+'" rx="6" ry="4" fill="#8E897E"/>'+S('M'+(x-52)+' '+(y+2)+' l-9 -4 M'+(x+52)+' '+(y+2)+' l9 -4 M'+(x-54)+' '+(y+14)+' l-10 0 M'+(x+54)+' '+(y+14)+' l10 0',N,3);},
+ arrowsIn:function(){return arrow(26,54,92,98)+arrow(274,50,208,94)+arrow(18,170,82,172)+arrow(282,176,220,172)+arrow(150,4,150,52)+bubble(18,96,38,24,'!!',Y,'r',13);},
+ trophy:function(){return '<path d="M214 50 h38 v10 q0 24 -19 26 q-19 -2 -19 -26z" fill="'+Y+'"/>'+S('M214 58 q-12 0 -10 12 q2 8 12 8 M252 58 q12 0 10 12 q-2 8 -12 8',Y,4)+'<rect x="229" y="86" width="8" height="12" fill="'+Y+'"/><rect x="219" y="98" width="28" height="9" rx="2" fill="'+N+'"/>'+S('M140 140 L150 160 L160 140',RED,4)+'<circle cx="150" cy="166" r="10" fill="#C9CDD6"/>'+txt(150,171,'2',12,N);},
+ bulbOff:function(k){var x=k.hx,y=k.hy;return '<circle cx="'+x+'" cy="'+(y-42)+'" r="18" fill="#D9D5C8"/><rect x="'+(x-8)+'" y="'+(y-27)+'" width="16" height="11" rx="2" fill="#8C8A84"/>'+S('M'+(x-6)+' '+(y-40)+' l4 -6 l4 6 l4 -6',GR,2)+txt(x+34,y-40,'?',20,O);},
+ chain:function(){var s='';for(var i=0;i<4;i++)s+='<ellipse cx="'+(194+i*12)+'" cy="'+(250+i*3)+'" rx="8" ry="5" fill="none" stroke="#8C8A84" stroke-width="3.5" transform="rotate('+(i%2?60:15)+' '+(194+i*12)+' '+(250+i*3)+')"/>';return s+'<circle cx="252" cy="262" r="17" fill="'+N+'"/><circle cx="246" cy="256" r="4" fill="#fff" opacity=".25"/>';},
+ boxes:function(){function box(x,y,w,h){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="#C9A26B"/><path d="M'+x+' '+y+' l-10 -10 h'+(w*.45)+' l10 10z M'+(x+w)+' '+y+' l10 -10 h-'+(w*.45)+' l-10 10z" fill="#B88F57"/><rect x="'+x+'" y="'+y+'" width="'+w+'" height="5" fill="#8E6B3E"/>';}return box(38,234,52,32)+box(212,238,46,28)+txt(64,220,'0',18,N,'opacity=".6"');},
+ scribble:function(){var d='M150 40 ',i;for(i=1;i<=18;i++){var a=i*1.9,r=26+(i%3)*9,x=150+Math.cos(a)*r*1.7,y=46+Math.sin(a)*r*.7;d+='Q'+(150+Math.cos(a-.9)*r*2).toFixed(1)+' '+(46+Math.sin(a-.9)*r).toFixed(1)+' '+x.toFixed(1)+' '+y.toFixed(1)+' ';}return S(d,N,2.5);},
+ signpost:function(){return S('M60 262 V78',RIM,6)+'<path d="M64 84 h48 l10 11 l-10 11 h-48z" fill="'+Y+'"/><path d="M56 118 h-44 l-10 11 l10 11 h44z" fill="'+O+'"/><path d="M64 152 h40 l10 11 l-10 11 h-40z" fill="'+W+'"/>'+txt(90,100,'?',16)+txt(32,134,'?',16)+txt(84,168,'?',16);},
+ mugs:function(){return mug(34,244)+mug(58,248,O)+mug(214,244,O)+mug(238,248)+mug(226,222);},
+ ache:function(){return S('M196 150 l10 -8 M198 160 h12 M196 170 l10 8 M100 178 l-10 -8 M98 188 h-12 M100 198 l-10 8',RED,3)+'<circle cx="182" cy="160" r="5" fill="'+RED+'" opacity=".4"/>';},
+ fallenFlower:function(){return S('M206 266 L240 262',COL.teal,3)+'<g transform="translate(250 260) scale(.9)">'+flowerAt(0,0)+'</g>';},
+ tear:function(k){return drop(k.fx+12,k.fy+14,.6);},
+ flower:function(k){return flowerAt(k.hx,k.hy-2);},
+ bigQ:function(){return txt(236,170,'?',120,Y);},
+ stop:function(){var s='',r=24,cx=226,cy=86,d='';for(var i=0;i<8;i++){var a=Math.PI/8+i*Math.PI/4;d+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*Math.sin(a)).toFixed(1)+' ';}return S('M226 110 V170',N,4)+'<path d="'+d+'Z" fill="'+RED+'"/>'+txt(cx,cy+4,'STOP',11,W);},
+ books:function(){var c=[O,Y,N,'#5BB7C9',RIM,O,Y],s='';for(var i=0;i<7;i++){var w=52-(i%3)*4;s+='<rect x="'+(40+(i%2)*4)+'" y="'+(254-i*12)+'" width="'+w+'" height="11" rx="2" fill="'+c[i]+'"/>';}return s+'<g transform="rotate(-20 236 100)"><rect x="218" y="92" width="36" height="12" rx="2" fill="#5BB7C9"/></g>'+S('M248 120 l4 10',N,2,'opacity=".4"');},
+ globe:function(){return '<circle cx="232" cy="74" r="24" fill="'+BL+'"/><ellipse cx="232" cy="74" rx="10" ry="24" fill="none" stroke="#fff" stroke-width="2"/>'+S('M208 74 H256 M213 62 H251 M213 86 H251','#fff',2)+bubble(30,56,50,26,'Hi!',W,'r',13)+bubble(30,134,62,26,'Hallo?',Y,'r',13)+bubble(214,120,54,26,'¿Qué?',W,'l',12);},
+ swirl:function(k){var x=k.hx,y=k.hy-8;return '<ellipse cx="'+x+'" cy="'+y+'" rx="44" ry="12" fill="none" stroke="'+N+'" stroke-width="2" stroke-dasharray="4 5"/>'+star4(x-44,y,8)+star4(x+30,y-9,7)+star4(x+20,y+11,6,O)+star4(x-18,y-12,5,O);},
+ wifi:function(){return '<circle cx="226" cy="104" r="5" fill="'+N+'"/>'+S('M214 92 a17 17 0 0 1 24 0',N,4)+S('M204 82 a31 31 0 0 1 44 0 M194 72 a45 45 0 0 1 64 0','#C9C4B5',4)+txt(262,110,'?',18,O);},
+ meh:function(){return bubble(198,58,60,30,'meh',W,'l');},
+ /* positive */
+ party:function(k){var x=k.hx,y=k.hy+6;return '<path d="M'+(x-17)+' '+y+' L'+x+' '+(y-44)+' L'+(x+17)+' '+y+'Z" fill="'+O+'"/><circle cx="'+(x-5)+'" cy="'+(y-10)+'" r="2.5" fill="'+Y+'"/><circle cx="'+(x+4)+'" cy="'+(y-20)+'" r="2.5" fill="'+Y+'"/><circle cx="'+(x+7)+'" cy="'+(y-6)+'" r="2.5" fill="'+Y+'"/><circle cx="'+(x-1)+'" cy="'+(y-30)+'" r="2.5" fill="'+Y+'"/><circle cx="'+x+'" cy="'+(y-47)+'" r="5" fill="'+Y+'"/>'+confetti();},
+ confetti:function(){return confetti();},
+ loveTop:function(k){return heart(k.hx,k.hy-22,1.1,O);},
+ sparkles:function(){return star4(76,80,10)+star4(232,66,12)+star4(252,150,7,O)+star4(54,150,7,O)+star4(204,34,6);},
+ mountain:function(){return '<path d="M24 216 L96 94 L168 216Z" fill="#D5D0C4"/><path d="M128 216 L212 74 L282 216Z" fill="#DCD7CB"/><path d="M212 74 L196 102 L206 98 L214 106 L224 96 Z" fill="'+W+'"/><circle cx="62" cy="72" r="15" fill="'+Y+'"/>';},
+ headband:function(k){var x=k.hx,y=k.hy+14;return '<rect x="'+(x-24)+'" y="'+y+'" width="48" height="9" fill="'+O+'"/><path d="M'+(x+22)+' '+(y+2)+' l16 -7 l-3 11z M'+(x+22)+' '+(y+6)+' l15 6 l-8 3z" fill="'+O+'"/>';},
+ chef:function(k){var x=k.hx,y=k.hy;return '<g fill="'+W+'"><circle cx="'+(x-15)+'" cy="'+(y-12)+'" r="12"/><circle cx="'+x+'" cy="'+(y-22)+'" r="14"/><circle cx="'+(x+15)+'" cy="'+(y-12)+'" r="12"/><rect x="'+(x-21)+'" y="'+(y-12)+'" width="42" height="20" rx="2"/></g>'+S('M'+(x-21)+' '+(y+2)+' H'+(x+21),'#E2DCCB',2);},
+ wine:function(){return '<path d="M200 82 h22 q0 20 -11 20 q-11 0 -11 -20z" fill="'+W+'"/><path d="M201 90 h20 q-1 12 -10 12 q-9 0 -10 -12z" fill="#B8462F"/>'+S('M211 102 V116 M204 117 H218',N,2.5);},
+ ladderUp:function(){var s=S('M52 262 L68 66',RIM,5)+S('M82 262 L98 66',RIM,5);[236,206,176,146,116,86].forEach(function(y){var o=(262-y)*16/196;s+=S('M'+(52+o)+' '+y+' H'+(82+o),RIM,4);});return s+S('M84 66 V24',N,3)+'<path d="M84 24 L110 32 L84 40Z" fill="'+Y+'"/>';},
+ gradCap:function(k){var x=k.hx,y=k.hy;return '<rect x="'+(x-15)+'" y="'+(y-4)+'" width="30" height="13" rx="2" fill="'+N+'"/><path d="M'+(x-34)+' '+(y-4)+' L'+x+' '+(y-17)+' L'+(x+34)+' '+(y-4)+' L'+x+' '+(y+9)+'Z" fill="'+N+'"/>'+S('M'+x+' '+(y-4)+' L'+(x+26)+' '+y+' V'+(y+18),Y,2.5)+'<circle cx="'+(x+26)+'" cy="'+(y+20)+'" r="3.5" fill="'+Y+'"/>';},
+ booksSmall:function(){return '<rect x="40" y="254" width="52" height="11" rx="2" fill="'+O+'"/><rect x="44" y="242" width="46" height="11" rx="2" fill="#5BB7C9"/><rect x="42" y="230" width="48" height="11" rx="2" fill="'+Y+'"/>';},
+ bulbOn:function(k){var x=k.hx,y=k.hy-44,s='<circle cx="'+x+'" cy="'+y+'" r="18" fill="'+Y+'"/><rect x="'+(x-8)+'" y="'+(y+15)+'" width="16" height="11" rx="2" fill="#8C8A84"/>'+S('M'+(x-5)+' '+(y+2)+' l3 -6 l4 6 l3 -6',O,2);for(var i=0;i<7;i++){var a=Math.PI+i*Math.PI/6;s+=S('M'+(x+25*Math.cos(a)).toFixed(1)+' '+(y+25*Math.sin(a)).toFixed(1)+' L'+(x+34*Math.cos(a)).toFixed(1)+' '+(y+34*Math.sin(a)).toFixed(1),O,3);}return s;},
+ heartsFloat:function(){return heart(76,84,1.1,O)+heart(228,66,1.4,O)+heart(246,146,.9,COL.pink)+heart(58,152,.8,COL.pink)+heart(118,40,.7,O)+star4(150,176,11,Y);},
+ shield:function(){return '<path d="M232 62 l26 10 v20 q0 26 -26 38 q-26 -12 -26 -38 v-20z" fill="'+N+'"/>'+S('M220 94 l8 8 l16 -16',Y,5);},
+ scaleLevel:function(){return S('M150 40 V54',N,4)+'<path d="M150 58 l-9 -10 h18z" fill="'+N+'"/>'+S('M88 40 L212 40',N,4)+S('M88 40 L76 72 M88 40 L100 72 M212 40 L200 72 M212 40 L224 72',N,2)+'<path d="M70 72 h36 q-4 12 -18 12 q-14 0 -18 -12z" fill="'+N+'"/><path d="M194 72 h36 q-4 12 -18 12 q-14 0 -18 -12z" fill="'+N+'"/>'+heart(88,62,1,O)+'<rect x="199" y="54" width="26" height="16" rx="2" fill="'+COL.teal+'"/><rect x="195" y="69" width="34" height="3" fill="'+COL.teal+'"/>';},
+ trophyBig:function(){return '<path d="M128 26 h44 v12 q0 28 -22 30 q-22 -2 -22 -30z" fill="'+Y+'"/>'+S('M128 34 q-14 0 -12 14 q2 9 14 9 M172 34 q14 0 12 14 q-2 9 -14 9',Y,4.5)+'<rect x="146" y="68" width="8" height="10" fill="'+Y+'"/><rect x="134" y="78" width="32" height="10" rx="2" fill="'+N+'"/>'+star4(150,46,7,W);},
+ compass:function(){return '<circle cx="232" cy="82" r="27" fill="'+W+'" stroke="'+N+'" stroke-width="5"/><g transform="rotate(25 232 82)"><path d="M232 62 l6 20 h-12z" fill="'+RED+'"/><path d="M232 102 l6 -20 h-12z" fill="'+N+'"/></g><circle cx="232" cy="82" r="3" fill="'+Y+'"/>'+txt(232,52,'N',12);},
+ dumbbell:function(){return S('M210 258 H252',N,5)+'<rect x="204" y="244" width="9" height="28" rx="3" fill="'+O+'"/><rect x="249" y="244" width="9" height="28" rx="3" fill="'+O+'"/>'+heart(70,92,1.1,O)+drop(194,96,.7);},
+ talkHappy:function(){return bubble(30,54,66,30,'Danke!',Y,'r',13)+bubble(206,46,58,30,'Gern!',W,'l',13)+bubble(214,124,44,32,'',W,'l')+heart(236,141,.75,O);},
+ rainbow:function(){var c=[COL.pink,O,Y,BL],s='';[132,120,108,96].forEach(function(r,i){s+=S('M'+(150-r)+' 214 A'+r+' '+r+' 0 0 1 '+(150+r)+' 214',c[i],12,'stroke-linecap="butt"');});return s;},
+ sprout:function(k){var x=k.hx,y=k.hy+2;return S('M'+x+' '+y+' V'+(y-22),'#3E9E6A',4)+'<path d="M'+x+' '+(y-14)+' q-18 -2 -22 -18 q18 0 22 18z M'+x+' '+(y-20)+' q16 -4 20 -20 q-17 1 -20 20z" fill="#5BBE84"/>';},
+ aura:function(){return '<circle cx="150" cy="166" r="76" fill="none" stroke="'+Y+'" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/><circle cx="150" cy="166" r="92" fill="none" stroke="'+Y+'" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" opacity=".6"/>'+star4(60,80,8)+star4(240,76,8);},
+ checklist:function(){var s='<rect x="214" y="112" width="46" height="62" rx="4" fill="'+W+'"/><rect x="226" y="106" width="22" height="10" rx="3" fill="'+N+'"/>';[130,146,162].forEach(function(y){s+=S('M220 '+y+' l4 4 l7 -8',COL.teal,3)+S('M235 '+(y+1)+' H254',N,2,'opacity=".35"');});return s;},
+ rocket:function(){return '<circle cx="219" cy="86" r="6" fill="#D5D0C4"/><circle cx="209" cy="97" r="5" fill="#D5D0C4"/><circle cx="200" cy="107" r="4" fill="#D5D0C4"/><g transform="rotate(45 236 64)"><path d="M230 82 q6 18 12 0z" fill="'+Y+'"/><path d="M236 36 q12 12 12 30 v16 h-24 v-16 q0 -18 12 -30z" fill="'+N+'"/><circle cx="236" cy="60" r="5" fill="'+BL+'"/><path d="M224 70 l-8 14 h8z M248 70 l8 14 h-8z" fill="'+O+'"/></g>'+star4(80,70,8)+star4(60,130,6,O);},
+ heartBetween:function(){return heart(152,96,1.3,O)+star4(120,70,7)+star4(184,70,7);},
+ crownStraight:function(k){var x=k.hx,y=k.hy+4;return '<path d="M'+(x-22)+' '+y+' L'+(x-25)+' '+(y-26)+' L'+(x-11)+' '+(y-13)+' L'+x+' '+(y-32)+' L'+(x+11)+' '+(y-13)+' L'+(x+25)+' '+(y-26)+' L'+(x+22)+' '+y+'Z" fill="'+Y+'"/><circle cx="'+x+'" cy="'+(y-8)+'" r="3" fill="'+RED+'"/>';},
+ sunCloud:function(){var s='<circle cx="70" cy="70" r="20" fill="'+Y+'"/>';for(var i=0;i<8;i++){var a=i*Math.PI/4;s+=S('M'+(70+27*Math.cos(a)).toFixed(1)+' '+(70+27*Math.sin(a)).toFixed(1)+' L'+(70+35*Math.cos(a)).toFixed(1)+' '+(70+35*Math.sin(a)).toFixed(1),Y,4);}return s+cloud(226,58,'#B7BCC9')+S('M212 92 l-4 10 M228 92 l-4 10 M244 92 l-4 10',BL,3);},
+ yawn:function(){return bubble(36,62,66,30,'gähn',W,'r');}
+};
+
+/* ---------- Rendern ---------- */
+var SHOW_NUM=true; /* auf true setzen, um die Nummer am Kaktus wieder anzuzeigen */
+function render(c,o){o=o||{};var col=COL[c.col||'teal'],b=BODIES[c.body||'classic'](col,COL[c.col2]||col),wide=b.wide||c.wide;
+ var k={hx:b.h[0],hy:b.h[1],fx:b.f[0][0],fy:b.f[0][1]};
+ var acc=c.acc||[],back='',front='';acc.forEach(function(a){if(!A[a])return;if(BACK[a])back+=A[a](k);else front+=A[a](k);});
+ var faces=b.f.map(function(p,i){var t=c.faces?c.faces[i]:c.face;return face(t,p[0],p[1],p[2]);}).join('');
+ var body=b.svg+faces;if(b.rot)body='<g transform="rotate('+b.rot+' 150 215)">'+body+'</g>';
+ var pot=wide?'<rect x="72" y="210" width="156" height="17" rx="3" fill="'+RIM+'"/><path d="M80 227 H220 L207 272 H93Z" fill="'+POT+'"/>':'<rect x="103" y="210" width="94" height="17" rx="3" fill="'+RIM+'"/><path d="M110 227 H190 L180 272 H120Z" fill="'+POT+'"/>';
+ var num=(o.num&&SHOW_NUM)?'<circle cx="32" cy="32" r="28" fill="'+(o.hl?Y:N)+'"/>'+txt(32,41,o.num,24,o.hl?N:W):'';
+ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 328 328" role="img" aria-label="'+c.name+'"><circle class="bk-disc" cx="150" cy="150" r="150" fill="'+(c.bg==='dark'?N:CR)+'"/><g class="bk-plant">'+back+body+pot+front+'</g>'+num+'</svg>';
+}
+function placeholder(){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 328 328" role="img" aria-label="Leerer Topf"><circle cx="150" cy="150" r="150" fill="'+CR+'"/><path d="M150 210 V184" stroke="'+COL.teal+'" stroke-width="5" stroke-linecap="round"/><path d="M150 192 q-18 -2 -22 -18 q18 0 22 18z M150 186 q16 -4 20 -20 q-17 1 -20 20z" fill="'+COL.teal+'"/><rect x="103" y="210" width="94" height="17" rx="3" fill="'+RIM+'"/><path d="M110 227 H190 L180 272 H120Z" fill="'+POT+'"/>'+txt(150,120,'?',64,'#D9D0B5')+'</svg>';}
+
+/* ---------- Matching ---------- */
+var STOP={'zu':1,'viel':1,'viele':1,'der':1,'die':1,'das':1,'und':1,'im':1,'mit':1,'kein':1,'keine':1,'nicht':1,'am':1,'an':1,'in':1,'von':1,'immer':1,'alles':1,'ohne':1,'sehr':1,'mehr':1,'wenig':1,'ich':1,'mein':1,'meine':1,'mich':1,'ist':1,'bin':1,'auf':1,'fuer':1,'den':1,'dem':1,'ein':1,'eine':1,'zum':1,'zur':1};
+function norm(s){return (s||'').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').replace(/[^a-z0-9\s-]/g,' ').replace(/\s+/g,' ').trim();}
+var SUF=['ungen','heiten','keiten','ung','heit','keit','lich','isch','ern','en','er','es','e','n','s','t'];
+function stem(w){for(var i=0;i<SUF.length;i++){var s=SUF[i];if(w.length-s.length>=4&&w.slice(-s.length)===s)return w.slice(0,-s.length);}return w;}
+function toks(s){return s.split(/[\s-]+/).filter(function(t){return t.length>=3&&!STOP[t];});}
+function score(f,k){if(!f||!k)return 0;if(f===k)return 10;
+ if(k.length>=4&&(' '+f+' ').indexOf(' '+k+' ')>-1)return 7;
+ if(f.length>=4&&(' '+k+' ').indexOf(' '+f+' ')>-1)return 6;
+ var ft=toks(f),kt=toks(k),best=0;
+ ft.forEach(function(a){kt.forEach(function(b){var v=0,sa=stem(a),sb=stem(b);if(a===b)v=5;else if(sa===sb)v=4.5;else if(sa.length>=4&&sb.length>=4&&(sa.indexOf(sb)>-1||sb.indexOf(sa)>-1))v=3;if(v>best)best=v;});});
+ if(best&&kt.length>1&&best<6)best*=.7;return best;}
+CACTI.forEach(function(c){c._kw=c.kw.map(norm);});
+function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+/* ---------- Stimmung je Begriff ---------- */
+function set(a){var o={};a.forEach(function(w){o[norm(w)]=1;});return o;}
+var NEGATORS=set(['kein','keine','keinen','keiner','keinem','nicht','ohne','null','kaum','wenig','zu wenig','fehlt','fehlen','fehlende','fehlender','fehlendes','mangel','mangelnde','mangelnder','nie','niemals','nix','nichts']);
+var LEX_POS=set(['gut','super','toll','prima','klasse','genial','spitze','wunderbar','schön','positiv','froh','freude','freudig','spaß','lachen','liebe','glücklich','zufrieden','stolz','dankbar','begeistert','motiviert','entspannt','gelassen','erholt','produktiv','erfolg','erfolgreich','kreativ','inspiriert','fit','gesund','harmonie','harmonisch','leicht','frei','optimistisch','hoffnung','zuversicht','zuversichtlich','wertgeschätzt','gelobt','unterstützt','fair','fröhlich','heiter','munter','stark','hoffnungsvoll','neugierig','angekommen','mega','cool','nice','great','good','happy','zusammenarbeit','teamwork','vertrauen','wertschätzung','anerkennung','lob','motivation','balance','freiraum','autonomie','kreativität','innovation','erholung','urlaub','karriere','entwicklung','weiterentwicklung','sinn','gesundheit','flexibilität','transparenz','klarheit','ruhe','zusammenhalt','teamgeist','fokus','gute','guter','gutes','chance','chancen','support','unterstützung','lernen','ideen','feiern']);
+var LEX_NEG=set(['schlecht','mies','doof','blöd','nervig','genervt','nervt','anstrengend','schwierig','problem','probleme','sorge','sorgen','ärger','ärgerlich','wütend','wut','traurig','frust','frustriert','stress','gestresst','müde','krank','kaputt','hass','katastrophe','chaos','druck','angst','unzufrieden','überfordert','unglücklich','langweilig','toxisch','konflikt','streit','mobbing','burnout','krise','hektik','zeitdruck','überlastet','erschöpft','einsam','demotiviert','bad','sad']);
+function termMood(f){var tk=f.split(/[\s-]+/),neg=tk.some(function(t){return NEGATORS[t];}),lex=0;
+ tk.forEach(function(t){if(NEGATORS[t])return;var s=stem(t);if(LEX_POS[t]||LEX_POS[s])lex++;if(LEX_NEG[t]||LEX_NEG[s])lex--;});
+ var bp=0,bn=0,kn='';CACTI.forEach(function(c){if(c.mood==='mix')return;c._kw.forEach(function(k){var s=score(f,k);if(c.mood==='pos'){if(s>bp)bp=s;}else if(s>bn){bn=s;kn=k;}});});
+ var m=lex>0?1:lex<0?-1:(bp>=3&&bp>bn*1.15)?1:(bn>=3&&bn>bp*1.15)?-1:0;
+ /* Verneinung dreht die Stimmung um, ausser das Keyword selbst enthält sie schon (z. B. "keine Lust") */
+ var kwNeg=m<0&&kn&&kn.split(' ').some(function(t){return NEGATORS[t];});
+ if(neg&&!kwNeg)m=m>0?-1:m<0?1:-1;
+ /* Wortbildung: "un..." dreht um (unmotiviert), "...los" ist negativ (motivationslos) – ausser das Wort ist selbst ein Keyword */
+ var exact=Math.max(bp,bn)>=10||LEX_POS[f]||LEX_NEG[f];
+ if(!exact&&tk.length===1){var t=tk[0];
+  if(t.length>5&&t.slice(0,2)==='un'){var bm=termMoodBase(t.slice(2));if(bm)m=-bm;}
+  else if(t.length>6&&/los(e|er|es)?$/.test(t))m=-1;}
+ return m;}
+function termMoodBase(w){var s=stem(w);if(LEX_POS[w]||LEX_POS[s])return 1;if(LEX_NEG[w]||LEX_NEG[s])return -1;
+ var bp=0,bn=0;CACTI.forEach(function(c){if(c.mood==='mix')return;c._kw.forEach(function(k){var v=score(w,k);if(c.mood==='pos'){if(v>bp)bp=v;}else if(v>bn)bn=v;});});
+ return bp>=6&&bp>bn?1:bn>=6&&bn>bp?-1:0;}
+function byId(id){return CACTI.filter(function(c){return c.id===id;})[0];}
+
+var LAST={key:'',id:''};
+function match(words){var nf=words.map(norm),seed=hash(nf.join('|')),tm=nf.map(termMood);
+ var p=tm.filter(function(m){return m>0;}).length,n=tm.filter(function(m){return m<0;}).length;
+ var mood=p>n?'pos':n>p?'neg':'mix';
+ var pool=CACTI.filter(function(c){var cm=c.mood||'neg';return mood==='mix'?true:cm===mood;});
+ var res=pool.map(function(c){var total=0,hits=0,hit=[];nf.forEach(function(f,fi){if((mood==='pos'&&tm[fi]<0)||(mood==='neg'&&tm[fi]>0))return;var best=0,bk=null;c._kw.forEach(function(k,i){var s=score(f,k)*(i<3?1.2:1);if(s>best){best=s;bk=c.kw[i];}});if(best>0){total+=best;hits++;if(hit.indexOf(bk)<0)hit.push(bk);}});if(hits>1)total+=2*(hits-1);return {c:c,s:total,hit:hit,t:hash(seed+c.id)};});
+ res.sort(function(a,b){return b.s-a.s||a.t-b.t;});
+ /* Ergebnis wählen: schwacher Treffer -> passender Stimmungs-Kaktus */
+ /* Kandidaten: alle Kakteen, die fast so gut passen wie der beste (mind. 60 %).
+    Welcher davon gezeigt wird, hängt von allen drei Wörtern ab. */
+ var top=res[0].s,fb={pos:'zufrieden',neg:'stimmung'};
+ var cand=res.filter(function(x){return x.s>=2&&x.s>=top*0.6;});
+ var pick=cand.length?cand[seed%cand.length]:res[0];
+ if(mood==='mix'&&p>0&&top<8)pick={c:byId('aprilwetter'),s:0,hit:[]};
+ else if(top<2)pick={c:mood==='mix'?(p>0?byId('aprilwetter'):FALLBACK):byId(fb[mood]),s:0,hit:[]};
+ /* Wurde ein Wort geändert und es käme derselbe Kaktus heraus, nimm den nächstbesten passenden */
+ var key=nf.join('|');
+ /* Gleiche Eingabe nochmal -> gleicher Kaktus wie zuvor */
+ if(LAST.key===key){var same=res.filter(function(x){return x.c.id===LAST.id;})[0];if(same)pick=same;}
+ else if(LAST.key&&LAST.id===pick.c.id){
+  var alt=cand.filter(function(x){return x.c!==pick.c;})[0]
+   ||res.filter(function(x){return x.c!==pick.c&&x.s>0;})[0]
+   ||(pick.c!==FALLBACK?res.filter(function(x){return x.c!==pick.c&&(mood==='mix'||(x.c.mood||'neg')===mood);})[0]:null);
+  if(alt)pick=alt;}
+ LAST={key:key,id:pick.c.id};
+ var rest=res.filter(function(x){return x.c!==pick.c&&x.s>=2;});
+ if(pick.c.id==='aprilwetter'){var bp=rest.filter(function(x){return x.c.mood==='pos';})[0],bn=rest.filter(function(x){return !x.c.mood;})[0];rest=[bp,bn].filter(Boolean);}
+ return {mood:mood,moods:tm,pick:pick,related:rest.slice(0,2),list:res};}
+var MOOD_LABEL={pos:'Grundstimmung: sonnig',neg:'Grundstimmung: stachelig',mix:'Grundstimmung: gemischt'};
+
+/* ---------- UI ---------- */
+var root=document.getElementById('bunditas-kaktus'),form=root.querySelector('.bk-form'),inputs=[].slice.call(form.querySelectorAll('input')),btn=form.querySelector('.bk-btn'),art=root.querySelector('.bk-art'),out=root.querySelector('.bk-result'),rel=root.querySelector('.bk-related'),relRow=root.querySelector('.bk-rel-row'),current=null;
+art.innerHTML=placeholder();
+function esc(s){return String(s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+function upd(){var ok=inputs.every(function(i){return i.value.trim().length>0;});inputs.forEach(function(i){i.parentNode.classList.toggle('is-filled',i.value.trim().length>0);});btn.disabled=!ok;}
+inputs.forEach(function(i){i.addEventListener('input',upd);});
+function numOf(c){var i=CACTI.indexOf(c);return i>-1?String(i+1):'?';}
+function show(c,hit,words,moods,mood){current=c;art.classList.remove('bk-grow');art.innerHTML=render(c,{num:numOf(c),hl:true});void art.offsetWidth;art.classList.add('bk-grow');
+ out.hidden=false;var cm=mood||c.mood||'neg',ml=out.querySelector('.bk-mood');ml.className='bk-mood is-'+cm;ml.textContent=MOOD_LABEL[cm];
+ out.querySelector('.bk-name').textContent=c.name;out.querySelector('.bk-text').textContent=c.text;out.querySelector('.bk-tiptext').textContent=c.tip;
+ var chips=(words||[]).map(function(w,i){var m=moods?moods[i]:0;return '<span class="bk-chip '+(m>0?'is-pos':m<0?'':'is-soft')+'" title="'+(m>0?'positiv':m<0?'herausfordernd':'neutral')+'">'+esc(w)+'</span>';}).join('');
+ if(!words||!words.length)chips+=(hit||[]).map(function(w){return '<span class="bk-chip is-soft">'+esc(w)+'</span>';}).join('');
+ out.querySelector('.bk-chips').innerHTML=chips;}
+function card(c,small){return '<button type="button" class="bk-card" data-id="'+c.id+'">'+render(c,{num:numOf(c)})+'<span>'+esc(c.name)+'</span>'+(small?'<small>'+esc(c.kw.slice(0,4).join(', '))+'</small>':'')+'</button>';}
+form.addEventListener('submit',function(e){e.preventDefault();if(btn.disabled)return;var words=inputs.map(function(i){return i.value.trim();});var r=match(words);
+ show(r.pick.c,r.pick.hit,words,r.moods,r.mood);
+ rel.hidden=!r.related.length;relRow.innerHTML=r.related.map(function(x){return card(x.c,true);}).join('');
+ rel.querySelector('h4').textContent=r.pick.c.id==='aprilwetter'?'Deine zwei Seiten':'Auch verwandt mit deinen Begriffen';
+ if(window.innerWidth<840)art.scrollIntoView({behavior:'smooth',block:'start'});});
+root.addEventListener('click',function(e){var b=e.target.closest('.bk-card');if(!b)return;var c=CACTI.filter(function(x){return x.id===b.getAttribute('data-id');})[0];if(c){show(c,c.kw.slice(0,4),[],null,c.mood||'neg');art.scrollIntoView({behavior:'smooth',block:'center'});}});
+root.querySelector('.bk-reset').addEventListener('click',function(){inputs.forEach(function(i){i.value='';});upd();out.hidden=true;rel.hidden=true;current=null;art.classList.remove('bk-grow');art.innerHTML=placeholder();inputs[0].focus();});
+var BK_LOGO='<svg width="1639" height="326" aria-label="bunditas." role="img" viewBox="0 0 1638.74 325.98" xmlns="http://www.w3.org/2000/svg"><path d="M1591.09,254.43c0,12.36,10.42,22.78,22.78,22.78s22.78-10.42,22.78-22.78-10.41-22.78-22.78-22.78-22.78,10.42-22.78,22.78M1435.55,253.13c16.27,15.94,40.68,24.4,67.36,24.4,42.3,0,65.41-21.16,65.41-48.81,0-37.1-33.52-44.91-60.85-50.76-18.55-4.23-34.17-8.46-34.17-20.51,0-11.06,11.39-17.57,29.28-17.57,19.53,0,37.1,8.13,46.54,18.87l14.32-24.09c-14.32-12.69-34.5-22.12-61.19-22.12-39.7,0-61.83,22.12-61.83,47.83,0,35.14,32.22,42.3,59.23,48.17,19.2,4.23,35.79,9.11,35.79,22.78,0,11.71-10.42,19.2-30.91,19.2s-42.3-10.74-53.37-22.13l-15.62,24.74ZM1370.79,237.84c-7.81,10.73-22.45,16.27-37.42,16.27-19.2,0-33.52-11.07-33.52-27.99s14.32-28.31,33.52-28.31c14.97,0,29.62,5.53,37.42,16.27v23.76ZM1370.79,273.63h34.17v-104.13c0-42.31-30.59-56.95-65.41-56.95-25.06,0-47.84,8.13-66.07,25.38l14,23.76c13.67-13.35,28.97-19.86,46.53-19.86,21.81,0,36.78,11.07,36.78,29.29v23.43c-11.39-13.34-29.62-20.17-50.76-20.17-25.71,0-54.68,14.97-54.68,51.09s28.97,52.07,54.68,52.07c20.82,0,39.05-7.48,50.76-20.82v16.92ZM1211.67,277.53c15.94,0,26.03-4.23,32.21-10.09l-8.13-25.7c-2.61,2.92-8.78,5.53-15.29,5.53-9.77,0-14.97-7.81-14.97-18.55v-82.32h31.89v-29.94h-31.89v-42.96h-34.17v42.96h-26.04v29.94h26.04v90.78c0,26.03,14,40.36,40.36,40.36M1079.55,273.63h34.17V116.45h-34.17v157.17ZM1096.46,90.42c11.71,0,21.16-9.44,21.16-21.16s-9.44-21.15-21.16-21.15-21.15,9.43-21.15,21.15,9.76,21.16,21.15,21.16M1001.12,226.45c-7.81,11.71-24.4,20.82-40.67,20.82-27.01,0-44.26-21.81-44.26-52.07s17.25-52.39,44.26-52.39c16.27,0,32.86,9.43,40.67,21.15v62.49ZM1001.12,273.63h34.17V56.58h-34.17v81.68c-12.69-16.59-30.91-25.7-50.44-25.7-40.68,0-69.96,31.89-69.96,82.65s29.62,82.33,69.96,82.33c20.17,0,38.4-9.77,50.44-25.39v21.48ZM818.57,273.63h34.17v-110.64c0-32.22-16.93-50.44-50.76-50.44-24.74,0-44.91,13.01-55.33,25.38v-21.47h-34.17v157.17h34.17v-109.67c7.81-10.74,22.78-21.15,40.36-21.15,19.2,0,31.56,8.13,31.56,32.54v98.28ZM634.06,273.63h34.17V116.45h-34.17v110.32c-8.13,10.73-23.1,20.5-40.36,20.5-19.2,0-31.56-7.48-31.56-31.89v-98.93h-34.17v111.29c0,32.21,16.59,49.79,50.44,49.79,24.74,0,44.26-12.04,55.65-24.73v20.82ZM379.58,226.45v-62.16c7.48-11.71,24.4-21.47,40.36-21.47,27.33,0,44.58,21.8,44.58,52.39s-17.24,52.07-44.58,52.07c-15.95,0-32.87-9.11-40.36-20.82M345.41,273.63h34.17v-21.48c12.04,15.62,29.94,25.39,50.44,25.39,40.03,0,69.65-30.59,69.65-82.33s-29.29-82.65-69.65-82.65c-19.85,0-38.07,9.11-50.44,25.7V56.58h-34.17v217.05Z" fill="#2C2E45"></path><path d="M136.81,323.93c-36.6,0-71.75-12.54-94.33-35.06C-6.33,240.15-9.7,162.5,17.8,123.28c5.36-7.65,15.9-9.5,23.55-4.14,7.65,5.36,9.5,15.9,4.14,23.55-17.05,24.33-17.4,84.04,20.88,122.24,21.99,21.94,63.34,30.79,100.55,21.52,20.86-5.2,58.01-20.9,72.33-67.54,10.13-33.01,3.44-58.27-6.76-73.78-5.58,25.61-20.55,48.14-48.13,60.27-35.08,15.38-72.63-1.03-85.75-22.49-14.9-24.4-13.49-62.5,18.03-88.13,21.35-17.37,54.9-20.6,86.07-10.2-6.06-18.93-18.88-35.24-35.4-43.51-22.28-11.15-47.73-6.26-73.58,14.13-7.32,5.79-17.95,4.54-23.75-2.8-5.78-7.33-4.53-17.97,2.8-23.75C121.82-10.06,162.53.85,182.42,10.82c33.96,16.98,56.67,54.46,57.88,94.57,34.72,28.77,46.42,74.07,31.27,123.44-14.02,45.67-49.18,78.63-96.47,90.43-12.63,3.15-25.55,4.67-38.29,4.67ZM166.71,112.39c-11.35,0-21.62,2.82-28.75,8.62-16.47,13.39-17.75,32.41-10.5,44.27,6.95,11.39,27.61,16.22,42.69,9.59,27.74-12.2,31.92-36.27,35.08-52.48-12.31-6.59-26.06-9.99-38.52-9.99Z" fill="#2C2E45"></path></svg>';
+root.querySelector('.bk-dl').addEventListener('click',function(){if(!current)return;var svg=render(current,{num:numOf(current),hl:true}),img=new Image(),cv=document.createElement('canvas');cv.width=1080;cv.height=1350;var g=cv.getContext('2d'),ff=getComputedStyle(root).fontFamily||'sans-serif';
+ img.onload=function(){g.fillStyle='#F2E8C4';g.fillRect(0,0,1080,1350);g.drawImage(img,150,40,780,780);g.fillStyle=N;g.textAlign='center';g.font='800 60px '+ff;g.fillText(current.name,540,910);g.font='400 32px '+ff;var ws=current.text.split(' '),ln='',yy=970;ws.forEach(function(w){var t=ln?ln+' '+w:w;if(g.measureText(t).width>880){g.fillText(ln,540,yy);ln=w;yy+=44;}else ln=t;});g.fillText(ln,540,yy);
+  function save(){var a=document.createElement('a');a.download='kaktus-'+current.id+'.png';a.href=cv.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove();}
+  /* echtes bunditas. Logo unten mittig (Seitenverhältnis 1638.74 : 325.98) */
+  var lg=new Image();lg.onload=function(){var w=300,hh=w*325.98/1638.74;g.drawImage(lg,(1080-w)/2,1215,w,hh);save();};
+  lg.onerror=function(){g.font='800 40px '+ff;g.fillText('bunditas.',540,1290);save();};
+  lg.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(BK_LOGO);};
+ img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);});
+var gal=root.querySelector('.bk-gal-grid');root.querySelector('.bk-gallery summary').textContent='Alle '+CACTI.length+' Kakteen ansehen';
+root.querySelector('.bk-gallery').addEventListener('toggle',function(){if(this.open&&!gal.innerHTML){var g=[['Gute Tage','pos'],['Herausforderungen','neg'],['Dazwischen','mix']];gal.innerHTML=g.map(function(x){var l=CACTI.filter(function(c){return (c.mood||'neg')===x[1];});return '<h4 class="bk-gal-h">'+x[0]+' <span>('+l.length+')</span></h4>'+l.map(function(c){return card(c,true);}).join('');}).join('');}});
+window.BUNDITAS_KAKTUS={cacti:CACTI,match:match,render:render};
+})();
+</script>
+</div>
+<!-- ===================== bunditas Kaktus-Check: Ende ===================== -->
+
+<footer><div class="wrap">
+<div class="fgrid">
+<div><a class="logo" href="/" style="text-decoration:none"><svg aria-label="bunditas." role="img" viewBox="0 0 1638.74 325.98" xmlns="http://www.w3.org/2000/svg"><path d="M1591.09,254.43c0,12.36,10.42,22.78,22.78,22.78s22.78-10.42,22.78-22.78-10.41-22.78-22.78-22.78-22.78,10.42-22.78,22.78M1435.55,253.13c16.27,15.94,40.68,24.4,67.36,24.4,42.3,0,65.41-21.16,65.41-48.81,0-37.1-33.52-44.91-60.85-50.76-18.55-4.23-34.17-8.46-34.17-20.51,0-11.06,11.39-17.57,29.28-17.57,19.53,0,37.1,8.13,46.54,18.87l14.32-24.09c-14.32-12.69-34.5-22.12-61.19-22.12-39.7,0-61.83,22.12-61.83,47.83,0,35.14,32.22,42.3,59.23,48.17,19.2,4.23,35.79,9.11,35.79,22.78,0,11.71-10.42,19.2-30.91,19.2s-42.3-10.74-53.37-22.13l-15.62,24.74ZM1370.79,237.84c-7.81,10.73-22.45,16.27-37.42,16.27-19.2,0-33.52-11.07-33.52-27.99s14.32-28.31,33.52-28.31c14.97,0,29.62,5.53,37.42,16.27v23.76ZM1370.79,273.63h34.17v-104.13c0-42.31-30.59-56.95-65.41-56.95-25.06,0-47.84,8.13-66.07,25.38l14,23.76c13.67-13.35,28.97-19.86,46.53-19.86,21.81,0,36.78,11.07,36.78,29.29v23.43c-11.39-13.34-29.62-20.17-50.76-20.17-25.71,0-54.68,14.97-54.68,51.09s28.97,52.07,54.68,52.07c20.82,0,39.05-7.48,50.76-20.82v16.92ZM1211.67,277.53c15.94,0,26.03-4.23,32.21-10.09l-8.13-25.7c-2.61,2.92-8.78,5.53-15.29,5.53-9.77,0-14.97-7.81-14.97-18.55v-82.32h31.89v-29.94h-31.89v-42.96h-34.17v42.96h-26.04v29.94h26.04v90.78c0,26.03,14,40.36,40.36,40.36M1079.55,273.63h34.17V116.45h-34.17v157.17ZM1096.46,90.42c11.71,0,21.16-9.44,21.16-21.16s-9.44-21.15-21.16-21.15-21.15,9.43-21.15,21.15,9.76,21.16,21.15,21.16M1001.12,226.45c-7.81,11.71-24.4,20.82-40.67,20.82-27.01,0-44.26-21.81-44.26-52.07s17.25-52.39,44.26-52.39c16.27,0,32.86,9.43,40.67,21.15v62.49ZM1001.12,273.63h34.17V56.58h-34.17v81.68c-12.69-16.59-30.91-25.7-50.44-25.7-40.68,0-69.96,31.89-69.96,82.65s29.62,82.33,69.96,82.33c20.17,0,38.4-9.77,50.44-25.39v21.48ZM818.57,273.63h34.17v-110.64c0-32.22-16.93-50.44-50.76-50.44-24.74,0-44.91,13.01-55.33,25.38v-21.47h-34.17v157.17h34.17v-109.67c7.81-10.74,22.78-21.15,40.36-21.15,19.2,0,31.56,8.13,31.56,32.54v98.28ZM634.06,273.63h34.17V116.45h-34.17v110.32c-8.13,10.73-23.1,20.5-40.36,20.5-19.2,0-31.56-7.48-31.56-31.89v-98.93h-34.17v111.29c0,32.21,16.59,49.79,50.44,49.79,24.74,0,44.26-12.04,55.65-24.73v20.82ZM379.58,226.45v-62.16c7.48-11.71,24.4-21.47,40.36-21.47,27.33,0,44.58,21.8,44.58,52.39s-17.24,52.07-44.58,52.07c-15.95,0-32.87-9.11-40.36-20.82M345.41,273.63h34.17v-21.48c12.04,15.62,29.94,25.39,50.44,25.39,40.03,0,69.65-30.59,69.65-82.33s-29.29-82.65-69.65-82.65c-19.85,0-38.07,9.11-50.44,25.7V56.58h-34.17v217.05Z" fill="currentColor"></path><path d="M136.81,323.93c-36.6,0-71.75-12.54-94.33-35.06C-6.33,240.15-9.7,162.5,17.8,123.28c5.36-7.65,15.9-9.5,23.55-4.14,7.65,5.36,9.5,15.9,4.14,23.55-17.05,24.33-17.4,84.04,20.88,122.24,21.99,21.94,63.34,30.79,100.55,21.52,20.86-5.2,58.01-20.9,72.33-67.54,10.13-33.01,3.44-58.27-6.76-73.78-5.58,25.61-20.55,48.14-48.13,60.27-35.08,15.38-72.63-1.03-85.75-22.49-14.9-24.4-13.49-62.5,18.03-88.13,21.35-17.37,54.9-20.6,86.07-10.2-6.06-18.93-18.88-35.24-35.4-43.51-22.28-11.15-47.73-6.26-73.58,14.13-7.32,5.79-17.95,4.54-23.75-2.8-5.78-7.33-4.53-17.97,2.8-23.75C121.82-10.06,162.53.85,182.42,10.82c33.96,16.98,56.67,54.46,57.88,94.57,34.72,28.77,46.42,74.07,31.27,123.44-14.02,45.67-49.18,78.63-96.47,90.43-12.63,3.15-25.55,4.67-38.29,4.67ZM166.71,112.39c-11.35,0-21.62,2.82-28.75,8.62-16.47,13.39-17.75,32.41-10.5,44.27,6.95,11.39,27.61,16.22,42.69,9.59,27.74-12.2,31.92-36.27,35.08-52.48-12.31-6.59-26.06-9.99-38.52-9.99Z" fill="currentColor"></path></svg></a></div>
+<div>
+<h2>Überblick</h2>
+<ul>
+<li><a href="/#prinzip">bunditas. Prinzip</a></li>
+<li><a href="/#angebot">Angebot</a></li>
+<li><a href="/#wir">Eva &amp; Maja</a></li>
+<li><a href="/case-study-saas.html">Case Study</a></li>
+<li><a href="/#arbeitsweise">Zusammenarbeit</a></li>
+<li><a href="/#kontakt">Kontakt</a></li></ul>
+</div>
+<div>
+<h2>Kontaktmöglichkeiten</h2>
+<ul>
+<li><a href="mailto:hallo@bunditas.at">hallo@bunditas.at</a></li>
+<li><a href="https://www.linkedin.com/in/evamaria-sturm/" rel="noopener noreferrer" target="_blank">LinkedIn Eva</a></li>
+<li><a href="https://www.linkedin.com/in/maja-tuder/" rel="noopener noreferrer" target="_blank">LinkedIn Maja</a></li>
+<li><a href="https://www.linkedin.com/company/bunditas/" rel="noopener noreferrer" target="_blank" data-umami-event="linkedin-bunditas">LinkedIn bunditas.</a></li></ul>
+</div>
+</div>
+<div class="fbottom">
+<span>© 2026 bunditas.</span>
+<span><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></span>
+</div>
+</div></footer>
+<script>
+/* Menüknopf am Handy (wie auf bunditas.at) */
+(function(){
+  var leiste=document.querySelector('nav'),knopf=leiste&&leiste.querySelector('.burger'),menue=leiste&&leiste.querySelector('.navmenu');
+  if(!knopf||!menue)return;
+  function stand(offen){leiste.classList.toggle('offen',offen);knopf.setAttribute('aria-expanded',offen?'true':'false');knopf.setAttribute('aria-label',offen?'Menü schließen':'Menü öffnen');}
+  knopf.addEventListener('click',function(e){e.stopPropagation();stand(!leiste.classList.contains('offen'));});
+  menue.addEventListener('click',function(e){if(e.target.closest('a'))stand(false);});
+  document.addEventListener('click',function(e){if(leiste.classList.contains('offen')&&!leiste.contains(e.target))stand(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&leiste.classList.contains('offen')){stand(false);knopf.focus();}});
+})();
+</script>
+</body>
+</html>
